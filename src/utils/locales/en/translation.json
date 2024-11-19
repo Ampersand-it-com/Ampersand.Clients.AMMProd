@@ -31,7 +31,7 @@
     "agency": "Agency",
     "initialPhrase": "This is a video and it's good :`)",
     "finalePhrase": "It's not just a video, it's a tool aimed to achieve a result!",
-    "fillerPhrases": [ "Wow!", "Really?!", "No way!", "Was that even possible?!", "Whoa!", "Incredible!", "Amazing!" ],
+    "fillerPhrases": ["Wow!", "Really?!", "No way!", "Was that even possible?!", "Whoa!", "Incredible!", "Amazing!"],
     "items": [
       "Analyzing video trends",
       "Adapting to various formats",
@@ -243,6 +243,10 @@
   },
   "footer": {
     "rights": "© 2022 AMM Production. All Rights Reserved."
+  },
+  "meta": {
+    "title": "AMM/ video agency v.2.0",
+    "description": "Animation and Video Production Agency for Businesses – Order a Custom Video"
   },
   "error": "Invalid value"
 }

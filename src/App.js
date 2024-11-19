@@ -1,5 +1,9 @@
-import { Suspense, lazy } from "react";
-import Loader from "./helpers/components/Loader/Loader";
+import { Suspense, lazy, useEffect } from 'react';
+import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
+import i18n from 'utils/i18next';
+
+import Loader from './helpers/components/Loader/Loader';
+import SEO from 'components/SEO/SEO';
 const Layout = lazy(() => import('./helpers/components/Layout/Layout'));
 const Header = lazy(() => import('./components/Header/Header'));
 const Hero = lazy(() => import('components/Hero/Hero'));
@@ -15,9 +19,31 @@ const Clients = lazy(() => import('components/Clients/Clients'));
 const Footer = lazy(() => import('components/Footer/Footer'));
 
 function App() {
+  return (
+    <Router>
+      <Suspense fallback={<Loader />}>
+        <Routes>
+          <Route path="/" element={<AppLayout />} />
+          <Route path="/en" element={<AppLayout lang="en" />} />
+          <Route path="/ua" element={<AppLayout lang="ua" />} />
+          <Route path="/ru" element={<AppLayout lang="ru" />} />
+          <Route path="*" element={<Navigate to="/" />} />
+        </Routes>
+      </Suspense>
+    </Router>
+  );
+}
+
+function AppLayout({ lang }) {
+  useEffect(() => {
+    if (lang && i18n.language !== lang) {
+      i18n.changeLanguage(lang);
+    }
+  }, [lang]);
 
   return (
-    <Suspense fallback={<Loader />}>
+    <>
+      <SEO currentLang={lang} />
       <Layout>
         <Header />
         <Hero />
@@ -34,7 +60,7 @@ function App() {
         <Clients />
       </Layout>
       <Footer />
-    </Suspense>
+    </>
   );
 }
 

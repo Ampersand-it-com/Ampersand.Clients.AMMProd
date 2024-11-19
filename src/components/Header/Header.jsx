@@ -9,9 +9,11 @@ import classNames from 'classnames';
 import { useTranslation } from 'react-i18next';
 import 'utils/i18next';
 import Modal from 'components/Modal/Modal';
-import Helmet from 'react-helmet';
+import { useNavigate } from 'react-router-dom';
+
 function Header() {
   const s = useStyles();
+  const navigate = useNavigate();
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { t, i18n } = useTranslation();
@@ -20,6 +22,7 @@ function Header() {
   const handleChangeLanguage = (lang) => {
     i18n.changeLanguage(lang);
     setCurrentLang(lang);
+    navigate(`/${lang}`);
   };
 
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -45,14 +48,6 @@ function Header() {
 
   return (
     <div className={s.root} id="start">
-      <Helmet>
-        <html lang={currentLang} />
-        <title>{t('header.title')}</title> {/* Пример использования t для локализации */}
-        <meta name="description" content={t('header.description')} />
-        <meta name="title" content={t('header.title')} />
-        <meta name="og:description" content={t('header.description')} />
-        <meta name="og:title" content={t('header.title')} />
-      </Helmet>
       <a href="#root" aria-label="link to the top of the page">
         <Logo className={s.logo} />
       </a>
