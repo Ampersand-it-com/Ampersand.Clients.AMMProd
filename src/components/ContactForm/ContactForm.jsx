@@ -34,21 +34,25 @@ function ContactForm() {
     e.preventDefault();
     setIsDirty(true);
     if (isNameValid && isPhoneValid) {
-      const formData = {
-        fullname: name,
-        phone: phone,
-        email: email,
-      };
-      const encoded = encodeURI('https://api.ampersand-it.com/public/contactus/amm/amm.prod1@gmail.com');
-      fetch(encoded, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Client-Id': 'amm_prod_client',
-          'Client-Secret': 'vsKxWYBjifROzMDc1Y2zDEua3vmOkNIUptYf0bdI',
-        },
-        body: JSON.stringify(formData),
-      })
+
+        const body = {
+            emailTo: ['amm.prod1@gmail.com'],
+            clientId: "ammagency",
+            clientSecret: "SDKJLenv83n&#@nmv98n387Sf",
+            contactEmail: email,
+            contactFirstName: name,
+            contactPhoneNumber: phone,
+            includeSystemInfo: true,
+        };
+
+        // setup request
+        fetch("https://email.ampersand-it.com/sendcontactusform", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(body),
+        })
         .then((response) => {
           if (response.ok) {
             console.log('Form successfully submitted');
