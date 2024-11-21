@@ -10,10 +10,9 @@ export const useStyles = makeStyles({
     color: COLORS.WHITE,
     paddingTop: 110,
     overflow: 'hidden',
-    
+
     [BREAKPOINTS.DESKTOP]: {
       maxWidth: 1170,
-    }
+    },
   },
 });
-

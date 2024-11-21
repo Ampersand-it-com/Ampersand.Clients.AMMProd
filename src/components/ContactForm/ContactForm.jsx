@@ -4,11 +4,10 @@ import { useTranslation } from 'react-i18next';
 import foxImg from 'assets/images/foxImg.png';
 import { ReactComponent as PhoneIcon } from 'assets/icons/phoneIcon.svg';
 import classNames from 'classnames';
-import {tel} from 'helpers/constants'
+import { tel } from 'helpers/constants';
 import 'utils/i18next';
-
- 
-
+import { useNavigate } from 'react-router-dom';
+import i18n from 'utils/i18next';
 
 function ContactForm() {
   const s = useStyles();
@@ -21,51 +20,60 @@ function ContactForm() {
   const [isPhoneValid, setIsPhoneValid] = useState(false);
   const [isEmailValid, setIsEmailValid] = useState(false);
   const [isDirty, setIsDirty] = useState(false);
-  const myForm = useRef()
+  const myForm = useRef();
+
+  const navigate = useNavigate();
+  const currentLang = i18n.language;
+  const langPath = currentLang === 'en' ? '' : '/' + currentLang;
+
+  const handleSubmit = () => {
+    navigate(langPath + '/sent');
+  };
 
   const handleSubmitClick = (e) => {
     e.preventDefault();
     setIsDirty(true);
-      if (isNameValid && isPhoneValid) {
-          const formData = {
-              fullname: name,
-              phone: phone,
-              email: email
-          };
-          const encoded = encodeURI('https://api.ampersand-it.com/public/contactus/amm/amm.prod1@gmail.com');
-          fetch(encoded, {
-              method: "POST",
-              headers: {
-                  "Content-Type": "application/json",
-                  "Client-Id": "amm_prod_client",
-                  "Client-Secret": "vsKxWYBjifROzMDc1Y2zDEua3vmOkNIUptYf0bdI"
-              },
-              body: JSON.stringify(formData)
-          })
-              .then(response => {
-                  if (response.ok) {
-                      console.log("Form successfully submitted");
-                      setIsSubmited(true);
-                      setIsDirty(false);
-                  } else {
-                      throw new Error('Ошибка при отправке данных на сервер');
-                  }
-              })
-              .catch((error) => alert(error));
-      }
-  }
+    if (isNameValid && isPhoneValid) {
+      const formData = {
+        fullname: name,
+        phone: phone,
+        email: email,
+      };
+      const encoded = encodeURI('https://api.ampersand-it.com/public/contactus/amm/amm.prod1@gmail.com');
+      fetch(encoded, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Client-Id': 'amm_prod_client',
+          'Client-Secret': 'vsKxWYBjifROzMDc1Y2zDEua3vmOkNIUptYf0bdI',
+        },
+        body: JSON.stringify(formData),
+      })
+        .then((response) => {
+          if (response.ok) {
+            console.log('Form successfully submitted');
+            setIsSubmited(true);
+            setIsDirty(false);
+            handleSubmit();
+          } else {
+            throw new Error('пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ');
+          }
+        })
+        .catch((error) => alert(error));
+    }
+  };
 
-    useEffect(() => {
+  useEffect(() => {
     name.length > 2 ? setIsNameValid(true) : setIsNameValid(false);
-    email.length > 5 && email.includes('@') ?  setIsEmailValid(true) :  setIsEmailValid(false);
+    email.length > 5 && email.includes('@') ? setIsEmailValid(true) : setIsEmailValid(false);
     phone.toString().length >= 10 && phone.toString().length <= 13 ? setIsPhoneValid(true) : setIsPhoneValid(false);
-  }, [name, email, phone])
+  }, [name, email, phone]);
 
   return (
     <div className={s.root}>
       <div className={s.elipseTwo}></div>
       <div className={s.elispse}></div>
-      {isSubmited ?
+      {/* {isSubmited ?
         <div className={s.submittedContainer}>
           <h2 className={s.successTitle}>{t("contactModal.successTitle")}</h2>
           <p className={s.successDescription}>{t("contactModal.description")}</p>
@@ -73,35 +81,66 @@ function ContactForm() {
           <p className={s.successRequest}>{t("contactModal.request")}</p>
           <img src={foxImg} className={s.foxLogo} alt='fox mascot'/>
         </div>
-        :
-        <div className={s.formContainer}>
-          <h2 className={s.title}>{t('contactForm.title')}</h2>
-          <p className={s.description}>{t('contactForm.description')}</p>
-          <form className={s.contactForm} name="contactForm" action='/contactForm' method="POST" data-netlify="true" ref={myForm}>
-            <input type='hidden' name='form-name' value='contactForm'/>
-            <label className={classNames({[s.errorState]: !isNameValid && isDirty})}>
-              <span>{t("contactModal.name")}</span>
-              <input type="text" className={s.contactInput} autoComplete="off" placeholder={t('contactModal.namePlaceholder')} name='name' value={name} onChange={(e) => setName(e.target.value)} />
-              {!isNameValid && isDirty && <span className={s.error}>{t("error")}</span>}
-            </label>
-            <label>
-              <span>{t("contactModal.phoneNumber")}</span>
-              <input type="number" className={s.contactInput} autoComplete="off" name='phone' placeholder='+380' value={phone} onChange={(e) => setPhone(e.target.value)} />
-              {!isPhoneValid && isDirty && <span className={s.error}>{t("error")}</span>}
-            </label>
-            <label>
-              <span>{t("contactModal.email")}</span>
-              <input type="email" className={s.contactInput} autoComplete="off" placeholder={t('contactModal.emailPlaceholder')} name='email' value={email} onChange={(e) => setEmail(e.target.value)} />
-              {!isEmailValid && isDirty && <span className={s.error}>{t("error")}</span>}
-            </label>
-            <button className={s.submitBtn} type='button' onClick={(e) => handleSubmitClick(e)}>
-              {t("contactModal.btn")}
-            </button>
-          </form>
-        </div>
-      }
+        : */}
+      <div className={s.formContainer}>
+        <h2 className={s.title}>{t('contactForm.title')}</h2>
+        <p className={s.description}>{t('contactForm.description')}</p>
+        <form
+          className={s.contactForm}
+          name="contactForm"
+          action="/contactForm"
+          method="POST"
+          data-netlify="true"
+          ref={myForm}
+        >
+          <input type="hidden" name="form-name" value="contactForm" />
+          <label className={classNames({ [s.errorState]: !isNameValid && isDirty })}>
+            <span>{t('contactModal.name')}</span>
+            <input
+              type="text"
+              className={s.contactInput}
+              autoComplete="off"
+              placeholder={t('contactModal.namePlaceholder')}
+              name="name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
+            {!isNameValid && isDirty && <span className={s.error}>{t('error')}</span>}
+          </label>
+          <label>
+            <span>{t('contactModal.phoneNumber')}</span>
+            <input
+              type="number"
+              className={s.contactInput}
+              autoComplete="off"
+              name="phone"
+              placeholder="+380"
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
+            />
+            {!isPhoneValid && isDirty && <span className={s.error}>{t('error')}</span>}
+          </label>
+          <label>
+            <span>{t('contactModal.email')}</span>
+            <input
+              type="email"
+              className={s.contactInput}
+              autoComplete="off"
+              placeholder={t('contactModal.emailPlaceholder')}
+              name="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            {!isEmailValid && isDirty && <span className={s.error}>{t('error')}</span>}
+          </label>
+          <button className={s.submitBtn} type="button" onClick={(e) => handleSubmit(e)}>
+            {t('contactModal.btn')}
+          </button>
+        </form>
+      </div>
+      {/* } */}
     </div>
   );
 }
- 
+
 export default ContactForm;

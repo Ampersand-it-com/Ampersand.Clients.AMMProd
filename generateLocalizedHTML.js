@@ -5,20 +5,20 @@ const config = [
   {
     lang: 'en',
     fileName: 'index.html',
-    title: 'AMM/ Video Agency',
-    description: 'Animation and video production agency for business – order a custom video',
+    title: 'AMM/ video agency v.2.0',
+    description: 'Animation and Video Production Agency for Businesses – Order a Custom Video',
   },
   {
     lang: 'uk',
     fileName: 'ua/index.html',
-    title: 'AMM/ відеоагентство',
-    description: 'Анімаційне та відеовиробниче агентство для бізнесу – замовте індивідуальне відео',
+    title: 'AMM/ відео агенція v.2.0',
+    description: 'Анімаційна та відеопродакшн агенція для бізнесу - замовити відео ролик',
   },
   {
     lang: 'ru',
     fileName: 'ru/index.html',
-    title: 'AMM/ видеоагентство',
-    description: 'Анимационное и видеопроизводственное агентство для бизнеса – закажите индивидуальное видео',
+    title: 'AMM/ видео агенство v.2.0',
+    description: 'Анимационное и видеопродакш агенство для бизнеса — заказать видеоролик',
   },
 ];
 
@@ -36,11 +36,15 @@ config.forEach(({ lang, fileName, title, description }) => {
     }
 
     // mod
-    let modifiedData = data.replace('<html lang="en">', `<html lang="${lang}">`);
-    modifiedData = modifiedData.replace(/<title>.*<\/title>/, `<title>${title}</title>`);
+    let modifiedData = data.replace(/<html lang=".*?">/, `<html lang="${lang}">`);
+    modifiedData = modifiedData.replace(/<title>.*?<\/title>/, `<title>${title}</title>`);
     modifiedData = modifiedData.replace(
-      /<meta name="description" content=".*"\/>/,
-      `<meta name="description" content="${description}"/>`
+      /<meta data-react-helmet="true" name="title" content=".*?"\/>/,
+      `<meta data-react-helmet="true" name="title" content="${title}"/>`
+    );
+    modifiedData = modifiedData.replace(
+      /<meta data-react-helmet="true" name="description" content=".*?"\/>/,
+      `<meta data-react-helmet="true" name="description" content="${description}"/>`
     );
 
     // write

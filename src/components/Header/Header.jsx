@@ -22,7 +22,7 @@ function Header() {
   const handleChangeLanguage = (lang) => {
     i18n.changeLanguage(lang);
     setCurrentLang(lang);
-    navigate(`/${lang}`);
+    navigate(`/${lang === 'en' ? '' : lang}`);
   };
 
   const [isModalOpen, setIsModalOpen] = useState(false);

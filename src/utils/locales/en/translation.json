@@ -244,6 +244,12 @@
   "footer": {
     "rights": "© 2022 AMM Production. All Rights Reserved."
   },
+  "sentPage": {
+    "title": "Thank you for choosing us!",
+    "description": "We appreciate your time and look forward to talking to you. Our manager will contact you within 30 minutes during the agency’s working hours to clarify the details.",
+    "returnButton": "Return to home page",
+    "caption": "If you have an urgent question — call us right now"
+  },
   "meta": {
     "title": "AMM/ video agency v.2.0",
     "description": "Animation and Video Production Agency for Businesses – Order a Custom Video"
