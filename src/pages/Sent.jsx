@@ -1,35 +1,36 @@
 import { useTranslation } from 'react-i18next';
 import 'utils/i18next';
+
+import { Helmet } from 'react-helmet';
+
 import { ReactComponent as PhoneIcon } from 'assets/icons/phoneIcon.svg';
-import { tel, telRaw } from 'helpers/constants';
-import styled from 'styled-components';
 import PageContainer, { contentWrapperCss } from 'helpers/components/LayoutReworked/LayoutReworked';
 import Footer from 'components/FooterReworked/FooterReworked';
-import typo from 'helpers/typography';
-import { COLORS } from 'helpers/colors';
 import Button from 'components/CharacterUpgrade/components/Button/Button';
 import Ellipse from 'helpers/components/Ellipse/Ellipse';
-import i18n from 'utils/i18next';
-import { useNavigate } from 'react-router-dom';
-import { Helmet } from 'react-helmet';
+
+import styled from 'styled-components';
+
+import { tel, telRaw } from 'helpers/constants';
+import typo from 'helpers/typography';
+import { COLORS } from 'helpers/colors';
 import { BREAKPOINTS } from 'helpers/breakpoints';
+import useLocaleNavigate from 'hooks/useLocaleNavigate';
+import Meta from 'components/Meta/Meta';
 
 const SentPage = () => {
   const { t } = useTranslation();
 
-  const navigate = useNavigate();
-  const currentLang = i18n.language;
-  const langPath = currentLang === 'en' ? '/' : '/' + currentLang;
+  // Navigation
 
+  const navigateToIndex = useLocaleNavigate('');
   const handleReturn = (e) => {
-    navigate(langPath);
+    navigateToIndex();
   };
 
   return (
     <PageContainer>
-      <Helmet>
-        <meta name="robots" content="noindex, nofollow" />
-      </Helmet>
+      <Meta title={t('meta.title')} description={t('meta.description')} noIndex />
       <Section>
         <Ellipse className="ellipse" />
         <div className="text-block">

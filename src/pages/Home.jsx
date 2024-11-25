@@ -1,5 +1,9 @@
 import { lazy } from 'react';
 
+import { useTranslation } from 'react-i18next';
+import 'utils/i18next';
+import Meta from 'components/Meta/Meta';
+
 const Layout = lazy(() => import('helpers/components/Layout/Layout'));
 const Header = lazy(() => import('components/Header/Header'));
 const Hero = lazy(() => import('components/Hero/Hero'));
@@ -15,8 +19,11 @@ const Clients = lazy(() => import('components/Clients/Clients'));
 const Footer = lazy(() => import('components/Footer/Footer'));
 
 function HomePage() {
+  const { t } = useTranslation();
+
   return (
     <>
+      <Meta title={t('meta.title')} description={t('meta.description')} />
       <Layout>
         <Header />
         <Hero />

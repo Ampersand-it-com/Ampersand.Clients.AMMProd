@@ -12,8 +12,7 @@ import classNames from 'classnames';
 import 'utils/i18next';
 import { tel } from 'helpers/constants';
 import { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-import i18n from 'utils/i18next';
+import useLocaleNavigate from 'hooks/useLocaleNavigate';
 
 function Modal({ isModalOpen, setIsModalOpen }) {
   const s = useStyles();
@@ -28,36 +27,35 @@ function Modal({ isModalOpen, setIsModalOpen }) {
   const [isDirty, setIsDirty] = useState(false);
   const myForm = useRef();
 
-  const navigate = useNavigate();
-  const currentLang = i18n.language;
-  const langPath = currentLang === 'en' ? '' : '/' + currentLang;
+  // Navigation
 
+  const navigateToSent = useLocaleNavigate('/sent');
   const handleSubmit = () => {
-    navigate(langPath + '/sent');
+    navigateToSent();
   };
 
   const handleSubmitClick = (e) => {
     e.preventDefault();
     setIsDirty(true);
     if (isNameValid && isPhoneValid) {
-        const body = {
-            emailTo: ['amm.prod1@gmail.com'],
-            clientId: "ammagency",
-            clientSecret: "SDKJLenv83n&#@nmv98n387Sf",
-            contactEmail: email,
-            contactFirstName: name,
-            contactPhoneNumber: phone,
-            includeSystemInfo: true,
-        };
+      const body = {
+        emailTo: ['amm.prod1@gmail.com'],
+        clientId: 'ammagency',
+        clientSecret: 'SDKJLenv83n&#@nmv98n387Sf',
+        contactEmail: email,
+        contactFirstName: name,
+        contactPhoneNumber: phone,
+        includeSystemInfo: true,
+      };
 
-        // setup request
-        fetch("https://email.ampersand-it.com/sendcontactusform", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(body),
-        })
+      // setup request
+      fetch('https://email.ampersand-it.com/sendcontactusform', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(body),
+      })
         .then((response) => {
           if (response.ok) {
             console.log('Form successfully submitted');

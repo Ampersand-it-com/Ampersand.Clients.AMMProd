@@ -6,8 +6,7 @@ import { ReactComponent as PhoneIcon } from 'assets/icons/phoneIcon.svg';
 import classNames from 'classnames';
 import { tel } from 'helpers/constants';
 import 'utils/i18next';
-import { useNavigate } from 'react-router-dom';
-import i18n from 'utils/i18next';
+import useLocaleNavigate from 'hooks/useLocaleNavigate';
 
 function ContactForm() {
   const s = useStyles();
@@ -22,37 +21,37 @@ function ContactForm() {
   const [isDirty, setIsDirty] = useState(false);
   const myForm = useRef();
 
-  const navigate = useNavigate();
-  const currentLang = i18n.language;
-  const langPath = currentLang === 'en' ? '' : '/' + currentLang;
+  // Navigation
 
+  const navigateToSent = useLocaleNavigate('/sent');
   const handleSubmit = () => {
-    navigate(langPath + '/sent');
+    navigateToSent();
   };
+
+  // Handle Form
 
   const handleSubmitClick = (e) => {
     e.preventDefault();
     setIsDirty(true);
     if (isNameValid && isPhoneValid) {
+      const body = {
+        emailTo: ['amm.prod1@gmail.com'],
+        clientId: 'ammagency',
+        clientSecret: 'SDKJLenv83n&#@nmv98n387Sf',
+        contactEmail: email,
+        contactFirstName: name,
+        contactPhoneNumber: phone,
+        includeSystemInfo: true,
+      };
 
-        const body = {
-            emailTo: ['amm.prod1@gmail.com'],
-            clientId: "ammagency",
-            clientSecret: "SDKJLenv83n&#@nmv98n387Sf",
-            contactEmail: email,
-            contactFirstName: name,
-            contactPhoneNumber: phone,
-            includeSystemInfo: true,
-        };
-
-        // setup request
-        fetch("https://email.ampersand-it.com/sendcontactusform", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(body),
-        })
+      // setup request
+      fetch('https://email.ampersand-it.com/sendcontactusform', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(body),
+      })
         .then((response) => {
           if (response.ok) {
             console.log('Form successfully submitted');
@@ -137,7 +136,7 @@ function ContactForm() {
             />
             {!isEmailValid && isDirty && <span className={s.error}>{t('error')}</span>}
           </label>
-          <button className={s.submitBtn} type="button" onClick={(e) => handleSubmit(e)}>
+          <button className={s.submitBtn} type="button" onClick={(e) => handleSubmitClick(e)}>
             {t('contactModal.btn')}
           </button>
         </form>

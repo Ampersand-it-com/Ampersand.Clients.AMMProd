@@ -1,5 +1,5 @@
 # https://www.robotstxt.org/robotstxt.html
 User-agent: *
-Disallow: /sent
+Disallow: /en/sent
 Disallow: /ua/sent
 Disallow: /ru/sent
