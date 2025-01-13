@@ -5,6 +5,7 @@ import i18n from 'utils/i18next';
 import Loader from './helpers/components/Loader/Loader';
 import SentPage from 'pages/Sent';
 import HomePage from 'pages/Home';
+import Videos from 'pages/Videos';
 
 const allowedLanguages = ['en', 'ua', 'ru'];
 
@@ -19,6 +20,8 @@ function App() {
             <Route index element={<HomePage />} />
             <Route path="sent" element={<SentPage />} />
           </Route>
+
+          <Route path="videos" element={<Videos />} />
 
           <Route path="*" element={<Navigate to="/en" replace />} />
         </Routes>
