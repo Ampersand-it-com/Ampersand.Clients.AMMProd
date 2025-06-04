@@ -59,7 +59,7 @@ function ContactForm() {
             setIsDirty(false);
             handleSubmit();
           } else {
-            throw new Error('������ ��� �������� ������ �� ������');
+            throw new Error('Failed to submit form');
           }
         })
         .catch((error) => alert(error));
@@ -113,7 +113,7 @@ function ContactForm() {
           <label>
             <span>{t('contactModal.phoneNumber')}</span>
             <input
-              type="number"
+              type="tel"
               className={s.contactInput}
               autoComplete="off"
               name="phone"

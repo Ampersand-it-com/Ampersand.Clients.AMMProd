@@ -63,7 +63,7 @@ function Modal({ isModalOpen, setIsModalOpen }) {
             setIsDirty(false);
             handleSubmit();
           } else {
-            throw new Error('������ ��� �������� ������ �� ������');
+            throw new Error('Failed to submit form');
           }
         })
         .catch((error) => alert(error));
@@ -128,7 +128,7 @@ function Modal({ isModalOpen, setIsModalOpen }) {
                 <span>{t('contactModal.phoneNumber')}</span>
                 <input
                   required
-                  type="number"
+                  type="tel"
                   autoComplete="off"
                   className={s.contactInput}
                   name="phone"
