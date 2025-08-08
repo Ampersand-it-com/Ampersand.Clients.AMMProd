@@ -1,8 +1,13 @@
-export default function TestPage({ lang }) {
+import Layout from "@/helpers/components/Layout/Layout";
+import { useTranslation } from "react-i18next";
+
+export default function HomePage() {
+  const { t } = useTranslation();
+
   return (
-    <main>
-      <h1>Test page for "{lang}"</h1>
-    </main>
+    <>
+      <Layout></Layout>
+    </>
   );
 }
 
@@ -18,7 +23,7 @@ export const getStaticPaths = async () => {
 export const getStaticProps = async ({ params }) => {
   return {
     props: {
-      lang: params?.lang || "ua",
+      lang: params?.lang || "en",
     },
   };
 };

@@ -1,90 +1,85 @@
-import { css } from 'styled-components';
-import { BREAKPOINTS } from './breakpoints';
+@use "./variables" as *; // если переменные и миксины лежат тут
 
-const typo = {};
-
-typo.h2 = css`
+.h2 {
   font-family: Furore, sans-serif;
   font-weight: 400;
   font-size: 22px;
   line-height: 133%;
   letter-spacing: 0.07em;
 
-  ${BREAKPOINTS.DESKTOP} {
+  @include desktop {
     font-size: 36px;
   }
-`;
+}
 
-typo.h3 = css`
+.h3 {
   font-family: Furore, sans-serif;
   font-weight: 400;
   font-size: 18px;
   line-height: 133%;
   letter-spacing: 0.07em;
 
-  ${BREAKPOINTS.DESKTOP} {
+  @include desktop {
     font-size: 22px;
   }
-`;
+}
 
-typo.lead = css`
+.lead {
   font-family: Roboto, sans-serif;
   font-weight: 400;
   font-size: 18px;
   line-height: 133%;
   letter-spacing: 0.02em;
 
-  ${BREAKPOINTS.DESKTOP} {
+  @include desktop {
     font-size: 22px;
   }
-`;
+}
 
-typo.text = css`
+.text {
   font-family: Roboto, sans-serif;
   font-weight: 400;
   font-size: 14px;
   line-height: 150%;
   letter-spacing: 0.02em;
 
-  ${BREAKPOINTS.DESKTOP} {
+  @include desktop {
     font-size: 16px;
   }
-`;
+}
 
-typo.bold = css`
+.bold {
   font-family: Roboto, sans-serif;
   font-weight: 700;
   font-size: 14px;
   line-height: 150%;
   letter-spacing: 0.02em;
 
-  ${BREAKPOINTS.DESKTOP} {
+  @include desktop {
     font-size: 16px;
   }
-`;
+}
 
-typo.caption = css`
+.caption {
   font-family: Roboto, sans-serif;
   font-weight: 400;
   font-size: 12px;
   line-height: 150%;
   letter-spacing: 0.05em;
 
-  ${BREAKPOINTS.DESKTOP} {
+  @include desktop {
     font-size: 14px;
   }
-`;
+}
 
-typo.ui = css`
+.ui {
   font-family: Roboto, sans-serif;
   font-weight: 700;
   font-size: 16px;
   line-height: 125%;
   letter-spacing: 0.05em;
 
-  ${BREAKPOINTS.DESKTOP} {
+  @include desktop {
     font-size: 18px;
   }
-`;
-
-export default typo;
+}

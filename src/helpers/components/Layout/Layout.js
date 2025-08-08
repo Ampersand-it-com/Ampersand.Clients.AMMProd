@@ -1,13 +1,7 @@
-import {useStyles} from './Layout.styles'
+import "./Layout.module.scss";
 
-function  Layout({children}) {
-  const s = useStyles()
- 
-  return (
-    <div className={s.root}>
-      {children}
-    </div>
-  );
+function Layout({ children }) {
+  return <div className="styles.root">{children}</div>;
 }
 
 export default Layout;

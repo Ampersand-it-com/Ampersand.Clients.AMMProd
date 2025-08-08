@@ -1,67 +1,65 @@
-@import "../../styles/variables.scss";
+@use "../../styles/variables.scss" as *;
 
 .checkbox {
-	margin: -8px;
-	padding: 8px;
+  margin: -8px;
+  padding: 8px;
 
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	gap: 12px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
 
-	color: $color-gray-primary;
+  color: $color-gray-primary;
 
-	cursor: pointer;
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 
-	input {
-		position: absolute;
-		opacity: 0;
-		cursor: pointer;
-		height: 0;
-		width: 0;
-	}
+  input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
 
-	.box {
-		position: relative;
-		height: 24px;
-		width: 24px;
+  .box {
+    position: relative;
+    height: 24px;
+    width: 24px;
 
-		display: flex;
-		justify-content: center;
-		align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-		// background: $color-black-primary;
-		border: 1px solid $color-gray-primary;
-	}
+    // background: $color-black-primary;
+    border: 1px solid $color-gray-primary;
+  }
 
-	.box::before {
-		content: '';
-		width: 12px;
-		height: 12px;
-		display: none;
-		background: $color-white;
-	}
+  .box::before {
+    content: "";
+    width: 12px;
+    height: 12px;
+    display: none;
+    background: $color-white;
+  }
 }
-
-
 
 // States
 .checkbox:hover {
-	color: $color-white;
+  color: $color-white;
 
-	.box {
-		border-color: $color-white;
-	}
+  .box {
+    border-color: $color-white;
+  }
 }
 
-.checkbox input:checked+.box::before {
-	display: block;
+.checkbox input:checked + .box::before {
+  display: block;
 }
 
 .checkbox:has(input:checked) {
-	color: $color-white;
+  color: $color-white;
 }

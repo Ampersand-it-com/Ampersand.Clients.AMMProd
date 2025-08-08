@@ -1,33 +1,33 @@
-@import '../../styles/variables.scss';
+@use "../../styles/variables.scss" as *;
 
 .button {
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	align-items: center;
-	padding: 12px 24px;
-	gap: 4px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 24px;
+  gap: 4px;
 
-	height: 40px;
-	font-size: 16px;
-	font-weight: 600;
-	border: none;
-	outline: none;
-	background: $color-white;
-	color: $color-black-primary;
+  height: 40px;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  outline: none;
+  background: $color-white;
+  color: $color-black-primary;
 
-	cursor: pointer;
+  cursor: pointer;
 
-	span {
-		padding: 0 4px;
-	}
+  span {
+    padding: 0 4px;
+  }
 
-	&:hover,
-	&:focus-visible {
-		outline: 2px solid $color-white;
-	}
+  &:hover,
+  &:focus-visible {
+    outline: 2px solid $color-white;
+  }
 
-	&:active {
-		background: $color-gray-light;
-	}
+  &:active {
+    background: $color-gray-light;
+  }
 }
