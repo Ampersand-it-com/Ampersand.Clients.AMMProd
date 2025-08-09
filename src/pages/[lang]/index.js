@@ -1,29 +1,46 @@
+import Hero from "@/components/Hero/Hero";
 import Layout from "@/helpers/components/Layout/Layout";
-import { useTranslation } from "react-i18next";
+import { LocaleProvider } from "@/helpers/locale";
+import fs from "fs";
+import path from "path";
 
-export default function HomePage() {
-  const { t } = useTranslation();
+export async function getStaticPaths() {
+  const locales = ["en", "ua", "ru"];
+  const paths = locales.map((lang) => ({
+    params: { lang },
+  }));
 
-  return (
-    <>
-      <Layout></Layout>
-    </>
-  );
+  return { paths, fallback: false };
 }
 
-// Динамические маршруты (SSG)
-export const getStaticPaths = async () => {
-  return {
-    paths: ["ua", "en", "ru"].map((lang) => ({ params: { lang } })),
-    fallback: false, // 404 если не найдено
-  };
-};
+export async function getStaticProps({ params }) {
+  const { lang } = params;
 
-// Данные для страницы
-export const getStaticProps = async ({ params }) => {
+  // Путь к файлу с переводами
+  const filePath = path.join(
+    process.cwd(),
+    "public",
+    "locales",
+    lang,
+    "common.json"
+  );
+  const translations = JSON.parse(fs.readFileSync(filePath, "utf-8"));
+
   return {
     props: {
-      lang: params?.lang || "en",
+      lang,
+
+      translations,
     },
   };
-};
+}
+
+export default function Home({ lang, translations }) {
+  return (
+    <LocaleProvider lang={lang} t={translations}>
+      <Layout>
+        <Hero />
+      </Layout>
+    </LocaleProvider>
+  );
+}

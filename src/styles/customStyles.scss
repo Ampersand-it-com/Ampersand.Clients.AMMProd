@@ -1,0 +1,99 @@
+@use "@/styles/variables" as *;
+
+.select-control {
+  width: 100%;
+  border: 0;
+  box-shadow: none;
+  border-radius: 0;
+  margin-bottom: 40px;
+  border-bottom: 1px solid $grey-primary !important;
+  background-color: $black-primary;
+
+  &:focus-within {
+    border-bottom: 1px solid $white !important;
+  }
+}
+
+.select-single-value {
+  color: $white;
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  background-color: transparent;
+
+  .select-control:focus-within & {
+    background-color: $black-light;
+  }
+}
+
+.select-value-container {
+  padding: 16px;
+}
+
+.select-placeholder {
+  color: $grey-primary;
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  margin: 0;
+}
+
+.select-dropdown-indicator {
+  color: $white;
+  transition: transform 0.2s;
+
+  .select-control:focus-within & {
+    transform: rotate(-180deg);
+  }
+}
+
+.select-indicator-separator {
+  display: none;
+}
+
+.select-option {
+  padding: 15px 16px;
+  font-family: Roboto, sans-serif;
+  border-radius: 0;
+  font-weight: 400;
+  font-size: 14px;
+  background-color: transparent;
+  display: flex;
+  align-items: flex-start;
+
+  &:focus,
+  &:active,
+  &:hover {
+    background-color: $black-light;
+  }
+}
+
+.select-menu {
+  width: 100%;
+  border-radius: 0;
+  background-color: $black-primary;
+  overflow: hidden;
+
+  div:active {
+    background-color: $black-light;
+  }
+}
+
+.select-multi-value {
+  border-radius: 0;
+  color: $white;
+  background-color: $black-primary;
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+
+  div {
+    color: $white;
+  }
+}
+
+.select-multi-value-remove {
+  display: none;
+}

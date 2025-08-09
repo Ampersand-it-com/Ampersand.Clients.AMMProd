@@ -13,6 +13,7 @@ const nextConfig = {
     unoptimized: true,
   },
   trailingSlash: true,
+
   webpack: (config) => {
     // alias
     config.resolve.alias["@"] = resolve(__dirname, "src");

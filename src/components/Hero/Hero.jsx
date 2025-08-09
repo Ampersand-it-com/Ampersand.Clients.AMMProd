@@ -1,57 +1,41 @@
-import { useStyles } from './Hero.styles';
-import { useState } from 'react';
-import { useTranslation } from 'react-i18next';
-import 'utils/i18next';
-import Modal from 'components/Modal/Modal';
-// import Marquee from "react-easy-marquee";
+import s from "./Hero.module.scss";
+import { useState } from "react";
+import { useLocale } from "@/helpers/locale";
+// import Modal from "components/Modal/Modal";
 
 function Hero() {
-    const s = useStyles();
-    const { t } = useTranslation();
-    const [isModalOpen, setIsModalOpen] = useState(false);
+  const { t } = useLocale();
 
-    const handleOpenModal = () => {
-        setIsModalOpen(true);
-        document.body.style.overflow = 'hidden';
-    }
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
-    return (
-        <div className={s.root}>
-            <div className={s.eclipseTwo}></div>
-            <div className={s.elipse}></div>
+  const handleOpenModal = () => {
+    setIsModalOpen(true);
+    document.body.style.overflow = "hidden";
+  };
 
-            <header className={s.mobileTitleContainer}>
-                <h1 className={s.name}>{t('title.name')}</h1>
-                <p className={s.title}>{t('title.title')}</p> 
-            </header>
+  return (
+    <div className={s.root}>
+      <div className={s.eclipseTwo}></div>
+      <div className={s.elipse}></div>
 
-            <div className={s.desctopTitle} aria-hidden="true">
-                {t('title.name')} {t('title.title')}
-            </div>
+      <header className={s.mobileTitleContainer}>
+        <h1 className={s.name}>{t.title.name}</h1>
+        <p className={s.title}>{t.title.title}</p>
+      </header>
 
-            <h2 className={s.subTitle}>{t('title.subTitle')}</h2>
+      <div className={s.desctopTitle} aria-hidden="true">
+        {t.title.name} {t.title.title}
+      </div>
 
-            <button className={s.modalBtn} onClick={handleOpenModal}>
-                {t('title.mainBtn')}
-            </button>
+      <h2 className={s.subTitle}>{t.title.subTitle}</h2>
 
-            {/* <div className={s.ribbonContainer}>
-    <Marquee className={s.blackRibbon} duration={25000} background="#000" reverse height="30px">
-      <span className={s.blackRibbonText}>
-       {t('title.ribbonAd')} {t('title.ribbonAd')} {t('title.ribbonAd')} {t('title.ribbonAd')}&nbsp;
-      </span>
-    </Marquee>
-    <Marquee className={s.whiteRibbon} duration={25000} background="#fff" height="30px">
-      <span className={s.whiteRibbonText}>
-        {t('title.ribbonAd')} {t('title.ribbonAd')} {t('title.ribbonAd')} {t('title.ribbonAd')}&nbsp;
-      </span>
-    </Marquee> 
-  </div> */}
+      <button className={s.modalBtn} onClick={handleOpenModal}>
+        {t.title.mainBtn}
+      </button>
 
-            <Modal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />
-        </div>
-
-    );
+      {/* <Modal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} /> */}
+    </div>
+  );
 }
 
 export default Hero;

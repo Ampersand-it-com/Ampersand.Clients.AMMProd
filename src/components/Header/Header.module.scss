@@ -1,0 +1,197 @@
+@use "@/styles/variables" as *;
+
+.root {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: $black-primary;
+  z-index: 8;
+
+  @include desktop {
+    padding: 12px 24px;
+  }
+}
+
+.logo {
+  width: 102px;
+  height: 56px;
+
+  @include desktop {
+    width: 128px;
+    height: 76px;
+  }
+}
+
+.menuBtn {
+  position: absolute;
+  top: 33px;
+  left: 20px;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+
+  @include desktop {
+    display: none;
+  }
+}
+
+.mobileMenu {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 9;
+  background-color: $black-primary;
+  color: $grey-light;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.desctopMenu {
+  display: none;
+
+  @include desktop {
+    display: flex;
+    margin-left: 172px;
+    justify-content: space-between;
+    width: 875px;
+  }
+}
+
+.myNodeEnter {
+  opacity: 0;
+  transform: translateY(-50%);
+}
+
+.myNodeEnterActive {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 2500ms ease;
+}
+
+.myNodeExit {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.myNodeExitActive {
+  opacity: 0;
+  transform: translateY(-50%);
+  transition: all 2500ms ease;
+}
+
+.hidden {
+  display: none;
+}
+
+.menuList {
+  margin: 130px 0;
+  gap: 32px;
+}
+
+.menuItem {
+  text-align: center;
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: $grey-light;
+
+  &:not(:last-child) {
+    margin-bottom: 32px;
+  }
+}
+
+.contactBtn {
+  border: none;
+  background-color: transparent;
+  font-family: Roboto, sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 16px;
+  color: $white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 132px;
+  height: 32px;
+
+  svg {
+    margin-left: 10px;
+  }
+
+  @include desktop {
+    margin-bottom: 0;
+    cursor: pointer;
+    padding: 0;
+
+    &:hover {
+      border-bottom: 1px solid $white;
+    }
+  }
+}
+
+.btnContainer {
+  display: flex;
+  align-items: center;
+}
+
+.separator {
+  margin: 0 10px;
+  width: 1px;
+  height: 20px;
+  background-color: $white;
+}
+
+.langBtn {
+  background-color: transparent;
+  border: none;
+  color: $grey-light;
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    font-weight: 700;
+    color: $white;
+  }
+}
+
+.closeBtn {
+  position: absolute;
+  top: 37px;
+  left: 24px;
+  border: none;
+  padding: 0;
+  background-color: transparent;
+}
+
+.desctopMenuList {
+  display: none;
+
+  @include desktop {
+    display: flex;
+    gap: 32px;
+    font-family: Roboto, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 100%;
+    color: $grey-light;
+    align-items: center;
+  }
+}
+
+.desctopMenuItem {
+  &:hover,
+  &:focus {
+    border-bottom: 1px solid $white;
+    color: $white;
+  }
+}
