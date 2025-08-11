@@ -1,5 +1,6 @@
 import { createContext, useContext } from "react";
 
+// Context
 const LocaleContext = createContext();
 
 export function LocaleProvider({ lang, t, children }) {

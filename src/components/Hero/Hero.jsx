@@ -19,18 +19,18 @@ function Hero() {
       <div className={s.elipse}></div>
 
       <header className={s.mobileTitleContainer}>
-        <h1 className={s.name}>{t.title.name}</h1>
-        <p className={s.title}>{t.title.title}</p>
+        <h1 className={s.name}>{t.common.title.name}</h1>
+        <p className={s.title}>{t.common.title.title}</p>
       </header>
 
       <div className={s.desctopTitle} aria-hidden="true">
-        {t.title.name} {t.title.title}
+        {t.common.title.name} {t.common.title.title}
       </div>
 
-      <h2 className={s.subTitle}>{t.title.subTitle}</h2>
+      <h2 className={s.subTitle}>{t.common.title.subTitle}</h2>
 
       <button className={s.modalBtn} onClick={handleOpenModal}>
-        {t.title.mainBtn}
+        {t.common.title.mainBtn}
       </button>
 
       {/* <Modal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} /> */}
