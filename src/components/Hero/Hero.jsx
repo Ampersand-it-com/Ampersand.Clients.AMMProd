@@ -1,3 +1,5 @@
+"use client";
+
 import s from "./Hero.module.scss";
 import { useState } from "react";
 import { useLocale } from "@/helpers/locale";
