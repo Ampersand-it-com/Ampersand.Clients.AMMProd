@@ -1,35 +1,17 @@
 import Layout from "@/helpers/components/Layout/Layout";
 import Hero from "@/components/Hero/Hero";
-import { LocaleProvider } from "@/helpers/locale";
-import {
-  getStaticPathsForLocales,
-  getStaticPropsForLocale,
-} from "@/helpers/localeServer";
-
-// Генерация статических путей
-export async function generateStaticParams() {
-  // getStaticPathsForLocales возвращает { paths: [{ params: { lang } }], ... }
-  const { paths } = getStaticPathsForLocales();
-  return paths.map(({ params }) => ({ lang: params.lang }));
-}
-
-// Получение переводов для страницы
-export async function getTranslations(lang) {
-  // getStaticPropsForLocale возвращает { props: { lang, translations } }
-  const { props } = await getStaticPropsForLocale({ params: { lang } }, [
-    "common",
-  ]);
-  return props;
-}
+import { NextIntlClientProvider } from "next-intl";
+import { getTranslations } from "@/helpers/locale/getTranslations";
 
 export default async function LangPage({ params }) {
-  const { lang, translations } = await getTranslations(params.lang);
+  const { lang } = await params;
+  const translations = getTranslations(lang, ["common"]);
 
   return (
-    <LocaleProvider lang={lang} t={translations}>
+    <NextIntlClientProvider locale={lang} messages={translations}>
       <Layout>
         <Hero />
       </Layout>
-    </LocaleProvider>
+    </NextIntlClientProvider>
   );
 }

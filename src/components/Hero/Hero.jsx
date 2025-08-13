@@ -1,12 +1,12 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import s from "./Hero.module.scss";
 import { useState } from "react";
-import { useLocale } from "@/helpers/locale";
 // import Modal from "components/Modal/Modal";
 
 function Hero() {
-  const { t } = useLocale();
+  const { t } = useTranslations();
 
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -21,18 +21,18 @@ function Hero() {
       <div className={s.elipse}></div>
 
       <header className={s.mobileTitleContainer}>
-        <h1 className={s.name}>{t.common.title.name}</h1>
-        <p className={s.title}>{t.common.title.title}</p>
+        <h1 className={s.name}>{t("title.name")}</h1>
+        <p className={s.title}>{t("title.title")}</p>
       </header>
 
       <div className={s.desctopTitle} aria-hidden="true">
-        {t.common.title.name} {t.common.title.title}
+        {t("title.name")} {t("title.title")}
       </div>
 
-      <h2 className={s.subTitle}>{t.common.title.subTitle}</h2>
+      <h2 className={s.subTitle}>{t("title.subTitle")}</h2>
 
       <button className={s.modalBtn} onClick={handleOpenModal}>
-        {t.common.title.mainBtn}
+        {t("title.mainBtn")}
       </button>
 
       {/* <Modal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} /> */}
