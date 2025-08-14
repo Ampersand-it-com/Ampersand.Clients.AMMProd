@@ -2,7 +2,7 @@ import { fileURLToPath } from "url";
 import { dirname, resolve } from "path";
 import createNextIntlPlugin from "next-intl/plugin";
 
-const withNextIntl = createNextIntlPlugin("./src/i18n.js");
+const withNextIntl = createNextIntlPlugin();
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
