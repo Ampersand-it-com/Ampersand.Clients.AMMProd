@@ -1,5 +1,8 @@
 import { fileURLToPath } from "url";
 import { dirname, resolve } from "path";
+import createNextIntlPlugin from "next-intl/plugin";
+
+const withNextIntl = createNextIntlPlugin("./src/i18n.js");
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -7,12 +10,11 @@ const __dirname = dirname(__filename);
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  output: "export",
-  trailingSlash: true,
+  // output: "export",
+  // trailingSlash: true,
   images: {
     unoptimized: true,
   },
-  trailingSlash: true,
 
   webpack: (config) => {
     // alias
@@ -36,4 +38,4 @@ const nextConfig = {
   },
 };
 
-export default nextConfig;
+export default withNextIntl(nextConfig);
