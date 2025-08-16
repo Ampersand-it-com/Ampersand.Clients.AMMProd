@@ -1,8 +1,8 @@
-import { useTranslations } from "next-intl";
-import { Link } from "@/i18n/navigation";
+"use client";
+import { useTranslations } from "@/i18n/context";
 
 export default function HomePage() {
-  const t = useTranslations();
+  const { t } = useTranslations();
   return (
     <div>
       <h1>{t("title.name")}</h1>

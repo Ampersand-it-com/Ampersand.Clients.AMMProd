@@ -1,8 +1,5 @@
 import { fileURLToPath } from "url";
 import { dirname, resolve } from "path";
-import createNextIntlPlugin from "next-intl/plugin";
-
-const withNextIntl = createNextIntlPlugin();
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -10,8 +7,8 @@ const __dirname = dirname(__filename);
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  // output: "export",
-  // trailingSlash: true,
+  output: "export",
+  trailingSlash: true,
   images: {
     unoptimized: true,
   },
@@ -38,4 +35,4 @@ const nextConfig = {
   },
 };
 
-export default withNextIntl(nextConfig);
+export default nextConfig;
