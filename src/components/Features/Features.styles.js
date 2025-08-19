@@ -1,187 +1,188 @@
-import { makeStyles } from '@mui/styles';
-import { BREAKPOINTS } from 'helpers/breakpoints';
-import { COLORS } from 'helpers/colors';
-import cardBgOne from 'assets/images/cardBgOne.png'
-import cardBgTwo from 'assets/images/cardBgTwo.png'
-import cardBgThree from 'assets/images/cardBgThree.png'
-import cardBgFour from 'assets/images/cardBgFour.png'
-import cardBgFifth from 'assets/images/cardBgFifth.png'
-import cardBgSix from 'assets/images/cardBgSix.png'
+import { makeStyles } from "@mui/styles";
+import { BREAKPOINTS } from "helpers/breakpoints";
+import { COLORS } from "helpers/colors";
+import cardBgOne from "@/assets/images/cardBgOne.png";
+import cardBgTwo from "@/assets/images/cardBgTwo.png";
+import cardBgThree from "@/assets/images/cardBgThree.png";
+import cardBgFour from "@/assets/images/cardBgFour.png";
+import cardBgFifth from "@/assets/images/cardBgFifth.png";
+import cardBgSix from "@/assets/images/cardBgSix.png";
 
 export const useStyles = makeStyles({
   root: {
-    margin: '0 auto 80px auto',
+    margin: "0 auto 80px auto",
   },
   title: {
-    fontFamily: 'Furore, sans-serif',
+    fontFamily: "Furore, sans-serif",
     fontWeight: 400,
     fontSize: 22,
-    lineHeight: '150%',
-    textAlign: 'center',
-    letterSpacing: '0.07em',
+    lineHeight: "150%",
+    textAlign: "center",
+    letterSpacing: "0.07em",
 
     [BREAKPOINTS.DESKTOP]: {
       fontSize: 36,
-    }
+    },
   },
   label: {
-    display: 'block',
+    display: "block",
     width: 125,
-    margin: '7px auto 23px auto',
-    fontFamily: 'Furore, sans-serif',
+    margin: "7px auto 23px auto",
+    fontFamily: "Furore, sans-serif",
     fontWeight: 400,
     fontSize: 12,
-    lineHeight: '100%',
-    textAlign: 'center',
-    letterSpacing: '0.07em',
+    lineHeight: "100%",
+    textAlign: "center",
+    letterSpacing: "0.07em",
     color: COLORS.BLACK.PRIMARY,
     backgroundColor: COLORS.WHITE,
-    padding: '4px 12px',
+    padding: "4px 12px",
 
     [BREAKPOINTS.DESKTOP]: {
       fontSize: 22,
       width: 205,
-    }
+    },
   },
   labelAnimation: {
-    animation: '$labelFadeIn 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both',
-    animationDelay: '1s',
+    animation:
+      "$labelFadeIn 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both",
+    animationDelay: "1s",
   },
   titleAnimation: {
-    animation: '$fadeIn 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both',
-    animationDelay: '0.5s',
+    animation: "$fadeIn 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both",
+    animationDelay: "0.5s",
   },
-  '@keyframes fadeIn': {
-    from: { transform: 'scale(0.5)', opacity: 0 },
-    to: { transform: 'scale(1)', opacity: 1 },
+  "@keyframes fadeIn": {
+    from: { transform: "scale(0.5)", opacity: 0 },
+    to: { transform: "scale(1)", opacity: 1 },
   },
-  '@keyframes labelFadeIn': {
-    from: { transform: 'scale(0.5)', opacity: 0 },
-    to: { transform: 'scale(1) rotate(-2deg)', opacity: 1 },
+  "@keyframes labelFadeIn": {
+    from: { transform: "scale(0.5)", opacity: 0 },
+    to: { transform: "scale(1) rotate(-2deg)", opacity: 1 },
   },
   describe: {
-    fontFamily: 'Roboto, sans-serif',
+    fontFamily: "Roboto, sans-serif",
     fontWeight: 400,
     fontSize: 18,
-    lineHeight: '150%',
-    textAlign: 'center',
+    lineHeight: "150%",
+    textAlign: "center",
 
     [BREAKPOINTS.DESKTOP]: {
       fontSize: 24,
-    }
+    },
   },
   featuresList: {
-    display: 'flex',
-    flexDirection: 'column',
+    display: "flex",
+    flexDirection: "column",
     gap: 20,
 
     [BREAKPOINTS.DESKTOP]: {
-      flexDirection: 'row',
-      flexWrap: 'wrap'
-    }
+      flexDirection: "row",
+      flexWrap: "wrap",
+    },
   },
   featuresItem: {
-    display: 'flex',
+    display: "flex",
     gap: 20,
     padding: 18,
-    overflow: 'hidden',
+    overflow: "hidden",
 
     [BREAKPOINTS.DESKTOP]: {
       zIndex: 2,
-      position: 'relative',
+      position: "relative",
       width: 376,
       height: 285,
       padding: 40,
-      flexDirection: 'column',
+      flexDirection: "column",
 
-      '&::after': {
+      "&::after": {
         content: "''",
         opacity: 0,
-        display: 'block',
+        display: "block",
         height: 285,
         width: 376,
-        position: 'absolute',
+        position: "absolute",
         top: 0,
         left: 0,
         zIndex: -1,
-        transition: 'opacity 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000)',
+        transition: "opacity 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000)",
       },
 
-      '&::before': {
+      "&::before": {
         content: "''",
         opacity: 1,
-        display: 'block',
+        display: "block",
         height: 285,
         width: 376,
-        position: 'absolute',
+        position: "absolute",
         top: 0,
         left: 0,
         zIndex: -1,
-        transition: 'opacity 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000)',
+        transition: "opacity 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000)",
         background: COLORS.BLACK.LIGHT,
       },
 
-      '&:hover::before': {
+      "&:hover::before": {
         opacity: 0,
       },
 
-      '&:hover::after': {
+      "&:hover::after": {
         opacity: 1,
       },
-    }
+    },
   },
   firstCard: {
-    '&::after': {
+    "&::after": {
       background: `url(${cardBgOne})`,
-    }
+    },
   },
   secondCard: {
-    '&::after': {
+    "&::after": {
       background: `url(${cardBgTwo})`,
-    }
+    },
   },
   thirdCard: {
-    '&::after': {
+    "&::after": {
       background: `url(${cardBgThree})`,
-    }
+    },
   },
   fourthCard: {
-    '&::after': {
+    "&::after": {
       background: `url(${cardBgFour})`,
-    }
+    },
   },
   fifthCard: {
-    '&::after': {
+    "&::after": {
       background: `url(${cardBgFifth})`,
-    }
+    },
   },
   sixthCard: {
-    '&::after': {
+    "&::after": {
       background: `url(${cardBgSix})`,
-    }
+    },
   },
   describeAnimation: {
     [BREAKPOINTS.DESKTOP]: {
-      animation: '$fadeIn 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both',
-      animationDelay: '1.5s',
-    }
+      animation: "$fadeIn 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both",
+      animationDelay: "1.5s",
+    },
   },
-  featuresItemFirstAnimation:{
+  featuresItemFirstAnimation: {
     [BREAKPOINTS.DESKTOP]: {
-      animation: '$fadeIn 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both',
-      animationDelay: '2s',
-    }
+      animation: "$fadeIn 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both",
+      animationDelay: "2s",
+    },
   },
-  featuresItemSecondAnimation:{
+  featuresItemSecondAnimation: {
     [BREAKPOINTS.DESKTOP]: {
-      animation: '$fadeIn 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both',
-      animationDelay: '2.5s',
-    }
+      animation: "$fadeIn 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both",
+      animationDelay: "2.5s",
+    },
   },
   featuresIconContainer: {
     width: 40,
 
-    '& svg': {
+    "& svg": {
       width: 40,
       fill: COLORS.WHITE,
     },
@@ -189,32 +190,31 @@ export const useStyles = makeStyles({
     [BREAKPOINTS.DESKTOP]: {
       width: 64,
 
-      '& svg': {
+      "& svg": {
         width: 64,
-      }
-    }
+      },
+    },
   },
   featureTitle: {
     marginBottom: 8,
-    fontFamily: 'Roboto, sans-serif',
+    fontFamily: "Roboto, sans-serif",
     fontWeight: 700,
     fontSize: 16,
-    lineHeight: '150%',
+    lineHeight: "150%",
 
     [BREAKPOINTS.DESKTOP]: {
       fontSize: 22,
-    }
+    },
   },
   featureDescription: {
-    margin: 0, 
-    fontFamily: 'Roboto, sans-serif',
+    margin: 0,
+    fontFamily: "Roboto, sans-serif",
     fontWeight: 400,
     fontSize: 12,
-    lineHeight: '150%',
+    lineHeight: "150%",
 
     [BREAKPOINTS.DESKTOP]: {
       fontSize: 16,
-    }
-  }
+    },
+  },
 });
-

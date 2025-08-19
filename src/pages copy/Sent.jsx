@@ -1,49 +1,55 @@
-import { useTranslation } from 'react-i18next';
-import 'utils/i18next';
+import { useTranslation } from "react-i18next";
+import "utils/i18next";
 
-import { Helmet } from 'react-helmet';
+import { Helmet } from "react-helmet";
 
-import { ReactComponent as PhoneIcon } from 'assets/icons/phoneIcon.svg';
-import PageContainer, { contentWrapperCss } from 'helpers/components/LayoutReworked/LayoutReworked';
-import Footer from 'components/FooterReworked/FooterReworked';
-import Button from 'components/CharacterUpgrade/components/Button/Button';
-import Ellipse from 'helpers/components/Ellipse/Ellipse';
+import PhoneIcon from "@/assets/icons/phoneIcon.svg";
+import PageContainer, {
+  contentWrapperCss,
+} from "helpers/components/LayoutReworked/LayoutReworked";
+import Footer from "@/components/FooterReworked/FooterReworked";
+import Button from "@/components/CharacterUpgrade/components/Button/Button";
+import Ellipse from "helpers/components/Ellipse/Ellipse";
 
-import styled from 'styled-components';
+import styled from "styled-components";
 
-import { tel, telRaw } from 'helpers/constants';
-import typo from 'helpers/typography';
-import { COLORS } from 'helpers/colors';
-import { BREAKPOINTS } from 'helpers/breakpoints';
-import useLocaleNavigate from 'hooks/useLocaleNavigate';
-import Meta from 'components/Meta/Meta';
+import { tel, telRaw } from "helpers/constants";
+import typo from "helpers/typography";
+import { COLORS } from "helpers/colors";
+import { BREAKPOINTS } from "helpers/breakpoints";
+import useLocaleNavigate from "hooks/useLocaleNavigate";
+import Meta from "@/components/Meta/Meta";
 
 const SentPage = () => {
   const { t } = useTranslation();
 
   // Navigation
 
-  const navigateToIndex = useLocaleNavigate('');
+  const navigateToIndex = useLocaleNavigate("");
   const handleReturn = (e) => {
     navigateToIndex();
   };
 
   return (
     <PageContainer>
-      <Meta title={t('meta.title')} description={t('meta.description')} noIndex />
+      <Meta
+        title={t("meta.title")}
+        description={t("meta.description")}
+        noIndex
+      />
       <Section>
         <Ellipse className="ellipse" />
         <div className="text-block">
-          <h2>{t('sentPage.title')}</h2>
-          <p className="lead">{t('sentPage.description')}</p>
+          <h2>{t("sentPage.title")}</h2>
+          <p className="lead">{t("sentPage.description")}</p>
         </div>
-        <Button onClick={handleReturn}>{t('sentPage.returnButton')}</Button>
+        <Button onClick={handleReturn}>{t("sentPage.returnButton")}</Button>
         <div className="text-block tel">
-          <a href={'tel:' + telRaw} aria-label="call">
+          <a href={"tel:" + telRaw} aria-label="call">
             <PhoneIcon className="icon" />
             <span className="h3">{tel}</span>
           </a>
-          <p className="text">{t('sentPage.caption')}</p>
+          <p className="text">{t("sentPage.caption")}</p>
         </div>
       </Section>
       <Footer />

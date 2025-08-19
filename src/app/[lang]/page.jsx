@@ -1,5 +1,9 @@
+import Calculator from "@/components/Calculator/Calculator";
+import Features from "@/components/Features/Features";
 import Header from "@/components/Header/Header";
 import Hero from "@/components/Hero/Hero";
+import OurProducts from "@/components/OurProducts/OurProducts";
+import WhoAreWe from "@/components/WhoAreWe/WhoAreWe";
 import Layout from "@/helpers/components/Layout/Layout";
 import { getMetadata } from "@/helpers/getMetadata";
 import { getTranslations, LocaleProvider } from "@/i18n";
@@ -20,6 +24,12 @@ export default async function HomePage({ params }) {
       <Layout>
         <Header />
         <Hero />
+        <WhoAreWe />
+        <Features />
+      </Layout>
+      <OurProducts />
+      <Layout>
+        <Calculator />
       </Layout>
     </LocaleProvider>
   );

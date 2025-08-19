@@ -1,0 +1,172 @@
+@use "@/styles/variables" as *;
+
+.root {
+  margin: 70px auto 80px auto;
+  position: relative;
+  padding-top: 50px;
+
+  @include desktop {
+    padding-top: 0;
+    margin: 120px auto 80px auto;
+  }
+}
+
+.desctopContainer {
+  @include desktop {
+    display: flex;
+  }
+}
+
+.leftBlock {
+  @include desktop {
+    width: 230px;
+  }
+}
+
+.rightBlock {
+  @include desktop {
+    width: 940px;
+  }
+}
+
+.labelContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: labelFadeIn 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+}
+
+.label {
+  padding: 4px 12px;
+  font-family: Furore, sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 100%;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 0.07em;
+  color: $black-primary;
+  background-color: $white;
+
+  @include desktop {
+    font-size: 22px;
+  }
+}
+
+.labelAnimation {
+  animation: fadeIn 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  animation-delay: 0.5s;
+}
+
+.titleAnimation {
+  animation: fadeIn 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  animation-delay: 1s;
+}
+
+@keyframes fadeIn {
+  from {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes labelFadeIn {
+  from {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1) rotate(-2deg);
+    opacity: 1;
+  }
+}
+
+.title {
+  font-family: Furore, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 150%;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  margin: 0 auto 20px auto;
+
+  @include desktop {
+    font-size: 36px;
+  }
+}
+
+.reasonList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 40px;
+}
+
+.reasonItem {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+
+  @include desktop {
+    font-size: 18px;
+  }
+}
+
+.starIcon {
+  fill: $white;
+  width: 16px;
+  flex-shrink: 0;
+}
+
+.video {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%;
+  background-color: $black-primary;
+}
+
+.preview {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.videoBtn {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: none;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  svg {
+    fill: $white;
+    width: 60px;
+  }
+
+  &:active svg {
+    fill: $grey-light;
+  }
+
+  @include desktop {
+    svg {
+      width: 100px;
+    }
+  }
+}

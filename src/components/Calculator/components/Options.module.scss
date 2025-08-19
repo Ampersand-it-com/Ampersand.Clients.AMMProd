@@ -1,0 +1,55 @@
+@use "@/styles/variables" as *;
+
+.optionContainer {
+  div:active {
+    background-color: $black-light;
+  }
+}
+
+.container {
+  display: block;
+  position: relative;
+  padding: 0 0 0 35px;
+  cursor: pointer;
+  user-select: none;
+  margin: 0;
+  line-height: 24px;
+
+  input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+
+  input:checked ~ .checkmark::after {
+    display: block;
+  }
+
+  .checkmark::after {
+    left: 8px;
+    top: 4px;
+    width: 5px;
+    height: 10px;
+    border: solid $white;
+    border-width: 0 1px 1px 0;
+    transform: rotate(45deg);
+  }
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 24px;
+  width: 24px;
+  background-color: transparent;
+  border: 1px solid $white;
+
+  &::after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+}

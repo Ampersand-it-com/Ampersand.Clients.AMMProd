@@ -1,0 +1,367 @@
+@use "@/styles/variables" as *;
+
+@keyframes fadeIn {
+  from {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.root {
+  margin: 0 auto 80px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  font-family: Furore, sans-serif;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 150%;
+  text-align: center;
+  letter-spacing: 0.07em;
+  margin: 0 0 20px 0;
+
+  @include desktop {
+    font-size: 36px;
+  }
+}
+
+.descriptionAnimation {
+  animation: fadeIn 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  animation-delay: 1s;
+}
+
+.titleAnimation {
+  animation: fadeIn 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  animation-delay: 0.5s;
+}
+
+.description {
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 150%;
+  text-align: center;
+  margin: 0 0 55px 0;
+
+  @include desktop {
+    font-size: 24px;
+  }
+}
+
+.radioContainer {
+  display: flex;
+  padding: 0 1px;
+  margin-bottom: 55px;
+  justify-content: space-between;
+
+  & div:active {
+    background-color: $black-light;
+  }
+}
+
+.calculatorForm {
+  margin-bottom: 130px;
+
+  @include desktop {
+    width: 575px;
+    margin-bottom: 0;
+  }
+}
+
+.typeOfContent {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.radioLabel {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  user-select: none;
+  font-family: Furore, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  letter-spacing: 0.07em;
+
+  &:hover input ~ span {
+    border: 1px solid $white;
+  }
+
+  & input:checked ~ p {
+    display: block;
+  }
+
+  & input:checked ~ span:after {
+    display: block;
+  }
+
+  & span:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: 1px solid $white;
+  }
+
+  @include desktop {
+    font-size: 22px;
+    line-height: 100%;
+  }
+}
+
+.formTitle {
+  font-family: Roboto, sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 100%;
+  margin-bottom: 8px;
+}
+
+.checkmarkInner {
+  margin: 0;
+  width: 12px;
+  height: 12px;
+  background-color: $white;
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  display: none;
+  pointer-events: none;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 24px;
+  width: 24px;
+  background-color: transparent;
+  border: 1px solid $grey-primary;
+
+  &:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+}
+
+.submitBtn {
+  font-family: Roboto, sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  width: 100%;
+  color: $black-primary;
+  background-color: $white;
+  border: none;
+  padding: 16px 66px;
+
+  &:active {
+    background-color: $grey-light;
+  }
+}
+
+.calculatorImg {
+  display: none;
+
+  @include desktop {
+    display: block;
+    width: 496px;
+    height: 496px;
+  }
+}
+
+.calculatorImgAnimation {
+  @include desktop {
+    animation: fadeIn 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+    animation-delay: 1.5s;
+  }
+}
+
+.formContainer {
+  width: 100%;
+
+  @include desktop {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 90px;
+  }
+}
+
+.calculatedBlock {
+  padding: 16px;
+  border: 1px solid $grey-primary;
+  width: 100%;
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+
+  @include desktop {
+    margin-top: 0;
+    flex-direction: row;
+    gap: 0;
+    padding: 0;
+  }
+}
+
+.finalPrice {
+  font-family: Furore, sans-serif;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 100%;
+  letter-spacing: 0.07em;
+  margin-bottom: 12px;
+
+  @include desktop {
+    display: none;
+  }
+}
+
+.finalPriceDesctop {
+  display: none;
+
+  @include desktop {
+    display: block;
+    font-family: Furore, sans-serif;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 100%;
+    letter-spacing: 0.07em;
+  }
+}
+
+.finalPriceWrapper {
+  @include desktop {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+    margin-bottom: 28px;
+  }
+}
+
+.disclaimerTitle {
+  font-family: Roboto, sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 150%;
+
+  @include desktop {
+    display: none;
+  }
+}
+
+.disclaimerTitleDesctop {
+  display: none;
+
+  @include desktop {
+    display: block;
+    font-family: Roboto, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+  }
+}
+
+.videoOptionsContainer {
+  & p {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  @include desktop {
+    border-right: 1px solid $grey-primary;
+    width: 398px;
+    padding: 28px;
+    flex-shrink: 0;
+  }
+}
+
+.finalpriceContainer {
+  @include desktop {
+    padding: 28px;
+  }
+}
+
+.videoOptionsValue {
+  width: 152px;
+  display: inline-block;
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+}
+
+.optionsValues {
+  margin: 0;
+  width: 152px;
+  display: flex;
+  flex-direction: column;
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+}
+
+.videoOptionsTitle {
+  font-family: Roboto, sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 150%;
+  width: 72px;
+
+  @include desktop {
+    width: auto;
+  }
+}
+
+.videoDisclaimer {
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+
+  @include desktop {
+    margin-bottom: 28px;
+    font-size: 18px;
+  }
+}
+
+.modalBtn {
+  height: 50px;
+  width: 100%;
+  margin-top: 28px;
+  font-family: Roboto, sans-serif;
+  padding: 16px 36px;
+  align-self: center;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 100%;
+  border: none;
+  background-color: $white;
+  color: $black-primary;
+  cursor: pointer;
+  margin: 0 auto;
+  animation-delay: 1.5s;
+
+  &:active {
+    background-color: $grey-light;
+  }
+
+  @include desktop {
+    margin-top: 0;
+    width: auto;
+  }
+}

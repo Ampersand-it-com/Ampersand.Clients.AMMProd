@@ -1,0 +1,254 @@
+@use "@/styles/variables" as *;
+
+.root {
+  margin: 0 auto 80px auto;
+}
+
+.title {
+  font-family: Furore, sans-serif;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 150%;
+  text-align: center;
+  letter-spacing: 0.07em;
+
+  @include desktop {
+    font-size: 36px;
+  }
+}
+
+.label {
+  display: block;
+  width: 125px;
+  margin: 7px auto 23px auto;
+  font-family: Furore, sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 100%;
+  text-align: center;
+  letter-spacing: 0.07em;
+  color: $black-primary;
+  background-color: $white;
+  padding: 4px 12px;
+
+  @include desktop {
+    font-size: 22px;
+    width: 205px;
+  }
+}
+
+.labelAnimation {
+  animation: labelFadeIn 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  animation-delay: 1s;
+}
+
+.titleAnimation {
+  animation: fadeIn 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  animation-delay: 0.5s;
+}
+
+@keyframes fadeIn {
+  from {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes labelFadeIn {
+  from {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1) rotate(-2deg);
+    opacity: 1;
+  }
+}
+
+.describe {
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 150%;
+  text-align: center;
+
+  @include desktop {
+    font-size: 24px;
+  }
+}
+
+.featuresList {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  @include desktop {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+.featuresItem {
+  display: flex;
+  gap: 20px;
+  padding: 18px;
+  overflow: hidden;
+
+  @include desktop {
+    z-index: 2;
+    position: relative;
+    width: 376px;
+    height: 285px;
+    padding: 40px;
+    flex-direction: column;
+
+    &::after {
+      content: "";
+      opacity: 0;
+      display: block;
+      height: 285px;
+      width: 376px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      transition: opacity 0.4s cubic-bezier(0.39, 0.575, 0.565, 1);
+    }
+
+    &::before {
+      content: "";
+      opacity: 1;
+      display: block;
+      height: 285px;
+      width: 376px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      transition: opacity 0.4s cubic-bezier(0.39, 0.575, 0.565, 1);
+      background: $black-light;
+    }
+
+    &:hover::before {
+      opacity: 0;
+    }
+
+    &:hover::after {
+      opacity: 1;
+    }
+  }
+}
+
+.firstCard {
+  @include desktop {
+    &::after {
+      background: url("../../assets/images/cardBgOne.png");
+    }
+  }
+}
+
+.secondCard {
+  @include desktop {
+    &::after {
+      background: url("../../assets/images/cardBgTwo.png");
+    }
+  }
+}
+
+.thirdCard {
+  @include desktop {
+    &::after {
+      background: url("../../assets/images/cardBgThree.png");
+    }
+  }
+}
+
+.fourthCard {
+  @include desktop {
+    &::after {
+      background: url("../../assets/images/cardBgFour.png");
+    }
+  }
+}
+
+.fifthCard {
+  @include desktop {
+    &::after {
+      background: url("../../assets/images/cardBgFifth.png");
+    }
+  }
+}
+
+.sixthCard {
+  @include desktop {
+    &::after {
+      background: url("../../assets/images/cardBgSix.png");
+    }
+  }
+}
+
+.describeAnimation {
+  @include desktop {
+    animation: fadeIn 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+    animation-delay: 1.5s;
+  }
+}
+
+.featuresItemFirstAnimation {
+  @include desktop {
+    animation: fadeIn 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+    animation-delay: 2s;
+  }
+}
+
+.featuresItemSecondAnimation {
+  @include desktop {
+    animation: fadeIn 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+    animation-delay: 2.5s;
+  }
+}
+
+.featuresIconContainer {
+  width: 40px;
+
+  svg {
+    width: 40px;
+    fill: $white;
+  }
+
+  @include desktop {
+    width: 64px;
+
+    svg {
+      width: 64px;
+    }
+  }
+}
+
+.featureTitle {
+  margin-bottom: 8px;
+  font-family: Roboto, sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 150%;
+
+  @include desktop {
+    font-size: 22px;
+  }
+}
+
+.featureDescription {
+  margin: 0;
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 150%;
+
+  @include desktop {
+    font-size: 16px;
+  }
+}
