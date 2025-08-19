@@ -1,4 +1,4 @@
-import { locales, defaultLocale, translationsPath } from "./config";
+import { locales, defaultLocale } from "./config";
 
 export async function getTranslations(lang, namespaces = []) {
   if (!locales.includes(lang)) {

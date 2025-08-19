@@ -1,21 +1,22 @@
+"use client";
 import s from "./Header.module.scss";
-import { ReactComponent as Logo } from "@/assets/icons/logoIcon.svg";
-import { ReactComponent as Menu } from "@/assets/icons/menuIcon.svg";
-import { ReactComponent as ArrowRightUp } from "@/assets/icons/arrowRightUpIcon.svg";
-import { ReactComponent as CloseIcon } from "@/assets/icons/closeIcon.svg";
-import { useState } from "react";
+import Logo from "@/assets/icons/logoIcon.svg";
+import Menu from "@/assets/icons/menuIcon.svg";
+import ArrowRightUp from "@/assets/icons/arrowRightUpIcon.svg";
+import CloseIcon from "@/assets/icons/closeIcon.svg";
+import { useRef, useState } from "react";
 import { CSSTransition } from "react-transition-group";
 import classNames from "classnames";
-import { useTranslation } from "react-i18next";
-// import Modal from "components/Modal/Modal";
-// import { useNavigate } from "react-router-dom";
+import { useTranslations } from "@/i18n";
+import LanguageSwitcher from "./LanguageSwitcher/LanguageSwitcher";
+import Modal from "@/components/Modal/Modal";
 
 function Header() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { t, i18n } = useTranslation();
-  const [currentLang, setCurrentLang] = useState(i18n.language);
+  const { t } = useTranslations();
 
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  // menu
+
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleOpenMenu = () => {
     setIsMenuOpen(true);
@@ -31,10 +32,18 @@ function Header() {
     setIsMenuOpen(false);
   };
 
+  const nodeRef = useRef(null);
+
+  // modal
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const handleOpenModal = () => {
     setIsModalOpen(true);
     document.body.style.overflow = "hidden";
   };
+
+  //
 
   return (
     <div className={s.root} id="start">
@@ -45,60 +54,40 @@ function Header() {
         <Menu />
       </button>
       <CSSTransition
+        nodeRef={nodeRef}
         in={isMenuOpen}
         unmountOnExit
         timeout={250}
         classNames="menu"
       >
-        <div className={classNames(s.mobileMenu)}>
+        <div ref={nodeRef} className={classNames(s.mobileMenu)}>
           <ul className={s.menuList}>
             <li className={s.menuItem}>
               <a href="#aboutUs" onClick={() => handleLinkClick()}>
-                {t("header.aboutUs")}
+                {t("common.header.aboutUs")}
               </a>
             </li>
             <li className={s.menuItem}>
               <a href="#priceCalculator" onClick={() => handleLinkClick()}>
-                {t("header.priceCalculator")}
+                {t("common.header.priceCalculator")}
               </a>
             </li>
             <li className={s.menuItem}>
               <a href="#caseStudies" onClick={() => handleLinkClick()}>
-                {t("header.caseStudies")}
+                {t("common.header.caseStudies")}
               </a>
             </li>
             <li className={s.menuItem}>
               <a href="#conacts" onClick={() => handleLinkClick()}>
-                {t("header.conacts")}
+                {t("common.header.conacts")}
               </a>
             </li>
           </ul>
           <button className={s.contactBtn} onClick={() => setIsModalOpen(true)}>
-            {t("header.contactUs")}
+            {t("common.header.contactUs")}
             <ArrowRightUp />
           </button>
-          <div className={s.btnContainer}>
-            <button
-              onClick={() => handleChangeLanguage("ua")}
-              className={s.langBtn}
-            >
-              UA
-            </button>
-            <div className={s.separator}></div>
-            <button
-              onClick={() => handleChangeLanguage("en")}
-              className={s.langBtn}
-            >
-              EN
-            </button>
-            <div className={s.separator}></div>
-            <button
-              onClick={() => handleChangeLanguage("ru")}
-              className={s.langBtn}
-            >
-              RU
-            </button>
-          </div>
+          <LanguageSwitcher />
           <button className={s.closeBtn} onClick={handleCloseMenu}>
             <CloseIcon />
           </button>
@@ -108,54 +97,33 @@ function Header() {
         <ul className={s.desctopMenuList}>
           <li className={s.desctopMenuItem}>
             <a href="#aboutUs" onClick={() => handleLinkClick()}>
-              {t("header.aboutUs")}
+              {t("common.header.aboutUs")}
             </a>
           </li>
           <li className={s.desctopMenuItem}>
             <a href="#priceCalculator" onClick={() => handleLinkClick()}>
-              {t("header.priceCalculator")}
+              {t("common.header.priceCalculator")}
             </a>
           </li>
           <li className={s.desctopMenuItem}>
             <a href="#caseStudies" onClick={() => handleLinkClick()}>
-              {t("header.caseStudies")}
+              {t("common.header.caseStudies")}
             </a>
           </li>
           <li className={s.desctopMenuItem}>
             <a href="#conacts" onClick={() => handleLinkClick()}>
-              {t("header.conacts")}
+              {t("common.header.conacts")}
             </a>
           </li>
         </ul>
-        <div className={s.btnContainer}>
-          <button
-            onClick={() => handleChangeLanguage("ua")}
-            className={s.langBtn}
-          >
-            UA
-          </button>
-          <div className={s.separator}></div>
-          <button
-            onClick={() => handleChangeLanguage("en")}
-            className={s.langBtn}
-          >
-            EN
-          </button>
-          <div className={s.separator}></div>
-          <button
-            onClick={() => handleChangeLanguage("ru")}
-            className={s.langBtn}
-          >
-            RU
-          </button>
-        </div>
+        <LanguageSwitcher />
         <button className={s.contactBtn} onClick={handleOpenModal}>
-          {t("header.contactUs")}
+          {t("common.header.contactUs")}
           <ArrowRightUp />
         </button>
       </div>
 
-      {/* <Modal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} /> */}
+      <Modal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />
     </div>
   );
 }

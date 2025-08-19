@@ -1,15 +1,11 @@
 "use client";
-import { createContext, useContext } from "react";
+import { createContext, useCallback, useContext } from "react";
 import getT from "./getT";
 
-const LocaleContext = createContext({
-  lang: "",
-  translations: {},
-  t: (key) => key,
-});
+const LocaleContext = createContext({});
 
 export function LocaleProvider({ lang, translations, children }) {
-  const t = getT(translations);
+  const t = useCallback(getT(translations), [translations]);
 
   return (
     <LocaleContext.Provider value={{ lang, translations, t }}>
