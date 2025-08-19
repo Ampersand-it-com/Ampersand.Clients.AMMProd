@@ -1,0 +1,109 @@
+@use "@/styles/variables" as *;
+
+.root {
+  position: relative;
+  max-width: 320px;
+  margin: 52px auto 50px auto;
+  background-color: $black-primary;
+  color: $white;
+
+  @include desktop {
+    max-width: 1440px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 50px 50px;
+  }
+}
+
+.adressContainer {
+  @include desktop {
+    grid-column: 3;
+    grid-row: 1;
+    align-self: center;
+  }
+}
+
+.separator {
+  position: absolute;
+  top: -52px;
+  left: -100px;
+  z-index: 10;
+  width: 500px;
+  border-top: 1px solid $grey-primary;
+
+  @include desktop {
+    width: 2700px;
+  }
+}
+
+.logoIcon {
+  width: 102px;
+  display: block;
+  margin: 0 auto;
+
+  svg {
+    width: 102px;
+    height: 56px;
+  }
+
+  @include desktop {
+    align-self: center;
+  }
+}
+
+.icon {
+  fill: $grey-light;
+
+  &:hover {
+    fill: $white;
+  }
+}
+
+.newIconContainer {
+  width: 24px;
+  padding-top: 2px;
+  display: flex;
+  justify-content: center;
+}
+
+.newIcon {
+  stroke: $grey-light;
+  width: 19.5px;
+  height: 19.5px;
+
+  &:hover {
+    stroke: $white;
+  }
+}
+
+.socialmediaList {
+  display: flex;
+  justify-content: space-around;
+  margin: 40px 0;
+
+  @include desktop {
+    margin: 0;
+  }
+}
+
+.contacts {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  text-align: center;
+  margin: 0 0 12px 0;
+}
+
+.rights {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  margin: 0;
+  text-align: center;
+
+  @include desktop {
+    grid-column: 2;
+    grid-row: 2;
+  }
+}

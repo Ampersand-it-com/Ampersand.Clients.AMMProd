@@ -31,6 +31,10 @@
 #root {
   overflow: hidden;
 }
+html,
+body {
+  overflow-x: hidden;
+}
 
 h1,
 h2,

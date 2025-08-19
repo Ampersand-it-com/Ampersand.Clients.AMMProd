@@ -144,6 +144,7 @@ function Calculator() {
           <div className={s.formTitle}>{t("home.calculator.form")}</div>
           {typeOfContent === "video" && (
             <Select
+              instanceId="video-select"
               isSearchable={false}
               styles={customStyles}
               options={videoSelectOptions}
@@ -153,6 +154,7 @@ function Calculator() {
           )}
           {typeOfContent === "animation" && (
             <Select
+              instanceId="animation-select"
               isSearchable={false}
               styles={customStyles}
               options={animationSelectOptions}
@@ -167,6 +169,7 @@ function Calculator() {
                   {t("home.calculator.duration")}
                 </div>
                 <Select
+                  instanceId="duration-select"
                   isSearchable={false}
                   styles={customStyles}
                   ref={ref}
@@ -181,6 +184,7 @@ function Calculator() {
             <>
               <div className={s.formTitle}>{t("home.calculator.options")}</div>
               <Select
+                instanceId="options-select"
                 isSearchable={false}
                 styles={customStyles}
                 options={get(importantOptions, subTypeOfContent)}

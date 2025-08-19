@@ -1,0 +1,190 @@
+@use "@/styles/variables" as *;
+
+@keyframes fadeIn {
+  from {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.root {
+  margin: 0 auto 80px auto;
+}
+
+.video {
+  position: relative;
+  width: 320px;
+  height: 190px;
+  background-color: $black-primary;
+
+  @include desktop {
+    width: 575px;
+    height: 324px;
+    flex-shrink: 0;
+  }
+}
+
+.preview {
+  border: none;
+  width: 320px;
+  height: 190px;
+  object-fit: cover;
+
+  @include desktop {
+    width: 575px;
+    height: 324px;
+  }
+}
+
+.videoBtn {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: none;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  svg {
+    fill: $white;
+    width: 60px;
+  }
+
+  &:active svg {
+    fill: $grey-light;
+  }
+
+  @include desktop {
+    svg {
+      width: 100px;
+    }
+  }
+}
+
+.title {
+  font-family: Furore, sans-serif;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 150%;
+  text-align: center;
+  letter-spacing: 0.07em;
+
+  @include desktop {
+    font-size: 36px;
+  }
+}
+
+.descriptionAnimation {
+  animation: fadeIn 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  animation-delay: 1s;
+
+  @include desktop {
+    width: 590px;
+    text-align: center;
+    margin: 0 auto 80px auto;
+  }
+}
+
+.titleAnimation {
+  animation: fadeIn 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  animation-delay: 0.5s;
+}
+
+.description {
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 150%;
+  text-align: center;
+  margin: 20px 0 0 0;
+
+  @include desktop {
+    font-size: 24px;
+    display: inline;
+  }
+}
+
+.link {
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 150%;
+  text-align: center;
+  display: block;
+  text-decoration: underline;
+  margin-bottom: 40px;
+
+  @include desktop {
+    font-size: 24px;
+    display: inline;
+    margin-left: 10px;
+    font-weight: 600;
+  }
+}
+
+.card {
+  border-bottom: 1px solid $grey-primary;
+  padding-bottom: 20px;
+
+  &:not(:last-child) {
+    margin-bottom: 40px;
+  }
+
+  @include desktop {
+    display: flex;
+    gap: 48px;
+    border-bottom: none;
+
+    &:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+  }
+}
+
+.cardsTitle {
+  font-family: Furore, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 150%;
+  text-align: center;
+  margin: 40px 0 20px 0;
+
+  @include desktop {
+    font-size: 22px;
+    margin: 20px 0 20px 0;
+  }
+}
+
+.subTitle {
+  font-family: Roboto, sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 150%;
+  margin-bottom: 8px;
+
+  @include desktop {
+    font-size: 22px;
+  }
+}
+
+.text {
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+
+  &:not(:last-child) {
+    margin-bottom: 12px;
+  }
+
+  @include desktop {
+    font-size: 16px;
+  }
+}

@@ -1,0 +1,282 @@
+@use "../../styles/variables" as *;
+
+.root {
+  margin: 0 auto 80px auto;
+  position: relative;
+}
+
+.contactForm {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  margin-top: 28px;
+  width: 100%;
+
+  label {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-family: Roboto, sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 100%;
+    color: $white;
+  }
+}
+
+.title {
+  font-family: Furore, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 150%;
+  text-align: center;
+  letter-spacing: 0.07em;
+
+  @include desktop {
+    font-size: 36px;
+    text-align: left;
+  }
+}
+
+.description {
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  text-align: center;
+  line-height: 150%;
+
+  @include desktop {
+    font-size: 24px;
+    text-align: left;
+  }
+}
+
+.submittedContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include desktop {
+    width: 575px;
+  }
+}
+
+.contactInput {
+  border: none;
+  outline: none;
+  padding: 15px;
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 150%;
+  color: $white;
+  -webkit-border-radius: 0;
+  -webkit-appearance: none;
+
+  border-bottom: 1px solid $grey-primary;
+  background-color: $black-primary;
+
+  &:hover,
+  &:focus {
+    border-bottom: 1px solid $white;
+  }
+
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  &::-webkit-contacts-auto-fill-button {
+    visibility: hidden;
+    display: none !important;
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+  }
+}
+
+.errorState {
+  input {
+    border-bottom: 1px solid $red-tomato;
+  }
+}
+
+.error {
+  color: $red-tomato;
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 100%;
+}
+
+.formContainer {
+  @include desktop {
+    width: 575px;
+    margin-right: auto;
+  }
+}
+
+.submitBtn {
+  height: 50px;
+  font-family: Roboto, sans-serif;
+  padding: 16px 36px;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 100%;
+  border: none;
+  background-color: $white;
+  color: $black-primary;
+  cursor: pointer;
+
+  &:hover {
+    border: 2px solid $white;
+  }
+
+  &:active {
+    background-color: $grey-light;
+  }
+}
+
+.successTitle {
+  text-align: center;
+  font-family: Furore, sans-serif;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 150%;
+  margin-top: 40px;
+}
+
+.successDescription {
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  text-align: center;
+  color: $grey-light;
+  margin: 28px 0;
+}
+
+.phoneContainer {
+  display: flex;
+  align-items: center;
+  font-family: Furore, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 150%;
+  letter-spacing: 0.07em;
+  margin: 30px 0;
+}
+
+.phoneIcon {
+  width: 32px;
+  fill: $white;
+  margin-right: 12px;
+}
+
+.successRequest {
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  text-align: center;
+  color: $grey-light;
+  margin: 0 0 55px 0;
+}
+
+.foxLogo {
+  width: 160px;
+  margin: 0 auto;
+}
+
+.elispse {
+  display: none;
+
+  @include desktop {
+    display: block;
+    position: absolute;
+    width: 152px;
+    height: 245px;
+    left: 870px;
+    top: 220px;
+    background: #dc1515;
+    filter: blur(100px);
+    transform: translate3d(0, 0, 0);
+    border-radius: 50%;
+    animation: Ellipse 13000ms 0ms linear infinite;
+  }
+}
+
+@keyframes Ellipse {
+  0% {
+    left: 710px;
+    top: 160px;
+  }
+  20% {
+    left: 770px;
+    top: 160px;
+  }
+  40% {
+    left: 735px;
+    top: 160px;
+  }
+  60% {
+    left: 715px;
+    top: 160px;
+  }
+  80% {
+    left: 648px;
+    top: 130px;
+  }
+  100% {
+    left: 710px;
+    top: 160px;
+  }
+}
+
+.elipseTwo {
+  display: none;
+
+  @include desktop {
+    display: block;
+    position: absolute;
+    width: 137px;
+    height: 196px;
+    left: 820px;
+    top: 160px;
+    border-radius: 50%;
+    background: #c99c9c;
+    filter: blur(60px);
+    transform: translate3d(0, 0, 0);
+    animation: Ellipse2 13000ms 0ms linear infinite;
+  }
+}
+
+@keyframes Ellipse2 {
+  0% {
+    left: 710px;
+    top: 160px;
+  }
+  20% {
+    left: 770px;
+    top: 300px;
+  }
+  40% {
+    left: 860px;
+    top: 320px;
+  }
+  60% {
+    left: 840px;
+    top: 240px;
+  }
+  80% {
+    left: 740px;
+    top: 210px;
+  }
+  100% {
+    left: 710px;
+    top: 160px;
+  }
+}

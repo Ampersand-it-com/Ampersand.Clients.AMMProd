@@ -1,16 +1,12 @@
+"use client";
+
 import { useState, useRef, useEffect } from "react";
-import { useStyles } from "./ContactForm.styles";
-import { useTranslation } from "react-i18next";
-import foxImg from "@/assets/images/foxImg.png";
-import PhoneIcon from "@/assets/icons/phoneIcon.svg";
+import s from "./ContactForm.module.scss";
 import classNames from "classnames";
-import { tel } from "helpers/constants";
-import "utils/i18next";
-import useLocaleNavigate from "hooks/useLocaleNavigate";
+import { useTranslations } from "@/i18n";
 
 function ContactForm() {
-  const s = useStyles();
-  const { t } = useTranslation();
+  const { t } = useTranslations();
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
@@ -23,10 +19,11 @@ function ContactForm() {
 
   // Navigation
 
-  const navigateToSent = useLocaleNavigate("/sent");
-  const handleSubmit = () => {
-    navigateToSent();
-  };
+  // todo
+  // const navigateToSent = useLocaleNavigate("/sent");
+  // const handleSubmit = () => {
+  //   navigateToSent();
+  // };
 
   // Handle Form
 
@@ -82,16 +79,16 @@ function ContactForm() {
       <div className={s.elispse}></div>
       {/* {isSubmited ?
         <div className={s.submittedContainer}>
-          <h2 className={s.successTitle}>{t("contactModal.successTitle")}</h2>
-          <p className={s.successDescription}>{t("contactModal.description")}</p>
+          <h2 className={s.successTitle}>{t("common.contactModal.successTitle")}</h2>
+          <p className={s.successDescription}>{t("common.contactModal.description")}</p>
           <p className={s.phoneContainer}><PhoneIcon className={s.phoneIcon} />{tel}</p>
-          <p className={s.successRequest}>{t("contactModal.request")}</p>
+          <p className={s.successRequest}>{t("common.contactModal.request")}</p>
           <img src={foxImg} className={s.foxLogo} alt='fox mascot'/>
         </div>
         : */}
       <div className={s.formContainer}>
-        <h2 className={s.title}>{t("contactForm.title")}</h2>
-        <p className={s.description}>{t("contactForm.description")}</p>
+        <h2 className={s.title}>{t("home.contactForm.title")}</h2>
+        <p className={s.description}>{t("home.contactForm.description")}</p>
         <form
           className={s.contactForm}
           name="contactForm"
@@ -104,22 +101,22 @@ function ContactForm() {
           <label
             className={classNames({ [s.errorState]: !isNameValid && isDirty })}
           >
-            <span>{t("contactModal.name")}</span>
+            <span>{t("common.contactModal.name")}</span>
             <input
               type="text"
               className={s.contactInput}
               autoComplete="off"
-              placeholder={t("contactModal.namePlaceholder")}
+              placeholder={t("common.contactModal.namePlaceholder")}
               name="name"
               value={name}
               onChange={(e) => setName(e.target.value)}
             />
             {!isNameValid && isDirty && (
-              <span className={s.error}>{t("error")}</span>
+              <span className={s.error}>{t("home.error")}</span>
             )}
           </label>
           <label>
-            <span>{t("contactModal.phoneNumber")}</span>
+            <span>{t("common.contactModal.phoneNumber")}</span>
             <input
               type="tel"
               className={s.contactInput}
@@ -130,22 +127,22 @@ function ContactForm() {
               onChange={(e) => setPhone(e.target.value)}
             />
             {!isPhoneValid && isDirty && (
-              <span className={s.error}>{t("error")}</span>
+              <span className={s.error}>{t("home.error")}</span>
             )}
           </label>
           <label>
-            <span>{t("contactModal.email")}</span>
+            <span>{t("common.contactModal.email")}</span>
             <input
               type="email"
               className={s.contactInput}
               autoComplete="off"
-              placeholder={t("contactModal.emailPlaceholder")}
+              placeholder={t("common.contactModal.emailPlaceholder")}
               name="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
             {!isEmailValid && isDirty && (
-              <span className={s.error}>{t("error")}</span>
+              <span className={s.error}>{t("home.error")}</span>
             )}
           </label>
           <button
@@ -153,7 +150,7 @@ function ContactForm() {
             type="button"
             onClick={(e) => handleSubmitClick(e)}
           >
-            {t("contactModal.btn")}
+            {t("common.contactModal.btn")}
           </button>
         </form>
       </div>

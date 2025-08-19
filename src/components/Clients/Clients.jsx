@@ -1,5 +1,6 @@
-import { useStyles } from "./Clients.styles";
-import { useTranslation } from "react-i18next";
+"use client";
+
+import s from "./Clients.module.scss";
 import client1 from "@/assets/images/client1.jpg";
 import client2 from "@/assets/images/client2.jpg";
 import client3 from "@/assets/images/client3.jpg";
@@ -13,11 +14,11 @@ import clutch from "@/assets/images/clutch.png";
 import { useState, useEffect } from "react";
 import classNames from "classnames";
 import { useInView } from "react-intersection-observer";
-import "utils/i18next";
+import { useTranslations } from "@/i18n";
+import Image from "next/image";
 
 function Clients() {
-  const s = useStyles();
-  const { t } = useTranslation();
+  const { t } = useTranslations();
 
   const { ref: titleRef, inView: isTitleVisible } = useInView();
   const [isTitlelShown, setIsTitleShown] = useState(false);
@@ -34,7 +35,7 @@ function Clients() {
         className={classNames(s.title, { [s.titleAnimation]: isTitlelShown })}
         ref={titleRef}
       >
-        {t("clients.title")}
+        {t("home.clients.title")}
       </h2>
       <ul className={s.clientsCardList}>
         <li
@@ -42,105 +43,105 @@ function Clients() {
             [s.firstRowAnimation]: setIsTitleShown,
           })}
         >
-          <img
+          <Image
             className={s.clientsImg}
             src={client1}
             alt="client_image-1"
-          ></img>
+          ></Image>
         </li>
         <li
           className={classNames(s.clientTwo, {
             [s.firstRowAnimation]: setIsTitleShown,
           })}
         >
-          <img
+          <Image
             className={s.clientsImg}
             src={client2}
             alt="client_image-2"
-          ></img>
+          ></Image>
         </li>
         <li
           className={classNames(s.clientThree, {
             [s.firstRowAnimation]: setIsTitleShown,
           })}
         >
-          <img
+          <Image
             className={s.clientsImg}
             src={client3}
             alt="client_image-3"
-          ></img>
+          ></Image>
         </li>
         <li
           className={classNames(s.clientFour, {
             [s.firstRowAnimation]: setIsTitleShown,
           })}
         >
-          <img
+          <Image
             className={s.clientsImg}
             src={client4}
             alt="client_image-4"
-          ></img>
+          ></Image>
         </li>
         <li
           className={classNames(s.clientFive, {
             [s.secondRowAnimation]: setIsTitleShown,
           })}
         >
-          <img
+          <Image
             className={s.clientsImg}
             src={client5}
             alt="client_image-5"
-          ></img>
+          ></Image>
         </li>
         <li
           className={classNames(s.clientSix, {
             [s.secondRowAnimation]: setIsTitleShown,
           })}
         >
-          <img
+          <Image
             className={s.clientsImg}
             src={client6}
             alt="client_image-6"
-          ></img>
+          ></Image>
         </li>
         <li
           className={classNames(s.clientSeven, {
             [s.secondRowAnimation]: setIsTitleShown,
           })}
         >
-          <img
+          <Image
             className={s.clientsImg}
             src={client7}
             alt="client_image-7"
-          ></img>
+          ></Image>
         </li>
         <li
           className={classNames(s.clientEight, {
             [s.secondRowAnimation]: setIsTitleShown,
           })}
         >
-          <img
+          <Image
             className={s.clientsImg}
             src={client8}
             alt="client_image-8"
-          ></img>
+          ></Image>
         </li>
         <li
           className={classNames(s.clientNine, {
             [s.secondRowAnimation]: setIsTitleShown,
           })}
         >
-          <img
+          <Image
             className={s.clientsImg}
             src={client9}
             alt="client_image-9"
-          ></img>
+          ></Image>
         </li>
       </ul>
       <p
         className={classNames(s.clutch, { [s.clutchAnimation]: isTitlelShown })}
       >
-        {t("clients.clutch")}
+        {t("home.clients.clutch")}
       </p>
       <a
         href="https://clutch.co/profile/amm#summary"
@@ -150,7 +151,7 @@ function Clients() {
           [s.clutchAnimation]: isTitlelShown,
         })}
       >
-        <img src={clutch} alt="clutch_link"></img>
+        <Image src={clutch} alt="clutch_link"></Image>
       </a>
     </div>
   );

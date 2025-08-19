@@ -1,17 +1,18 @@
+"use client";
+
 import { useState, useEffect } from "react";
-import { useStyles } from "./WorkProcess.styles";
-import { useTranslation } from "react-i18next";
+import s from "./WorkProcess.module.scss";
 import imageOne from "@/assets/images/01.png";
 import imageTwo from "@/assets/images/02.png";
 import imageThree from "@/assets/images/03.png";
 import imageFour from "@/assets/images/04.png";
 import classNames from "classnames";
 import { useInView } from "react-intersection-observer";
-import "utils/i18next";
+import { useTranslations } from "@/i18n";
+import Image from "next/image";
 
 function WorkProcess() {
-  const s = useStyles();
-  const { t } = useTranslation();
+  const { t } = useTranslations();
   const { ref: titleRef, inView: isTitleVisible } = useInView();
   const [isTitlelShown, setIsTitleShown] = useState(false);
 
@@ -27,7 +28,7 @@ function WorkProcess() {
         className={classNames(s.title, { [s.titleAnimation]: isTitlelShown })}
         ref={titleRef}
       >
-        {t("workProcess.title")}
+        {t("home.workProcess.title")}
       </h2>
       <div className={s.cardsContainer}>
         <div
@@ -35,15 +36,21 @@ function WorkProcess() {
             [s.cardOneAnimation]: isTitlelShown,
           })}
         >
-          <img src={imageOne} alt="number one" className={s.cardsNumberImg} />
-          <div className={s.desctopImgPlaceholder}></div>
+          <Image
+            src={imageOne}
+            alt="number one"
+            className={s.cardsNumberImage}
+          />
+          <div className={s.desctopImagePlaceholder}></div>
           <div className={s.cardsList}>
-            <h3 className={s.cardsItemTitle}>{t("workProcess.first.title")}</h3>
+            <h3 className={s.cardsItemTitle}>
+              {t("home.workProcess.first.title")}
+            </h3>
             <p className={s.cardsListItem}>
-              {t("workProcess.first.firstItem")}
+              {t("home.workProcess.first.firstItem")}
             </p>
             <p className={s.cardsListItem}>
-              {t("workProcess.first.secondItem")}
+              {t("home.workProcess.first.secondItem")}
             </p>
           </div>
         </div>
@@ -52,23 +59,27 @@ function WorkProcess() {
             [s.cardTwoAnimation]: isTitlelShown,
           })}
         >
-          <img src={imageTwo} alt="number two" className={s.cardsNumberImg} />
-          <div className={s.desctopImgPlaceholderTwo}></div>
+          <Image
+            src={imageTwo}
+            alt="number two"
+            className={s.cardsNumberImage}
+          />
+          <div className={s.desctopImagePlaceholderTwo}></div>
           <div className={s.cardsList}>
             <h3 className={s.cardsItemTitle}>
-              {t("workProcess.second.title")}
+              {t("home.workProcess.second.title")}
             </h3>
             <p className={s.cardsListItem}>
-              {t("workProcess.second.firstItem")}
+              {t("home.workProcess.second.firstItem")}
             </p>
             <p className={s.cardsListItem}>
-              {t("workProcess.second.secondItem")}
+              {t("home.workProcess.second.secondItem")}
             </p>
             <p className={s.cardsListItem}>
-              {t("workProcess.second.thirdItem")}
+              {t("home.workProcess.second.thirdItem")}
             </p>
             <p className={s.cardsListItem}>
-              {t("workProcess.second.fifthItem")}
+              {t("home.workProcess.second.fifthItem")}
             </p>
           </div>
         </div>
@@ -77,21 +88,21 @@ function WorkProcess() {
             [s.cardThreeAnimation]: isTitlelShown,
           })}
         >
-          <img
+          <Image
             src={imageThree}
             alt="number three"
-            className={s.cardsNumberImg}
+            className={s.cardsNumberImage}
           />
-          <div className={s.desctopImgPlaceholderThree}></div>
+          <div className={s.desctopImagePlaceholderThree}></div>
           <div className={s.cardsList}>
             <h3 className={s.cardsItemTitle}>
-              {t("workProcess.someTitles.one")}
+              {t("home.workProcess.someTitles.one")}
             </h3>
             <p className={s.cardsListItem}>
-              {t("workProcess.third.firstItem")}
+              {t("home.workProcess.third.firstItem")}
             </p>
             <p className={s.cardsListItem}>
-              {t("workProcess.third.secondItem")}
+              {t("home.workProcess.third.secondItem")}
             </p>
           </div>
         </div>
@@ -100,17 +111,21 @@ function WorkProcess() {
             [s.cardFourAnimation]: isTitlelShown,
           })}
         >
-          <img src={imageFour} alt="number four" className={s.cardsNumberImg} />
-          <div className={s.desctopImgPlaceholderFour}></div>
+          <Image
+            src={imageFour}
+            alt="number four"
+            className={s.cardsNumberImage}
+          />
+          <div className={s.desctopImagePlaceholderFour}></div>
           <div className={s.cardsList}>
             <h3 className={s.cardsItemTitle}>
-              {t("workProcess.someTitles.two")}
+              {t("home.workProcess.someTitles.two")}
             </h3>
             <p className={s.cardsListItem}>
-              {t("workProcess.fourth.firstItem")}
+              {t("home.workProcess.fourth.firstItem")}
             </p>
             <p className={s.cardsListItem}>
-              {t("workProcess.fourth.secondItem")}
+              {t("home.workProcess.fourth.secondItem")}
             </p>
           </div>
         </div>

@@ -1,5 +1,6 @@
-import { useStyles } from "./Footer.styles";
-import { useTranslation } from "react-i18next";
+"use client";
+
+import s from "./Footer.module.scss";
 import Logo from "@/assets/icons/logoIcon.svg";
 import BehanceIcon from "@/assets/icons/behanceIcon.svg";
 import LinkedinIcon from "@/assets/icons/linkedinIcon.svg";
@@ -8,13 +9,11 @@ import VimeoIcon from "@/assets/icons/vimeoIcon.svg";
 import FacebookIcon from "@/assets/icons/facebookIcon.svg";
 import InstagramIcon from "@/assets/icons/instagramIcon.svg";
 import CluutchIcon from "@/assets/icons/clutchIcon.svg";
-import { tel, email } from "helpers/constants";
-
-import "utils/i18next";
+import { tel, email } from "@/helpers/constants";
+import { useTranslations } from "@/i18n";
 
 function Footer() {
-  const s = useStyles();
-  const { t } = useTranslation();
+  const { t } = useTranslations();
 
   return (
     <div className={s.root} id="conacts">
@@ -102,7 +101,7 @@ function Footer() {
           </a>
         </li>
       </ul>
-      <p className={s.rights}>{t("footer.rights")}</p>
+      <p className={s.rights}>{t("common.footer.rights")}</p>
     </div>
   );
 }

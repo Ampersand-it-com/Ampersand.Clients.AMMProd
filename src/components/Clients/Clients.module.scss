@@ -1,0 +1,207 @@
+@use "@/styles/variables" as *;
+
+@keyframes fadeIn {
+  from {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.root {
+  margin: 0 auto 80px auto;
+
+  @include desktop {
+    position: relative;
+    margin: 0 auto 120px auto;
+  }
+}
+
+.title {
+  font-family: "Furore", sans-serif;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 150%;
+  text-align: center;
+  letter-spacing: 0.07em;
+  margin-bottom: 40px;
+
+  @include desktop {
+    text-align: left;
+    font-size: 36px;
+    margin-bottom: 87px;
+  }
+}
+
+.clientsCardList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.clutch {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 150%;
+  text-align: center;
+  width: 210px;
+  margin: 40px auto 20px auto;
+
+  img {
+    width: 168px;
+    height: 68px;
+  }
+
+  @include desktop {
+    position: absolute;
+    top: 15px;
+    right: 250px;
+    text-align: left;
+    margin: 0;
+  }
+}
+
+.clutchLink {
+  margin: 20px auto 0 auto;
+  width: 168px;
+  display: block;
+
+  @include desktop {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+  }
+}
+
+.clientsImg {
+  @include desktop {
+    display: none;
+  }
+}
+
+// === Клиенты (повторяющийся паттерн) ===
+@mixin clientCard($img, $imgHover) {
+  @include desktop {
+    width: 278px;
+    height: 180px;
+    position: relative;
+
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      inset: 0;
+      background: url($imgHover);
+      background-size: cover;
+      transition: all cubic-bezier(0.39, 0.575, 0.565, 1);
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      inset: 0;
+      background: url($img);
+      background-size: cover;
+      opacity: 0;
+      transition: all cubic-bezier(0.39, 0.575, 0.565, 1);
+    }
+
+    &:hover::before {
+      opacity: 1;
+    }
+
+    &:hover::after {
+      opacity: 0;
+    }
+  }
+}
+
+.clientOne {
+  @include clientCard(
+    "../../assets/images/client1x2.png",
+    "../../assets/images/client1x2b.png"
+  );
+}
+.clientTwo {
+  @include clientCard(
+    "../../assets/images/client2x2.png",
+    "../../assets/images/client2x2b.png"
+  );
+}
+.clientThree {
+  @include clientCard(
+    "../../assets/images/client3x2.png",
+    "../../assets/images/client3x2b.png"
+  );
+}
+.clientFour {
+  @include clientCard(
+    "../../assets/images/client4x2.png",
+    "../../assets/images/client4x2b.png"
+  );
+}
+.clientFive {
+  @include clientCard(
+    "../../assets/images/client5x2.png",
+    "../../assets/images/client5x2b.png"
+  );
+}
+.clientSix {
+  @include clientCard(
+    "../../assets/images/client6x2.png",
+    "../../assets/images/client6x2b.png"
+  );
+}
+.clientSeven {
+  @include clientCard(
+    "../../assets/images/client7x2.png",
+    "../../assets/images/client7x2b.png"
+  );
+}
+.clientEight {
+  @include clientCard(
+    "../../assets/images/client8x2.png",
+    "../../assets/images/client8x2b.png"
+  );
+}
+.clientNine {
+  @include clientCard(
+    "../../assets/images/client9x2.png",
+    "../../assets/images/client9x2b.png"
+  );
+}
+
+// === Анимации ===
+.titleAnimation {
+  @include desktop {
+    animation: fadeIn 0.5s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+    animation-delay: 0.5s;
+  }
+}
+
+.clutchAnimation {
+  @include desktop {
+    animation: fadeIn 0.5s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+    animation-delay: 1s;
+  }
+}
+
+.firstRowAnimation {
+  @include desktop {
+    animation: fadeIn 0.5s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+    animation-delay: 1.5s;
+  }
+}
+
+.secondRowAnimation {
+  @include desktop {
+    animation: fadeIn 0.5s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+    animation-delay: 2s;
+  }
+}

@@ -1,0 +1,224 @@
+@use "@/styles/variables" as *;
+
+@keyframes fadeIn {
+  from {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.root {
+  margin: 0 auto 80px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include desktop {
+    margin: 0 auto 136px auto;
+  }
+}
+
+.cardsContainer {
+  @include desktop {
+    display: flex;
+    gap: 20px;
+  }
+}
+
+.title {
+  font-family: Furore, sans-serif;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 150%;
+  letter-spacing: 0.07em;
+  margin-bottom: 48px;
+
+  @include desktop {
+    font-size: 36px;
+  }
+}
+
+.titleAnimation {
+  @include desktop {
+    animation: fadeIn 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+    animation-delay: 0.5s;
+  }
+}
+
+.cardOneAnimation {
+  @include desktop {
+    animation: fadeIn 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+    animation-delay: 1s;
+  }
+}
+
+.cardTwoAnimation {
+  @include desktop {
+    animation: fadeIn 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+    animation-delay: 1.5s;
+  }
+}
+
+.cardThreeAnimation {
+  @include desktop {
+    animation: fadeIn 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+    animation-delay: 2s;
+  }
+}
+
+.cardFourAnimation {
+  @include desktop {
+    animation: fadeIn 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+    animation-delay: 2.5s;
+  }
+}
+
+.cardsItem {
+  display: flex;
+  gap: 33px;
+
+  &:not(:last-child) {
+    margin-bottom: 48px;
+  }
+
+  @include desktop {
+    display: block;
+    width: 278px;
+
+    &:not(:last-child) {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.cardsList {
+  width: 195px;
+}
+
+.cardsNumberImage {
+  width: 105px;
+  height: 69px;
+  margin-left: 10px;
+
+  @include desktop {
+    display: none;
+  }
+}
+
+.cardsItemTitle {
+  font-family: Furore, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 150%;
+  letter-spacing: 0.07em;
+  margin-bottom: 12px;
+
+  @include desktop {
+    font-size: 22px;
+  }
+}
+
+.cardsListItem {
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  margin: 0;
+
+  @include desktop {
+    font-size: 16px;
+  }
+}
+
+.desctopImagePlaceholder,
+.desctopImagePlaceholderTwo,
+.desctopImagePlaceholderThree,
+.desctopImagePlaceholderFour {
+  display: none;
+
+  @include desktop {
+    display: block;
+    width: 181px;
+    height: 120px;
+    position: relative;
+    margin-bottom: 28px;
+
+    &::after,
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: contain;
+      background-repeat: no-repeat;
+      transition: all 0.4s cubic-bezier(0.39, 0.575, 0.565, 1);
+    }
+
+    &::after {
+      opacity: 1;
+    }
+
+    &::before {
+      opacity: 0;
+    }
+
+    .cardsItem:hover &::after {
+      opacity: 0;
+    }
+
+    .cardsItem:hover &::before {
+      opacity: 1;
+    }
+  }
+}
+
+.desctopImagePlaceholder {
+  @include desktop {
+    &::after {
+      background-image: url("../../assets/images/01w.png");
+    }
+    &::before {
+      background-image: url("../../assets/images/01r.png");
+    }
+  }
+}
+
+.desctopImagePlaceholderTwo {
+  @include desktop {
+    &::after {
+      background-image: url("../../assets/images/02w.png");
+    }
+    &::before {
+      background-image: url("../../assets/images/02r.png");
+    }
+  }
+}
+
+.desctopImagePlaceholderThree {
+  @include desktop {
+    &::after {
+      background-image: url("../../assets/images/03w.png");
+    }
+    &::before {
+      background-image: url("../../assets/images/03r.png");
+    }
+  }
+}
+
+.desctopImagePlaceholderFour {
+  @include desktop {
+    &::after {
+      background-image: url("../../assets/images/04w.png");
+    }
+    &::before {
+      background-image: url("../../assets/images/04r.png");
+    }
+  }
+}

@@ -1,14 +1,14 @@
+"use client";
+
 import { useState, useEffect } from "react";
-import { useStyles } from "./Case.styles";
-import { useTranslation } from "react-i18next";
+import s from "./Case.module.scss";
 import PlayIcon from "@/assets/icons/playIcon.svg";
 import { useInView } from "react-intersection-observer";
 import classNames from "classnames";
-import "utils/i18next";
+import { useTranslations } from "@/i18n";
 
 function Case() {
-  const s = useStyles();
-  const { t } = useTranslation();
+  const { t } = useTranslations();
   const [isVideoClicked, setIsVideoClicked] = useState(false);
   const [isSecondVideoClicked, setIsSecondVideoClicked] = useState(false);
   const [isThirdVideoClicked, setIsThirdVideoClicked] = useState(false);
@@ -33,19 +33,19 @@ function Case() {
         className={classNames(s.title, { [s.titleAnimation]: isTitlelShown })}
         ref={titleRef}
       >
-        {t("caseStudies.title")}
+        {t("home.caseStudies.title")}
       </h2>
       <div
         className={classNames({ [s.descriptionAnimation]: isDescriptionShown })}
         ref={descriptionRef}
       >
-        <p className={s.description}>{t("caseStudies.description")}</p>
+        <p className={s.description}>{t("home.caseStudies.description")}</p>
         <a
           href="https://www.youtube.com/channel/UCDpiH6JPPe3-FBqhRZG-96g"
           target="_blanc"
           className={s.link}
         >
-          {t("caseStudies.link")}
+          {t("home.caseStudies.link")}
         </a>
       </div>
 
@@ -74,11 +74,15 @@ function Case() {
           )}
         </div>
         <div>
-          <h3 className={s.cardsTitle}>{t("caseStudies.secondCard.title")}</h3>
-          <div className={s.subTitle}>{t("caseStudies.need")}</div>
-          <div className={s.text}>{t("caseStudies.fourthCard.need")}</div>
-          <div className={s.subTitle}>{t("caseStudies.result")}</div>
-          <div className={s.text}>{t("caseStudies.fourthCard.result")}</div>
+          <h3 className={s.cardsTitle}>
+            {t("home.caseStudies.secondCard.title")}
+          </h3>
+          <div className={s.subTitle}>{t("home.caseStudies.need")}</div>
+          <div className={s.text}>{t("home.caseStudies.fourthCard.need")}</div>
+          <div className={s.subTitle}>{t("home.caseStudies.result")}</div>
+          <div className={s.text}>
+            {t("home.caseStudies.fourthCard.result")}
+          </div>
         </div>
       </div>
 
@@ -107,11 +111,15 @@ function Case() {
           )}
         </div>
         <div>
-          <h3 className={s.cardsTitle}>{t("caseStudies.secondCard.title")}</h3>
-          <div className={s.subTitle}>{t("caseStudies.need")}</div>
-          <div className={s.text}>{t("caseStudies.secondCard.need")}</div>
-          <div className={s.subTitle}>{t("caseStudies.result")}</div>
-          <div className={s.text}>{t("caseStudies.secondCard.result")}</div>
+          <h3 className={s.cardsTitle}>
+            {t("home.caseStudies.secondCard.title")}
+          </h3>
+          <div className={s.subTitle}>{t("home.caseStudies.need")}</div>
+          <div className={s.text}>{t("home.caseStudies.secondCard.need")}</div>
+          <div className={s.subTitle}>{t("home.caseStudies.result")}</div>
+          <div className={s.text}>
+            {t("home.caseStudies.secondCard.result")}
+          </div>
         </div>
       </div>
       <div className={s.card}>
@@ -139,11 +147,13 @@ function Case() {
           )}
         </div>
         <div>
-          <h3 className={s.cardsTitle}>{t("caseStudies.thirdCard.title")}</h3>
-          <div className={s.subTitle}>{t("caseStudies.need")}</div>
-          <div className={s.text}>{t("caseStudies.thirdCard.need")}</div>
-          <div className={s.subTitle}>{t("caseStudies.result")}</div>
-          <div className={s.text}>{t("caseStudies.thirdCard.result")}</div>
+          <h3 className={s.cardsTitle}>
+            {t("home.caseStudies.thirdCard.title")}
+          </h3>
+          <div className={s.subTitle}>{t("home.caseStudies.need")}</div>
+          <div className={s.text}>{t("home.caseStudies.thirdCard.need")}</div>
+          <div className={s.subTitle}>{t("home.caseStudies.result")}</div>
+          <div className={s.text}>{t("home.caseStudies.thirdCard.result")}</div>
         </div>
       </div>
     </div>
