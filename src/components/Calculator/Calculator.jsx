@@ -212,8 +212,8 @@ function Calculator() {
         <Image
           src={calculatorPhoto}
           alt="mobile phone"
-          className={classNames(s.calculatorImage, {
-            [s.calculatorImageAnimation]: isDescriptionlShown,
+          className={classNames(s.calculatorImg, {
+            [s.calculatorImgAnimation]: isDescriptionlShown,
           })}
         ></Image>
         {isCalculated && (

@@ -1,5 +1,6 @@
 import Calculator from "@/components/Calculator/Calculator";
 import Case from "@/components/Case/Case";
+import CharacterUpgrade from "@/components/CharacterUpgrade/CharacterUpgrade";
 import Clients from "@/components/Clients/Clients";
 import ContactForm from "@/components/ContactForm/ContactForm";
 import Features from "@/components/Features/Features";
@@ -29,6 +30,7 @@ export default async function HomePage({ params }) {
       <Layout>
         <Header />
         <Hero />
+        <CharacterUpgrade />
         <WhoAreWe />
         <Features />
       </Layout>

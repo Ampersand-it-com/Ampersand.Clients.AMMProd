@@ -25,11 +25,19 @@ const nextConfig = {
       fileLoaderRule.exclude = /\.svg$/i;
     }
 
-    config.module.rules.push({
-      test: /\.svg$/i,
-      issuer: /\.[jt]sx?$/,
-      use: ["@svgr/webpack"],
-    });
+    config.module.rules.push(
+      {
+        test: /\.svg$/i,
+        issuer: /\.[jt]sx?$/,
+        resourceQuery: /src/, // *.svg?src
+        type: "asset/resource", // return URL
+      },
+      {
+        test: /\.svg$/i,
+        issuer: /\.[jt]sx?$/,
+        use: ["@svgr/webpack"],
+      }
+    );
 
     return config;
   },

@@ -1,37 +1,30 @@
-import './Checkbox.scss'
-import React, { useState } from 'react'
+"use client";
 
-const sizes = ['xs', 's', 'm', 'l', 'xl']
+import s from "./Checkbox.module.scss";
+
+const sizes = ["xs", "s", "m", "l", "xl"];
 
 const Checkbox = ({ checked = false, onChange, className, ...props }) => {
-	const classList = ['checkbox']
-	if (className) classList.push(className)
-	for (let key in props) {
-		if (sizes.includes(key)) classList.push(key)
-	}
+  const classList = [s.checkbox];
+  if (className) classList.push(className);
+  for (let key in props) {
+    if (sizes.includes(key)) classList.push(key);
+  }
 
-	// const [isChecked, setIsChecked] = useState(checked)
+  // const [isChecked, setIsChecked] = useState(checked)
 
-	// function handleOnChange(e) {
-	// 	setIsChecked(isChecked ? false : true)
-	// 	onChange(e)
-	// }
+  // function handleOnChange(e) {
+  // 	setIsChecked(isChecked ? false : true)
+  // 	onChange(e)
+  // }
 
-	return (
-		<label
-			className={classList.join(' ')}
-			onClick={(e) => e.stopPropagation()}
-		>
-			<input
-				type="checkbox"
-				checked={checked}
-				onChange={onChange}
-			/>
-			<div className="box">
-			</div>
-			{props.children}
-		</label>
-	);
+  return (
+    <label className={classList.join(" ")} onClick={(e) => e.stopPropagation()}>
+      <input type="checkbox" checked={checked} onChange={onChange} />
+      <div className={s.box}></div>
+      {props.children}
+    </label>
+  );
 };
 
 export default Checkbox;
