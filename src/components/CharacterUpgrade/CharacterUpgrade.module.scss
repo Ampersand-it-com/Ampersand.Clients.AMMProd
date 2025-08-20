@@ -1,4 +1,4 @@
-@use "./styles/variables.scss" as *;
+@import "./styles/variables.scss";
 
 $body-width: 575px;
 
@@ -57,7 +57,7 @@ $body-width: 575px;
       background: $color-black-light;
       border: 1px solid $color-gray-primary;
 
-      :global(.MuiLinearProgress-bar) {
+      .MuiLinearProgress-bar {
         background: $color-white;
       }
     }
@@ -226,40 +226,40 @@ $body-width: 575px;
         min-width: 40px;
       }
 
-      :global(.item-thumb) {
+      .itemThumb {
         width: 40px;
         height: 40px;
+
+        &.active {
+          background: $color-gray-light;
+        }
+      }
+    }
+
+    .item {
+      flex-shrink: 0;
+
+      .itemDetails {
+        gap: 4px;
       }
 
-      :global(.item-thumb.active) {
-        background: $color-gray-light;
+      .itemThumb {
+        width: 56px;
+        height: 56px;
       }
-    }
 
-    :global(.item) {
-      flex-shrink: 0;
-    }
+      p {
+        font-size: 14px;
+      }
 
-    :global(.item .item-details) {
-      gap: 4px;
-    }
-
-    :global(.item .item-thumb) {
-      width: 56px;
-      height: 56px;
-    }
-
-    :global(.item p) {
-      font-size: 14px;
-    }
-
-    :global(.item button) {
-      margin-top: 12px;
-      width: 96px;
-      font-size: 12px;
-      line-height: 16px;
-      flex-shrink: 0;
-      padding: 4px 12px;
+      button {
+        margin-top: 12px;
+        width: 96px;
+        font-size: 12px;
+        line-height: 16px;
+        flex-shrink: 0;
+        padding: 4px 12px;
+      }
     }
   }
 }

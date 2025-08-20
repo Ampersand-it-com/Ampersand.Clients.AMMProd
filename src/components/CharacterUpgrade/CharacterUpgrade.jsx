@@ -9,28 +9,28 @@ import ItemThumb from "./components/ItemThumb/ItemThumb";
 import { useTranslations } from "@/i18n";
 import LinearProgress from "./components/LinearProgress/LinearProgress";
 
-import foxOld from "./assets/fox/Foxi_Vector_old-01.svg";
+import foxOld from "./assets/fox/Foxi_Vector_old-01.png";
 console.log(foxOld);
-import foxOldHelmetBack from "./assets/fox/FV_old_HELMET_back._1ai-01.svg";
-import foxOldHelmetFront from "./assets/fox/FV_old_HELMET_Front-01_fixed.svg";
-import foxOldBody from "./assets/fox/FV_old_Body-01.svg";
-import foxOldArmLeft from "./assets/fox/FV_old_ARM_Left-01.svg";
-import foxOldArmRight from "./assets/fox/FV_old_ARM_Right-01.svg";
-import foxOldForearmLeft from "./assets/fox/FV_old_ForearmARM_Left-01.svg";
-import foxOldForearmRight from "./assets/fox/FV_old_ForeARM_Right-01.svg";
-import foxOldLegLeft from "./assets/fox/FV_old_LEG_Left-01.svg";
-import foxOldLegRight from "./assets/fox/FV_old_LEG_Right-01.svg";
+import foxOldHelmetBack from "./assets/fox/FV_old_HELMET_back._1ai-01.png";
+import foxOldHelmetFront from "./assets/fox/FV_old_HELMET_Front-01_fixed.png";
+import foxOldBody from "./assets/fox/FV_old_Body-01.png";
+import foxOldArmLeft from "./assets/fox/FV_old_ARM_Left-01.png";
+import foxOldArmRight from "./assets/fox/FV_old_ARM_Right-01.png";
+import foxOldForearmLeft from "./assets/fox/FV_old_ForearmARM_Left-01.png";
+import foxOldForearmRight from "./assets/fox/FV_old_ForeARM_Right-01.png";
+import foxOldLegLeft from "./assets/fox/FV_old_LEG_Left-01.png";
+import foxOldLegRight from "./assets/fox/FV_old_LEG_Right-01.png";
 
-import foxNew from "./assets/fox/Foxi_Vector_new-01.svg";
-import foxNewHelmetBack from "./assets/fox/FV_new_Helmet_Face_Back_1-01.svg";
-import foxNewHelmetFront from "./assets/fox/FV_new_Helmet_Face_front-01.svg";
-import foxNewBody from "./assets/fox/FV_new_Body-01.svg";
-import foxNewArmLeft from "./assets/fox/FV_new_Arm_Left-01.svg";
-import foxNewArmRight from "./assets/fox/FV_new_Arm_Right-01.svg";
-import foxNewForearmLeft from "./assets/fox/FV_new_ForeArm_Left-01.svg";
-import foxNewForearmRight from "./assets/fox/FV_new_ForeArm_Right-01.svg";
-import foxNewLegLeft from "./assets/fox/FV_new_LEG_Left-01.svg";
-import foxNewLegRight from "./assets/fox/FV_new_LEG_Right-01.svg";
+import foxNew from "./assets/fox/Foxi_Vector_new-01.png";
+import foxNewHelmetBack from "./assets/fox/FV_new_Helmet_Face_Back_1-01.png";
+import foxNewHelmetFront from "./assets/fox/FV_new_Helmet_Face_front-01.png";
+import foxNewBody from "./assets/fox/FV_new_Body-01.png";
+import foxNewArmLeft from "./assets/fox/FV_new_Arm_Left-01.png";
+import foxNewArmRight from "./assets/fox/FV_new_Arm_Right-01.png";
+import foxNewForearmLeft from "./assets/fox/FV_new_ForeArm_Left-01.png";
+import foxNewForearmRight from "./assets/fox/FV_new_ForeArm_Right-01.png";
+import foxNewLegLeft from "./assets/fox/FV_new_LEG_Left-01.png";
+import foxNewLegRight from "./assets/fox/FV_new_LEG_Right-01.png";
 import Image from "next/image";
 
 class FoxPart {
@@ -249,7 +249,7 @@ function CharacterUpgrade() {
             .map((item, i) =>
               isMobile ? (
                 <ItemThumb
-                  className={item.type === activeItem.type ? "active" : ""}
+                  className={item.type === s[activeItem.type] ? "active" : ""}
                   key={i}
                   item={item}
                   applied={appliedItems.includes(item.type)}
@@ -269,7 +269,7 @@ function CharacterUpgrade() {
         <div className={s.characterContainer}>
           {equipedItems.map((item) =>
             item.imgs.map((img, i) => (
-              <img
+              <Image
                 key={item.type + i}
                 src={img}
                 className={`${s[item.type]}${i ? " " + s.back : ""}`}

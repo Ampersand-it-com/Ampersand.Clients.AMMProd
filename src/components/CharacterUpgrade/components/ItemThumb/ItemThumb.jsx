@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import s from "./ItemThumb.module.scss";
 
 export default function ItemThumb({ item, className, applied, ...props }) {
@@ -10,9 +11,9 @@ export default function ItemThumb({ item, className, applied, ...props }) {
   return (
     <div className={classList.join(" ")} {...props}>
       {item.imgs.map((img, i) => (
-        <img
+        <Image
           key={i}
-          className={item.type + (i ? " back" : "")}
+          className={s[item.type] + (i ? " back" : "")}
           src={img}
           alt="Icon"
           draggable={false}
