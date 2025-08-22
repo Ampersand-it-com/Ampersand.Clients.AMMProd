@@ -2,21 +2,22 @@
 
 import cn from "classnames";
 import s from "./ThankYou.module.scss";
-import { useTranslations } from "@/i18n";
+import { useLocalizedPath, useTranslations } from "@/i18n";
 import Ellipse from "@/helpers/components/Ellipse/Ellipse";
 import Button from "@/components/CharacterUpgrade/components/Button";
 import { tel, telRaw } from "@/helpers/constants";
 import PhoneIcon from "@/assets/icons/phoneIcon.svg";
+import { useRouter } from "next/navigation";
 
 export default function ThankYou() {
   const { t } = useTranslations();
 
   // Navigation
 
-  // to do
-  // const navigateToIndex = useLocaleNavigate('');
-  const handleReturn = (e) => {
-    //   navigateToIndex();
+  const router = useRouter();
+  const { toPage } = useLocalizedPath();
+  const handleReturn = () => {
+    router.push(toPage("/"));
   };
 
   return (

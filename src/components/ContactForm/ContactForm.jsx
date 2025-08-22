@@ -3,7 +3,8 @@
 import { useState, useRef, useEffect } from "react";
 import s from "./ContactForm.module.scss";
 import classNames from "classnames";
-import { useTranslations } from "@/i18n";
+import { useLocalizedPath, useTranslations } from "@/i18n";
+import { useRouter } from "next/navigation";
 
 function ContactForm() {
   const { t } = useTranslations();
@@ -19,11 +20,11 @@ function ContactForm() {
 
   // Navigation
 
-  // todo
-  // const navigateToSent = useLocaleNavigate("/sent");
-  // const handleSubmit = () => {
-  //   navigateToSent();
-  // };
+  const router = useRouter();
+  const { toPage } = useLocalizedPath();
+  const handleSubmit = () => {
+    router.push(toPage("/sent"));
+  };
 
   // Handle Form
 
@@ -32,15 +33,20 @@ function ContactForm() {
     setIsDirty(true);
     if (isNameValid && isPhoneValid) {
       const body = {
-        emailTo: ["amm.prod1@gmail.com"],
-        clientId: "ammagency",
-        clientSecret: "SDKJLenv83n&#@nmv98n387Sf",
+        // prod
+        // emailTo: ["amm.prod1@gmail.com"],
+        // clientId: "ammagency",
+        // clientSecret: "SDKJLenv83n&#@nmv98n387Sf",
+        // test
+        emailTo: ["kamazotbrosov@ukr.net"],
+        clientId: "andrewowlgrim",
+        clientSecret: "andrewowlgrim",
         contactEmail: email,
         contactFirstName: name,
         contactPhoneNumber: phone,
         includeSystemInfo: true,
       };
-
+      console.log("fetch form");
       // setup request
       fetch("https://email.ampersand-it.com/sendcontactusform", {
         method: "POST",
@@ -103,6 +109,7 @@ function ContactForm() {
           >
             <span>{t("common.contactModal.name")}</span>
             <input
+              required
               type="text"
               className={s.contactInput}
               autoComplete="off"
@@ -112,12 +119,13 @@ function ContactForm() {
               onChange={(e) => setName(e.target.value)}
             />
             {!isNameValid && isDirty && (
-              <span className={s.error}>{t("home.error")}</span>
+              <span className={s.error}>{t("common.error")}</span>
             )}
           </label>
           <label>
             <span>{t("common.contactModal.phoneNumber")}</span>
             <input
+              required
               type="tel"
               className={s.contactInput}
               autoComplete="off"
@@ -127,7 +135,7 @@ function ContactForm() {
               onChange={(e) => setPhone(e.target.value)}
             />
             {!isPhoneValid && isDirty && (
-              <span className={s.error}>{t("home.error")}</span>
+              <span className={s.error}>{t("common.error")}</span>
             )}
           </label>
           <label>
@@ -142,7 +150,7 @@ function ContactForm() {
               onChange={(e) => setEmail(e.target.value)}
             />
             {!isEmailValid && isDirty && (
-              <span className={s.error}>{t("home.error")}</span>
+              <span className={s.error}>{t("common.error")}</span>
             )}
           </label>
           <button

@@ -7,10 +7,10 @@ import pigImageDesc from "@/assets/images/pigImgDesc.png";
 import { useState, useRef } from "react";
 import classNames from "classnames";
 import { useEffect } from "react";
-// import useLocaleNavigate from 'hooks/useLocaleNavigate'; //to do
-import { useTranslations } from "@/i18n";
+import { useLocalizedPath, useTranslations } from "@/i18n";
 import { CSSTransition } from "react-transition-group";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 function Modal({ isModalOpen, setIsModalOpen }) {
   const { t } = useTranslations();
@@ -27,9 +27,10 @@ function Modal({ isModalOpen, setIsModalOpen }) {
 
   // Navigation
 
-  // const navigateToSent = useLocaleNavigate('/sent'); // to do
+  const router = useRouter();
+  const { toPage } = useLocalizedPath();
   const handleSubmit = () => {
-    // navigateToSent();
+    router.push(toPage("/sent"));
   };
 
   const handleSubmitClick = (e) => {
@@ -37,9 +38,14 @@ function Modal({ isModalOpen, setIsModalOpen }) {
     setIsDirty(true);
     if (isNameValid && isPhoneValid) {
       const body = {
-        emailTo: ["amm.prod1@gmail.com"],
-        clientId: "ammagency",
-        clientSecret: "SDKJLenv83n&#@nmv98n387Sf",
+        // prod
+        // emailTo: ["amm.prod1@gmail.com"],
+        // clientId: "ammagency",
+        // clientSecret: "SDKJLenv83n&#@nmv98n387Sf",
+        // test
+        emailTo: ["kamazotbrosov@ukr.net"],
+        clientId: "andrewowlgrim",
+        clientSecret: "andrewowlgrim",
         contactEmail: email,
         contactFirstName: name,
         contactPhoneNumber: phone,
@@ -181,7 +187,6 @@ function Modal({ isModalOpen, setIsModalOpen }) {
               >
                 <span>{t("common.contactModal.email")}</span>
                 <input
-                  required
                   type="email"
                   autoComplete="off"
                   className={s.contactInput}
