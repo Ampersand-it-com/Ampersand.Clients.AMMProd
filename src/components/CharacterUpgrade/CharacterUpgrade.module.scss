@@ -1,4 +1,353 @@
-@import "./styles/variables.scss";
+$color-black-primary: #131313;
+$color-black-light: #1d1d1d;
+$color-gray-primary: #535353;
+$color-gray-light: #d7d7d7;
+$color-white: #fff;
+$color-red-primary: #dc1515;
+$color-red-tomato: #a62d2d;
+$color-red-light: #c99c9c;
+
+$grid-width: 1170px;
+$grid-gap: 20px;
+
+@function grid-col($n) {
+  @return $n;
+}
+
+// Button
+
+.button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 24px;
+  gap: 4px;
+
+  height: 40px;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  outline: none;
+  background: $color-white;
+  color: $color-black-primary;
+
+  cursor: pointer;
+
+  span {
+    padding: 0 4px;
+  }
+
+  &:hover,
+  &:focus-visible {
+    outline: 2px solid $color-white;
+  }
+
+  &:active {
+    background: $color-gray-light;
+  }
+}
+
+// Checkbox
+
+.checkbox {
+  margin: -8px;
+  padding: 8px;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+
+  color: $color-gray-primary;
+
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+
+  .box {
+    position: relative;
+    height: 24px;
+    width: 24px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    // background: $color-black-primary;
+    border: 1px solid $color-gray-primary;
+  }
+
+  .box::before {
+    content: "";
+    width: 12px;
+    height: 12px;
+    display: none;
+    background: $color-white;
+  }
+}
+
+// States
+.checkbox:hover {
+  color: $color-white;
+
+  .box {
+    border-color: $color-white;
+  }
+}
+
+.checkbox input:checked + .box::before {
+  display: block;
+}
+
+.checkbox:has(input:checked) {
+  color: $color-white;
+}
+
+// Item
+
+.item {
+  position: relative;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 8px;
+  gap: 16px;
+
+  cursor: pointer;
+  user-select: none;
+
+  .itemDetails {
+    flex: 1;
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-self: stretch;
+
+    h6 {
+      font-family: "Furore";
+      font-size: 10px;
+      line-height: 12px;
+      letter-spacing: 1.5px;
+      color: $color-gray-primary;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 22px;
+    }
+
+    button {
+      align-self: flex-start;
+    }
+  }
+
+  // States
+
+  &:hover {
+    background: $color-gray-light;
+
+    &::before {
+      background: $color-black-light;
+    }
+  }
+
+  &.applied {
+    &::before {
+      background: $color-black-light;
+    }
+
+    &::after {
+      background: $color-gray-light;
+    }
+  }
+
+  &.applied:hover {
+    &::after {
+      background: $color-gray-light;
+    }
+  }
+
+  // Border
+
+  background: $color-gray-primary;
+  --cut-radius: 12px;
+  clip-path: polygon(
+    var(--cut-radius) 0,
+    100% 0%,
+    100% calc(100% - var(--cut-radius)),
+    calc(100% - var(--cut-radius)) 100%,
+    0% 100%,
+    0% var(--cut-radius)
+  );
+
+  &::before {
+    z-index: -1;
+    content: "";
+    display: block;
+    position: absolute;
+    inset: 1px;
+    background: $color-black-primary;
+    clip-path: polygon(
+      var(--cut-radius) 0,
+      100% 0%,
+      100% calc(100% - var(--cut-radius)),
+      calc(100% - var(--cut-radius)) 100%,
+      0% 100%,
+      0% var(--cut-radius)
+    );
+  }
+
+  // Check
+
+  &::after {
+    content: "";
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    width: 8px;
+    height: 8px;
+    border-radius: 1px;
+    display: block;
+  }
+}
+
+// Item Thumb
+
+.itemThumb {
+  overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
+  width: 64px;
+  height: 64px;
+  background: $color-gray-primary;
+
+  --cut-radius: 8px;
+  clip-path: polygon(
+    var(--cut-radius) 0,
+    100% 0%,
+    100% calc(100% - var(--cut-radius)),
+    calc(100% - var(--cut-radius)) 100%,
+    0% 100%,
+    0% var(--cut-radius)
+  );
+
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    inset: 1px;
+    z-index: -2;
+    background: $color-black-light;
+    clip-path: polygon(
+      var(--cut-radius) 0,
+      100% 0%,
+      100% calc(100% - var(--cut-radius)),
+      calc(100% - var(--cut-radius)) 100%,
+      0% 100%,
+      0% var(--cut-radius)
+    );
+  }
+
+  img {
+    position: absolute;
+    width: 120%;
+    height: auto;
+    left: -10%;
+    top: -25%;
+
+    &.helmet {
+      width: 120%;
+      left: -10%;
+      top: -25%;
+
+      &.back {
+        z-index: -1;
+      }
+    }
+
+    &.body {
+      width: 200%;
+      left: -50%;
+      top: -148%;
+    }
+
+    &.armLeft {
+      width: 300%;
+      left: -150%;
+      top: -230%;
+    }
+
+    &.armRight {
+      width: 300%;
+      left: -50%;
+      top: -230%;
+    }
+
+    &.forearmLeft {
+      width: 350%;
+      left: -210%;
+      top: -305%;
+    }
+
+    &.forearmRight {
+      width: 350%;
+      left: -40%;
+      top: -305%;
+    }
+
+    &.legLeft {
+      width: 250%;
+      left: -100%;
+      top: -250%;
+    }
+
+    &.legRight {
+      width: 250%;
+      left: -50%;
+      top: -250%;
+    }
+  }
+
+  // Check
+
+  &::after {
+    content: "";
+    position: absolute;
+    right: 4px;
+    top: 4px;
+    width: 6px;
+    height: 6px;
+    border-radius: 1px;
+    display: block;
+  }
+
+  &.applied {
+    &::before {
+      background: $color-black-light;
+    }
+
+    &::after {
+      background: $color-gray-light;
+    }
+  }
+}
+
+// Character Upgrade
 
 $body-width: 575px;
 

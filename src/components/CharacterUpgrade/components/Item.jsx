@@ -1,13 +1,13 @@
 "use client";
 
-import s from "./Item.module.scss";
-import Button from "../Button/Button";
-import ItemThumb from "../ItemThumb/ItemThumb";
+import s from "../CharacterUpgrade.module.scss";
+import Button from "./Button";
+import ItemThumb from "./ItemThumb";
 import { useTranslations } from "@/i18n";
 
 export default function Item({ item, applied, action, ...props }) {
   const classList = [s.item];
-  if (applied) classList.push("applied");
+  if (applied) classList.push(s.applied);
 
   const { t } = useTranslations();
 

@@ -1,6 +1,6 @@
 "use client";
 
-import s from "./Button.module.scss";
+import s from "../CharacterUpgrade.module.scss";
 
 const Button = (props) => {
   const fullClassName =

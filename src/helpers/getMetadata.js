@@ -1,18 +1,18 @@
 import { getTranslations } from "@/i18n";
 import { url } from "@/helpers/constants";
 
-export async function getMetadata(lang, namespace, path = "") {
+export async function getMetadata(lang, namespace, path = "", noIndex) {
   const translations = await getTranslations(lang, [namespace]);
   const meta = translations[namespace].meta;
 
-  return {
+  const data = {
     title: meta.title,
     description: meta.description,
     alternates: {
       languages: {
-        en: "/en" + path,
-        ru: "/ru" + path,
-        ua: "/ua" + path,
+        en: "/en/" + path,
+        ru: "/ru/" + path,
+        ua: "/ua/" + path,
         "x-default": "/" + path,
       },
     },
@@ -25,4 +25,13 @@ export async function getMetadata(lang, namespace, path = "") {
       type: "website",
     },
   };
+
+  if (noIndex) {
+    data.robots = {
+      index: false,
+      follow: false,
+    };
+  }
+
+  return data;
 }

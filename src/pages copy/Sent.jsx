@@ -8,7 +8,7 @@ import PageContainer, {
   contentWrapperCss,
 } from "helpers/components/LayoutReworked/LayoutReworked";
 import Footer from "@/components/FooterReworked/FooterReworked";
-import Button from "@/components/CharacterUpgrade/components/Button/Button";
+import Button from "@/components/CharacterUpgrade/components/Button";
 import Ellipse from "helpers/components/Ellipse/Ellipse";
 
 import styled from "styled-components";

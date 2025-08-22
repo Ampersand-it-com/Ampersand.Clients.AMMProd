@@ -424,3 +424,15 @@ template {
 [hidden] {
   display: none;
 }
+
+li {
+  list-style: none; /* убирает маркеры */
+  margin: 0; /* убирает отступы сверху/снизу */
+  padding: 0; /* убирает отступы слева/справа */
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+}

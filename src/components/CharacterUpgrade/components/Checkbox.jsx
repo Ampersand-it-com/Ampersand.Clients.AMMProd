@@ -1,6 +1,6 @@
 "use client";
 
-import s from "./Checkbox.module.scss";
+import s from "../CharacterUpgrade.module.scss";
 
 const sizes = ["xs", "s", "m", "l", "xl"];
 

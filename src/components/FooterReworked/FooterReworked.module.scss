@@ -1,0 +1,91 @@
+@use "@/styles/designSystem.scss" as *;
+
+.footerContainer {
+  display: flex;
+  flex-direction: column;
+
+  border-top: 1px solid $grey-primary;
+}
+
+.footerContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0;
+  gap: 40px;
+
+  .left,
+  .right {
+    flex: 1 0 0;
+  }
+
+  .middle {
+    flex-shrink: 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    order: 3;
+  }
+
+  .right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    order: 2;
+  }
+
+  .rights {
+    text-align: center;
+    @include caption;
+  }
+
+  :global(a) {
+    @include text;
+  }
+
+  :global(p) {
+    margin: 0;
+  }
+
+  @include desktop {
+    flex-direction: row;
+
+    .middle {
+      order: 2;
+    }
+
+    .right {
+      order: 3;
+    }
+
+    .socialLinks {
+      gap: 40px;
+    }
+  }
+}
+
+.socialLinks {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 24px;
+
+  /* govno */
+
+  .icon {
+    fill: $grey-light;
+
+    &:hover {
+      fill: $white;
+    }
+  }
+
+  .iconStroke {
+    stroke: $grey-light;
+
+    &:hover {
+      stroke: $white;
+    }
+  }
+}

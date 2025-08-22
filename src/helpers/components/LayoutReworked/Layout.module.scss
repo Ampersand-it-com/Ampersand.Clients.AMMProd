@@ -1,0 +1,16 @@
+@use "@/styles/variables" as *;
+
+.root {
+  width: 320px;
+  overflow: hidden;
+  align-self: center;
+
+  @include desktop {
+    width: 1170px;
+  }
+}
+
+.grow {
+  flex: 1 0 0;
+  min-height: 0px;
+}
