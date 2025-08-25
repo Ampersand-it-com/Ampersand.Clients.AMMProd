@@ -2,15 +2,17 @@
 
 import { useState, useRef, useEffect } from "react";
 import s from "./ContactForm.module.scss";
-import classNames from "classnames";
+import cn from "classnames";
 import { useLocalizedPath, useTranslations } from "@/i18n";
 import { useRouter } from "next/navigation";
+import Loader from "@/helpers/components/Loader/Loader";
 
 function ContactForm() {
   const { t } = useTranslations();
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
   const [isSubmited, setIsSubmited] = useState(false);
   const [isNameValid, setIsNameValid] = useState(false);
   const [isPhoneValid, setIsPhoneValid] = useState(false);
@@ -32,21 +34,22 @@ function ContactForm() {
     e.preventDefault();
     setIsDirty(true);
     if (isNameValid && isPhoneValid) {
+      setIsLoading(true);
       const body = {
         // prod
-        // emailTo: ["amm.prod1@gmail.com"],
-        // clientId: "ammagency",
-        // clientSecret: "SDKJLenv83n&#@nmv98n387Sf",
+        emailTo: ["amm.prod1@gmail.com"],
+        clientId: "ammagency",
+        clientSecret: "SDKJLenv83n&#@nmv98n387Sf",
         // test
-        emailTo: ["kamazotbrosov@ukr.net"],
-        clientId: "andrewowlgrim",
-        clientSecret: "andrewowlgrim",
+        // emailTo: ["kamazotbrosov@ukr.net"],
+        // clientId: "andrewowlgrim",
+        // clientSecret: "andrewowlgrim",
+        //
         contactEmail: email,
         contactFirstName: name,
         contactPhoneNumber: phone,
         includeSystemInfo: true,
       };
-      console.log("fetch form");
       // setup request
       fetch("https://email.ampersand-it.com/sendcontactusform", {
         method: "POST",
@@ -57,7 +60,6 @@ function ContactForm() {
       })
         .then((response) => {
           if (response.ok) {
-            console.log("Form successfully submitted");
             setIsSubmited(true);
             setIsDirty(false);
             handleSubmit();
@@ -65,7 +67,10 @@ function ContactForm() {
             throw new Error("Failed to submit form");
           }
         })
-        .catch((error) => alert(error));
+        .catch((error) => alert(error))
+        .finally(() => {
+          setIsLoading(false);
+        });
     }
   };
 
@@ -95,8 +100,9 @@ function ContactForm() {
       <div className={s.formContainer}>
         <h2 className={s.title}>{t("home.contactForm.title")}</h2>
         <p className={s.description}>{t("home.contactForm.description")}</p>
+        {isLoading && <Loader className={s.loader} />}
         <form
-          className={s.contactForm}
+          className={cn(s.contactForm, isLoading && s.disabled)}
           name="contactForm"
           action="/contactForm"
           method="POST"
@@ -104,9 +110,7 @@ function ContactForm() {
           ref={myForm}
         >
           <input type="hidden" name="form-name" value="contactForm" />
-          <label
-            className={classNames({ [s.errorState]: !isNameValid && isDirty })}
-          >
+          <label className={cn({ [s.errorState]: !isNameValid && isDirty })}>
             <span>{t("common.contactModal.name")}</span>
             <input
               required

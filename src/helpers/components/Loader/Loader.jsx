@@ -1,11 +1,9 @@
-import { useStyles } from './Loader.styles';
+import cn from "classnames";
+import s from "./Loader.module.scss";
 
-
-function Loader() {
-  const s = useStyles();
-
+function Loader({ className }) {
   return (
-    <div className={s.root}>
+    <div className={cn(s.root, className)}>
       <div className={s.spinner}></div>
     </div>
   );

@@ -21,7 +21,7 @@ export async function generateMetadata({ params }) {
   return await getMetadata(lang, pageName);
 }
 
-export default async function HomePage({ params }) {
+export default async function SentPage({ params }) {
   const { lang } = await params;
   const translations = await getTranslations(lang, ["common", pageName]);
 

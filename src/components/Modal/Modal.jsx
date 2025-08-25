@@ -5,18 +5,20 @@ import CloseIcon from "@/assets/icons/closeIcon.svg";
 import pigImage from "@/assets/images/pigImg.png";
 import pigImageDesc from "@/assets/images/pigImgDesc.png";
 import { useState, useRef } from "react";
-import classNames from "classnames";
+import cn from "classnames";
 import { useEffect } from "react";
 import { useLocalizedPath, useTranslations } from "@/i18n";
 import { CSSTransition } from "react-transition-group";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import Loader from "@/helpers/components/Loader/Loader";
 
 function Modal({ isModalOpen, setIsModalOpen }) {
   const { t } = useTranslations();
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
   const [isSubmited, setIsSubmited] = useState(false);
   const [isNameValid, setIsNameValid] = useState(false);
   const [isPhoneValid, setIsPhoneValid] = useState(false);
@@ -39,13 +41,14 @@ function Modal({ isModalOpen, setIsModalOpen }) {
     if (isNameValid && isPhoneValid) {
       const body = {
         // prod
-        // emailTo: ["amm.prod1@gmail.com"],
-        // clientId: "ammagency",
-        // clientSecret: "SDKJLenv83n&#@nmv98n387Sf",
+        emailTo: ["amm.prod1@gmail.com"],
+        clientId: "ammagency",
+        clientSecret: "SDKJLenv83n&#@nmv98n387Sf",
         // test
-        emailTo: ["kamazotbrosov@ukr.net"],
-        clientId: "andrewowlgrim",
-        clientSecret: "andrewowlgrim",
+        // emailTo: ["kamazotbrosov@ukr.net"],
+        // clientId: "andrewowlgrim",
+        // clientSecret: "andrewowlgrim",
+        //
         contactEmail: email,
         contactFirstName: name,
         contactPhoneNumber: phone,
@@ -53,6 +56,7 @@ function Modal({ isModalOpen, setIsModalOpen }) {
       };
 
       // setup request
+      setIsLoading(true);
       fetch("https://email.ampersand-it.com/sendcontactusform", {
         method: "POST",
         headers: {
@@ -70,7 +74,10 @@ function Modal({ isModalOpen, setIsModalOpen }) {
             throw new Error("Failed to submit form");
           }
         })
-        .catch((error) => alert(error));
+        .catch((error) => alert(error))
+        .finally(() => {
+          setIsLoading(false);
+        });
     }
   };
 
@@ -111,7 +118,7 @@ function Modal({ isModalOpen, setIsModalOpen }) {
       >
         <div
           ref={nodeRef}
-          className={classNames(s.contactsModal, {
+          className={cn(s.contactsModal, {
             [s.successModal]: isSubmited,
           })}
         >
@@ -133,15 +140,16 @@ function Modal({ isModalOpen, setIsModalOpen }) {
               alt="pig mascot"
             />
             <h2 className={s.modalTitle}>{t("common.contactModal.title")}</h2>
+            {isLoading && <Loader className={s.loader} />}
             <form
-              className={s.contactForm}
+              className={cn(s.contactForm, isLoading && s.disabled)}
               name="modalForm"
               method="POST"
               ref={myForm}
             >
               <input type="hidden" name="form-name" value="modalForm" />
               <label
-                className={classNames({
+                className={cn({
                   [s.errorState]: !isNameValid && isDirty,
                 })}
               >
@@ -161,7 +169,7 @@ function Modal({ isModalOpen, setIsModalOpen }) {
                 )}
               </label>
               <label
-                className={classNames({
+                className={cn({
                   [s.errorState]: !isPhoneValid && isDirty,
                 })}
               >
@@ -181,7 +189,7 @@ function Modal({ isModalOpen, setIsModalOpen }) {
                 )}
               </label>
               <label
-                className={classNames({
+                className={cn({
                   [s.errorState]: !isEmailValid && isDirty,
                 })}
               >
