@@ -115,7 +115,7 @@ function Header() {
                 {t("common.header.clients")}
               </Link>
             </li>
-            <li
+            {/* <li
               className={classNames(
                 s.menuItem,
                 cleanPath == "blog/" && s.active
@@ -127,7 +127,7 @@ function Header() {
               >
                 {t("common.header.blog")}
               </Link>
-            </li>
+            </li> */}
           </ul>
           <button className={s.contactBtn} onClick={() => setIsModalOpen(true)}>
             {t("common.header.contactUs")}
@@ -190,7 +190,7 @@ function Header() {
               {t("common.header.clients")}
             </Link>
           </li>
-          <li
+          {/* <li
             className={classNames(
               s.desctopMenuItem,
               cleanPath == "blog/" && s.active
@@ -202,7 +202,7 @@ function Header() {
             >
               {t("common.header.blog")}
             </Link>
-          </li>
+          </li> */}
         </ul>
         <LanguageSwitcher />
         <button className={s.contactBtn} onClick={handleOpenModal}>

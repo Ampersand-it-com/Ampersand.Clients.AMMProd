@@ -1,5 +1,5 @@
 import { redirect } from "next/navigation";
 
-export default function SentPage() {
+export default function BlogPage() {
   redirect("/en/blog");
 }

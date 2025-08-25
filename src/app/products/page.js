@@ -1,5 +1,5 @@
 import { redirect } from "next/navigation";
 
-export default function SentPage() {
-  redirect("/en/sent");
+export default function ProductsPage() {
+  redirect("/en/products");
 }
