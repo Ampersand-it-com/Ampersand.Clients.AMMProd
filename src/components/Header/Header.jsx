@@ -4,12 +4,14 @@ import Logo from "@/assets/icons/logoIcon.svg";
 import Menu from "@/assets/icons/menuIcon.svg";
 import ArrowRightUp from "@/assets/icons/arrowRightUpIcon.svg";
 import CloseIcon from "@/assets/icons/closeIcon.svg";
-import { useRef, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 import { CSSTransition } from "react-transition-group";
 import classNames from "classnames";
-import { useTranslations } from "@/i18n";
+import { useLocalizedPath, useTranslations } from "@/i18n";
 import LanguageSwitcher from "./LanguageSwitcher/LanguageSwitcher";
 import Modal from "@/components/Modal/Modal";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 function Header() {
   const { t } = useTranslations();
@@ -43,13 +45,18 @@ function Header() {
     document.body.style.overflow = "hidden";
   };
 
+  // navigation
+
+  const { toPage, getCleanPath } = useLocalizedPath();
+  const cleanPath = useMemo(() => getCleanPath(), []);
+
   //
 
   return (
     <div className={s.root} id="start">
-      <a href="#root" aria-label="link to the top of the page">
+      <Link href={toPage("/")} aria-label="link to the top of the page">
         <Logo className={s.logo} />
-      </a>
+      </Link>
       <button className={s.menuBtn} onClick={handleOpenMenu} aria-label="menu">
         <Menu />
       </button>
@@ -62,25 +69,64 @@ function Header() {
       >
         <div ref={nodeRef} className={classNames(s.mobileMenu)}>
           <ul className={s.menuList}>
-            <li className={s.menuItem}>
-              <a href="#aboutUs" onClick={() => handleLinkClick()}>
-                {t("common.header.aboutUs")}
-              </a>
+            <li
+              className={classNames(s.menuItem, cleanPath == "/" && s.active)}
+            >
+              <Link href={toPage("/")} onClick={() => handleLinkClick()}>
+                {t("common.header.agency")}
+              </Link>
             </li>
-            <li className={s.menuItem}>
-              <a href="#priceCalculator" onClick={() => handleLinkClick()}>
-                {t("common.header.priceCalculator")}
-              </a>
+            <li
+              className={classNames(
+                s.menuItem,
+                cleanPath == "products/" && s.active
+              )}
+            >
+              <Link
+                href={toPage("/products/#products")}
+                onClick={() => handleLinkClick()}
+              >
+                {t("common.header.products")}
+              </Link>
             </li>
-            <li className={s.menuItem}>
-              <a href="#caseStudies" onClick={() => handleLinkClick()}>
+            <li
+              className={classNames(
+                s.menuItem,
+                cleanPath == "cases/" && s.active
+              )}
+            >
+              <Link
+                href={toPage("/cases/#caseStudies")}
+                onClick={() => handleLinkClick()}
+              >
                 {t("common.header.caseStudies")}
-              </a>
+              </Link>
             </li>
-            <li className={s.menuItem}>
-              <a href="#conacts" onClick={() => handleLinkClick()}>
-                {t("common.header.conacts")}
-              </a>
+            <li
+              className={classNames(
+                s.menuItem,
+                cleanPath == "clients/" && s.active
+              )}
+            >
+              <Link
+                href={toPage("/clients/#clients")}
+                onClick={() => handleLinkClick()}
+              >
+                {t("common.header.clients")}
+              </Link>
+            </li>
+            <li
+              className={classNames(
+                s.menuItem,
+                cleanPath == "blog/" && s.active
+              )}
+            >
+              <Link
+                href={toPage("/blog/#blog")}
+                onClick={() => handleLinkClick()}
+              >
+                {t("common.header.blog")}
+              </Link>
             </li>
           </ul>
           <button className={s.contactBtn} onClick={() => setIsModalOpen(true)}>
@@ -95,25 +141,67 @@ function Header() {
       </CSSTransition>
       <div className={s.desctopMenu}>
         <ul className={s.desctopMenuList}>
-          <li className={s.desctopMenuItem}>
-            <a href="#aboutUs" onClick={() => handleLinkClick()}>
-              {t("common.header.aboutUs")}
-            </a>
+          <li
+            className={classNames(
+              s.desctopMenuItem,
+              cleanPath == "/" && s.active
+            )}
+          >
+            <Link href={toPage("/")} onClick={() => handleLinkClick()}>
+              {t("common.header.agency")}
+            </Link>
           </li>
-          <li className={s.desctopMenuItem}>
-            <a href="#priceCalculator" onClick={() => handleLinkClick()}>
-              {t("common.header.priceCalculator")}
-            </a>
+          <li
+            className={classNames(
+              s.desctopMenuItem,
+              cleanPath == "products/" && s.active
+            )}
+          >
+            <Link
+              href={toPage("/products/#products")}
+              onClick={() => handleLinkClick()}
+            >
+              {t("common.header.products")}
+            </Link>
           </li>
-          <li className={s.desctopMenuItem}>
-            <a href="#caseStudies" onClick={() => handleLinkClick()}>
+          <li
+            className={classNames(
+              s.desctopMenuItem,
+              cleanPath == "cases/" && s.active
+            )}
+          >
+            <Link
+              href={toPage("/cases/#caseStudies")}
+              onClick={() => handleLinkClick()}
+            >
               {t("common.header.caseStudies")}
-            </a>
+            </Link>
           </li>
-          <li className={s.desctopMenuItem}>
-            <a href="#conacts" onClick={() => handleLinkClick()}>
-              {t("common.header.conacts")}
-            </a>
+          <li
+            className={classNames(
+              s.desctopMenuItem,
+              cleanPath == "clients/" && s.active
+            )}
+          >
+            <Link
+              href={toPage("/clients/#clients")}
+              onClick={() => handleLinkClick()}
+            >
+              {t("common.header.clients")}
+            </Link>
+          </li>
+          <li
+            className={classNames(
+              s.desctopMenuItem,
+              cleanPath == "blog/" && s.active
+            )}
+          >
+            <Link
+              href={toPage("/blog/#blog")}
+              onClick={() => handleLinkClick()}
+            >
+              {t("common.header.blog")}
+            </Link>
           </li>
         </ul>
         <LanguageSwitcher />

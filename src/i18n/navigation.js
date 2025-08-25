@@ -19,7 +19,13 @@ export function useLocalizedPath() {
     return segments.join("/") || "/";
   }
 
-  return { lang, toPage, toLocale };
+  function getCleanPath() {
+    const segments = pathname.split("/");
+    segments.splice(0, 2);
+    return segments.join("/") || "/";
+  }
+
+  return { lang, toPage, toLocale, getCleanPath };
 }
 
 export function LocalizedLink({ href, children, ...props }) {

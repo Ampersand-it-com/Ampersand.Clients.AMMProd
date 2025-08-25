@@ -105,6 +105,13 @@
   &:not(:last-child) {
     margin-bottom: 32px;
   }
+
+  &.active {
+    color: $white;
+    font-weight: 700;
+    user-select: none;
+    pointer-events: none;
+  }
 }
 
 .contactBtn {
@@ -162,8 +169,14 @@
 
 .desctopMenuItem {
   &:hover,
-  &:focus {
+  &:focus,
+  &.active {
     border-bottom: 1px solid $white;
     color: $white;
+  }
+
+  &.active {
+    user-select: none;
+    pointer-events: none;
   }
 }

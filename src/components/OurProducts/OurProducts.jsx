@@ -22,7 +22,7 @@ function OurProducts() {
   }, [isBlockVisible]);
 
   return (
-    <div className={s.root}>
+    <div className={s.root} id="products">
       <h2
         className={classNames(s.title, { [s.titleAnimation]: isBlockShown })}
         ref={blockRef}

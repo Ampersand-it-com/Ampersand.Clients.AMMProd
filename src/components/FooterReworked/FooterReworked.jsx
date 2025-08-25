@@ -12,7 +12,6 @@ import InstagramIcon from "@/assets/icons/instagramIcon.svg";
 import CluutchIcon from "@/assets/icons/clutchIcon.svg";
 
 import s from "./FooterReworked.module.scss";
-import Layout from "@/helpers/components/LayoutReworked/Layout";
 import { useLocalizedPath, useTranslations } from "@/i18n";
 import Link from "next/link";
 

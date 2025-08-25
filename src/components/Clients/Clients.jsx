@@ -30,7 +30,7 @@ function Clients() {
   }, [isTitleVisible]);
 
   return (
-    <div className={s.root}>
+    <div className={s.root} id="clients">
       <h2
         className={classNames(s.title, { [s.titleAnimation]: isTitlelShown })}
         ref={titleRef}

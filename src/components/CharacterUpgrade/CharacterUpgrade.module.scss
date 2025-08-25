@@ -349,8 +349,6 @@ $grid-gap: 20px;
 
 // Character Upgrade
 
-$body-width: 575px;
-
 .characterUpgrade {
   margin: 120px auto 0 auto;
 
@@ -362,6 +360,8 @@ $body-width: 575px;
   font-family: Roboto, sans-serif;
 
   background: $color-black-light;
+
+  scroll-margin-top: 100px;
 
   * {
     box-sizing: border-box;

@@ -117,7 +117,7 @@ function CharacterUpgrade() {
   // Layout
 
   return (
-    <div className={s.characterUpgrade}>
+    <div className={s.characterUpgrade} id="upgrade">
       <div className={s.header}>
         <div className={s.checkboxWrapper}>
           <Checkbox checked={!agencyUpgraded} onChange={handleCheckboxOnChange}>

@@ -7,7 +7,11 @@
       "conacts": "CONTACTS",
       "contactUs": "CONTACT US",
       "title": "AMM/ video agency v.2.0",
-      "description": "We are a video agency. We create content that will work efficiently and effectively for you 24/7."
+      "description": "We are a video agency. We create content that will work efficiently and effectively for you 24/7.",
+      "agency": "AGENCY 2.0",
+      "products": "PRODUCTS",
+      "clients": "CLIENTS",
+      "blog": "BLOG"
     },
     "contactModal": {
       "title": "Let's talk about your project?",
