@@ -37,7 +37,7 @@ function ContactForm() {
       setIsLoading(true);
       const body = {
         // prod
-        emailTo: ["amm.prod1@gmail.com"],
+        emailTo: ["info@ammagency.com.ua"],
         clientId: "ammagency",
         clientSecret: "SDKJLenv83n&#@nmv98n387Sf",
         // test

@@ -100,7 +100,11 @@ function Footer() {
               </a>
             </li>
           </div>
-          <p className={s.rights}>{t("common.footer.rights")}</p>
+          <p className={s.rights}>
+            {`${t("common.footer.rights1")}${new Date().getFullYear()}${t(
+              "common.footer.rights2"
+            )}`}
+          </p>
         </div>
         <div className={s.right}>
           <a href={"mailto:" + email} aria-label="email link">

@@ -26,7 +26,8 @@
       "request": "If you have an urgent question - call us right now"
     },
     "footer": {
-      "rights": "© 2022 AMM Production. All Rights Reserved."
+      "rights1": "© 2022–",
+      "rights2": " AMM Production. All Rights Reserved."
     },
     "error": "Invalid value"
   }
