@@ -8,13 +8,13 @@
 }
 
 .footerContent {
-  @include layout;
-
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 20px 0;
   gap: 40px;
+
+  @include layout;
 
   .left,
   .right {

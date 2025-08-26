@@ -1,5 +1,5 @@
 import Calculator from "@/components/Calculator/Calculator";
-import Footer from "@/components/Footer/Footer";
+import Footer from "@/components/FooterReworked/FooterReworked";
 import Header from "@/components/Header/Header";
 import Hero from "@/components/Hero/Hero";
 import OurProducts from "@/components/OurProducts/OurProducts";

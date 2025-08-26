@@ -6,7 +6,7 @@
   background-color: $black-primary;
   color: $white;
   padding-top: 110px;
-  overflow: hidden;
+  overflow: visible;
 
   @include desktop {
     max-width: 1170px;

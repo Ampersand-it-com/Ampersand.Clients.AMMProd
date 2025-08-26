@@ -38,7 +38,7 @@ function Calculator() {
 
   const handleModalOpen = () => {
     setIsModalOpen(true);
-    document.body.style.overflow = "hidden";
+    document.documentElement.style.overflow = "hidden";
   };
 
   useEffect(() => {

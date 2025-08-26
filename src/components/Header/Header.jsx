@@ -22,16 +22,17 @@ function Header() {
 
   const handleOpenMenu = () => {
     setIsMenuOpen(true);
-    document.body.style.overflow = "hidden";
+    document.documentElement.style.overflow = "hidden";
   };
 
   const handleCloseMenu = () => {
     setIsMenuOpen(false);
-    document.body.style.overflow = "auto";
+    document.documentElement.style.overflow = "auto";
   };
 
   const handleLinkClick = () => {
     setIsMenuOpen(false);
+    document.documentElement.style.overflow = "auto";
   };
 
   const nodeRef = useRef(null);
@@ -42,7 +43,7 @@ function Header() {
 
   const handleOpenModal = () => {
     setIsModalOpen(true);
-    document.body.style.overflow = "hidden";
+    document.documentElement.style.overflow = "hidden";
   };
 
   // navigation

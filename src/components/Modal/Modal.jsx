@@ -101,7 +101,7 @@ function Modal({ isModalOpen, setIsModalOpen }) {
     setIsPhoneValid(false);
     setIsEmailValid(false);
     setIsDirty(false);
-    document.body.style.overflow = "auto";
+    document.documentElement.style.overflow = "auto";
   };
 
   return (

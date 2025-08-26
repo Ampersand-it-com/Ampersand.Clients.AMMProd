@@ -1,7 +1,6 @@
 @use "@/styles/designSystem.scss" as *;
 
 .root {
-  @include layout;
   flex: 1 0 0;
 
   height: 100%;
@@ -14,6 +13,8 @@
   padding: 50px 0;
 
   z-index: 0;
+
+  @include layout;
 
   .ellipse {
     z-index: -1;

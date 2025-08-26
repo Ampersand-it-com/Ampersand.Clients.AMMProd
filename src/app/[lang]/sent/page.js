@@ -1,6 +1,6 @@
 import { getMetadata } from "@/helpers/getMetadata";
 import { getTranslations, LocaleProvider } from "@/i18n";
-import ThankYou from "./components/ThankYou";
+import ThankYou from "@/components/ThankYou/ThankYou";
 import PageConainer from "@/helpers/components/PageConainer/PageConainer";
 import Footer from "@/components/FooterReworked/FooterReworked";
 

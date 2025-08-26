@@ -1,5 +1,5 @@
 import Clients from "@/components/Clients/Clients";
-import Footer from "@/components/Footer/Footer";
+import Footer from "@/components/FooterReworked/FooterReworked";
 import Header from "@/components/Header/Header";
 import Hero from "@/components/Hero/Hero";
 import Layout from "@/helpers/components/Layout/Layout";
