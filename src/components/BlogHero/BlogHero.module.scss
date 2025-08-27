@@ -1,0 +1,94 @@
+@use "@/styles/designSystem" as *;
+
+@keyframes fadeIn {
+  from {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes subtitleFadeIn {
+  from {
+    transform: scale(0.5) rotate(0deg);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1) rotate(-3deg);
+    opacity: 1;
+  }
+}
+
+// animation: fadeIn 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+
+.root {
+  position: relative;
+  height: 100vh;
+  min-height: 560px;
+  max-height: 720px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 108px 0;
+}
+
+.titleContainer {
+  max-width: 960px;
+  position: relative;
+}
+
+.title {
+  animation: fadeIn 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  text-align: center;
+  @include h1;
+}
+
+.subtitle {
+  position: absolute;
+  right: 0;
+  bottom: -40px;
+  transform: rotate(-3deg);
+
+  padding: 0 20px;
+
+  background: $red-tomato;
+
+  animation: subtitleFadeIn 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  animation-delay: 1s;
+
+  @include h3;
+}
+
+.marqueeContainer {
+  position: absolute;
+  bottom: 0;
+  height: 108px;
+  width: 110vw;
+  left: calc(50% - 55vw);
+}
+
+.marquee {
+  position: absolute;
+  width: 100%;
+
+  &.black {
+    background: $black-primary;
+    color: $white;
+    transform: rotate(-4deg);
+  }
+
+  &.white {
+    background: $white;
+    color: $black-primary;
+    top: 56px;
+    transform: rotate(2deg);
+  }
+
+  text-transform: uppercase;
+  @include lead;
+}

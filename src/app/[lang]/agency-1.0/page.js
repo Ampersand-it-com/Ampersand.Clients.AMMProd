@@ -1,23 +1,19 @@
-import BlogArticles from "@/components/BlogArticles/BlogArticles";
 import BlogHero from "@/components/BlogHero/BlogHero";
 import Footer from "@/components/FooterReworked/FooterReworked";
 import Header from "@/components/Header/Header";
-import SubscribeForm from "@/components/SubscribeForm/SubscribeForm";
 import Layout from "@/helpers/components/LayoutReworked/Layout";
 import PageConainer from "@/helpers/components/PageConainer/PageConainer";
 import { getMetadata } from "@/helpers/getMetadata";
 import { getTranslations, LocaleProvider } from "@/i18n";
 
-const pageName = "blog";
-
 export async function generateMetadata({ params }) {
   const { lang } = await params;
-  return await getMetadata(lang, pageName, pageName);
+  return await getMetadata(lang, "articleAgency", "agency-1.0");
 }
 
 export default async function BlogPage({ params }) {
   const { lang } = await params;
-  const translations = await getTranslations(lang, ["common", pageName]);
+  const translations = await getTranslations(lang, ["common", "articleAgency"]);
 
   return (
     <LocaleProvider lang={lang} translations={translations}>
@@ -25,8 +21,6 @@ export default async function BlogPage({ params }) {
         <Layout>
           <Header />
           <BlogHero />
-          <BlogArticles />
-          <SubscribeForm />
         </Layout>
         <Footer />
       </PageConainer>

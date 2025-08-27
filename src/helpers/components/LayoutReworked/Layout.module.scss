@@ -2,7 +2,7 @@
 
 .root {
   width: 320px;
-  overflow: hidden;
+  overflow: visible;
   align-self: center;
 
   @include desktop {

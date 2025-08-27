@@ -1,8 +1,39 @@
 {
   "blog": {
     "meta": {
-      "title": "AMM/ Blog",
-      "description": "AMM - talks about experience, ideas, results"
+      "title": "AMM / Blog",
+      "description": "AMM - talking about experience, ideas, results"
+    },
+
+    "hero": {
+      "title": "AMM - talking about experience, ideas, results",
+      "subtitle": "SHARING PRACTICAL",
+      "marquee": "Blog • "
+    },
+
+    "articles": [
+      {
+        "title": "Video agency 2.0: a new era of visual communication",
+        "description": "The world and everything in it is changing.\nYou can no longer create videos just 'for the sake of video', at least not when it comes to business processes. A tangible result is required.\nAnd that’s exactly why a new-generation agency is being formed – Video Agency 2.0.\n\nYes, in a certain way this is connected to the evolution of entrepreneurship.\nIt’s a response to real market challenges.\nIt’s efficient visual communication on a new level.\nIt emphasizes that every second of audience attention to visual content is now worth its weight in gold."
+      }
+    ],
+
+    "subscribe": {
+      "title": "SUBSCRIBE TO AMM NEWSLETTER",
+      "subtitle": "Your source for practical experience and ideas",
+      "email": {
+        "label": "Email",
+        "placeholder": "Email"
+      },
+      "niche": {
+        "label": "Company niche",
+        "placeholder": "Select"
+      },
+      "country": {
+        "label": "Country",
+        "placeholder": "Country"
+      },
+      "button": "Send"
     }
   }
 }
