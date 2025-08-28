@@ -66,9 +66,14 @@ export default function SubscribeForm() {
       setIsLoading(true);
 
       const body = {
-        emailTo: ["kamazotbrosov@ukr.net"],
-        clientId: "andrewowlgrim",
-        clientSecret: "andrewowlgrim",
+        // prod
+        emailTo: ["info@ammagency.com.ua"],
+        clientId: "ammagency",
+        clientSecret: "SDKJLenv83n&#@nmv98n387Sf",
+        //test
+        // emailTo: ["kamazotbrosov@ukr.net"],
+        // clientId: "andrewowlgrim",
+        // clientSecret: "andrewowlgrim",
         subject: "Нова підписка на розсилку",
         templateName: null,
         htmlTemplate: `
