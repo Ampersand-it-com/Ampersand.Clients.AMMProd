@@ -2,18 +2,20 @@
 
 .hero {
   position: relative;
-  height: 100vh;
-  min-height: 560px;
-  max-height: 720px;
 
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
+  padding: 108px 0;
+  justify-content: center;
+  gap: 40px;
 
   @include desktop {
+    height: 100vh;
+    min-height: 560px;
+    max-height: 720px;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    padding: 108px 0;
     gap: 48px;
   }
 }

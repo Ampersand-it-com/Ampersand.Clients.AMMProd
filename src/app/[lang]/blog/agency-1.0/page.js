@@ -9,7 +9,7 @@ import { getTranslations, LocaleProvider } from "@/i18n";
 
 export async function generateMetadata({ params }) {
   const { lang } = await params;
-  return await getMetadata(lang, "articleAgency", "agency-1.0");
+  return await getMetadata(lang, "articleAgency", "blog/agency-1.0");
 }
 
 export default async function BlogPage({ params }) {

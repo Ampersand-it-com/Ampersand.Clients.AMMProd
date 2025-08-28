@@ -18,7 +18,7 @@ function BlogArticles() {
         preview: "https://i.ytimg.com/vi/XT4jRiyFLoc/hqdefault.jpg",
         title: t("blog.articles.0.title"),
         description: t("blog.articles.0.description"),
-        page: toPage("/agency-1.0"),
+        page: toPage("/blog/agency-1.0"),
       },
     ],
     []

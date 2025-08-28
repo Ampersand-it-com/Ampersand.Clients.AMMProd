@@ -33,7 +33,38 @@
         "label": "Country",
         "placeholder": "Country"
       },
-      "button": "Send"
+      "button": "Send",
+      "niches": {
+        "it": "IT / Software Development",
+        "design": "Design / Creative",
+        "marketing": "Marketing / Advertising",
+        "media": "Media / Production",
+        "gaming": "Gaming / eSports",
+        "film": "Film / Video Production",
+        "music": "Music / Entertainment",
+        "fashion": "Fashion / Lifestyle",
+        "education": "Education / eLearning",
+        "health": "Healthcare / Wellness",
+        "other": "Other"
+      },
+      "countries": {
+        "ua": "Ukraine",
+        "us": "United States",
+        "gb": "United Kingdom",
+        "ca": "Canada",
+        "au": "Australia",
+        "de": "Germany",
+        "fr": "France",
+        "it": "Italy",
+        "es": "Spain",
+        "pl": "Poland",
+        "nl": "Netherlands",
+        "other": "Other"
+      },
+      "success": {
+        "title": "Thank you for subscription!",
+        "text": "We appreciate your interest. Stay tuned for updates!"
+      }
     }
   }
 }
