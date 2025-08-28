@@ -4,10 +4,11 @@ export const customStyles = {
   control: (provided, state) => ({
     ...provided,
     width: "100%",
+    height: 56,
     border: 0,
     boxShadow: state.isFocused ? 0 : 0,
     borderRadius: 0,
-    marginBottom: 40,
+    marginBottom: 0,
     borderBottom: state.isFocused
       ? `1px solid ${COLORS.WHITE} !important`
       : `1px solid ${COLORS.GREY.PRIMARY} !important`,
@@ -78,5 +79,23 @@ export const customStyles = {
   }),
   multiValueRemove: () => ({
     display: "none",
+  }),
+  input: (provided) => ({
+    ...provided,
+    color: COLORS.WHITE,
+    fontFamily: "Roboto, sans-serif",
+    fontWeight: 400,
+    fontSize: 16,
+    lineHeight: "150%",
+  }),
+  noOptionsMessage: (provided) => ({
+    ...provided,
+    color: COLORS.GREY.PRIMARY,
+    fontFamily: "Roboto, sans-serif",
+    fontWeight: 400,
+    fontSize: 14,
+    lineHeight: "150%",
+    padding: "15px 16px",
+    backgroundColor: COLORS.BLACK.PRIMARY,
   }),
 };

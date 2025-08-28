@@ -106,6 +106,16 @@ function Header() {
             <li
               className={classNames(
                 s.menuItem,
+                cleanPath == "blog/" && s.active
+              )}
+            >
+              <Link href={toPage("/blog")} onClick={() => handleLinkClick()}>
+                {t("common.header.blog")}
+              </Link>
+            </li>
+            <li
+              className={classNames(
+                s.menuItem,
                 cleanPath == "clients/" && s.active
               )}
             >
@@ -116,19 +126,6 @@ function Header() {
                 {t("common.header.clients")}
               </Link>
             </li>
-            {/* <li
-              className={classNames(
-                s.menuItem,
-                cleanPath == "blog/" && s.active
-              )}
-            >
-              <Link
-                href={toPage("/blog/#blog")}
-                onClick={() => handleLinkClick()}
-              >
-                {t("common.header.blog")}
-              </Link>
-            </li> */}
           </ul>
           <button className={s.contactBtn} onClick={() => setIsModalOpen(true)}>
             {t("common.header.contactUs")}
@@ -181,6 +178,16 @@ function Header() {
           <li
             className={classNames(
               s.desctopMenuItem,
+              cleanPath == "blog/" && s.active
+            )}
+          >
+            <Link href={toPage("/blog")} onClick={() => handleLinkClick()}>
+              {t("common.header.blog")}
+            </Link>
+          </li>
+          <li
+            className={classNames(
+              s.desctopMenuItem,
               cleanPath == "clients/" && s.active
             )}
           >
@@ -191,19 +198,6 @@ function Header() {
               {t("common.header.clients")}
             </Link>
           </li>
-          {/* <li
-            className={classNames(
-              s.desctopMenuItem,
-              cleanPath == "blog/" && s.active
-            )}
-          >
-            <Link
-              href={toPage("/blog/#blog")}
-              onClick={() => handleLinkClick()}
-            >
-              {t("common.header.blog")}
-            </Link>
-          </li> */}
         </ul>
         <LanguageSwitcher />
         <button className={s.contactBtn} onClick={handleOpenModal}>

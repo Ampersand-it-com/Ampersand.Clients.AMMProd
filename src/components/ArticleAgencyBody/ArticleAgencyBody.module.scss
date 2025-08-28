@@ -1,0 +1,138 @@
+@use "@/styles/designSystem.scss" as *;
+
+.article {
+  z-index: 1;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
+  padding-bottom: 100px;
+}
+
+.featureText {
+  margin: 0;
+  position: absolute;
+  right: 0px;
+  top: -20px;
+  transform: rotate(2deg);
+
+  padding: 4px 24px;
+
+  background: $white;
+  color: $black-primary;
+
+  @include h3;
+}
+
+.chapter {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.imgBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  @include desktop {
+    flex-direction: row;
+    gap: 48px;
+
+    & > * {
+      flex: 1 0 0;
+      min-width: 0;
+    }
+
+    & > .imgWrapper {
+      max-width: 480px;
+    }
+  }
+}
+
+.imgWrapper {
+  & > * {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.cardBordered,
+.cardFilled {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 40px;
+  box-sizing: border-box;
+}
+
+.cardBordered {
+  border-radius: 40px;
+  border: 1px solid $grey-light;
+}
+
+.cardFilled {
+  background: $black-light;
+}
+
+.chapterTitle {
+  @include h2;
+}
+
+.p,
+.lead {
+  white-space: pre-line;
+}
+
+.p {
+  margin: 0;
+  @include text;
+}
+
+.lead {
+  margin: 0;
+  @include lead;
+}
+
+.bold {
+  @include bold;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.listItem {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  @include text;
+}
+
+.starIcon {
+  fill: $white;
+  width: 16px;
+  flex-shrink: 0;
+}
+
+.topEllipse {
+  z-index: -1 !important;
+  right: 0 !important;
+  width: 640px !important;
+  height: 480px !important;
+}
+
+.bottomEllipse {
+  z-index: -1 !important;
+
+  width: 440px !important;
+  height: 320px !important;
+  bottom: 0 !important;
+  left: -100px !important;
+}

@@ -63,18 +63,24 @@ export default function SubscribeForm() {
           )}
         </label>
         <div className={s.formRow}>
-          <Select
-            options={niches}
-            placeholder="Выбери нишу..."
-            isSearchable={false}
-            styles={customStyles}
-          />
-          <Select
-            options={countries}
-            placeholder="Выбери страну..."
-            isSearchable={true}
-            styles={customStyles}
-          />
+          <label className={s.label}>
+            <span>{t("blog.subscribe.niche.label")}</span>
+            <Select
+              options={niches}
+              placeholder={t("blog.subscribe.niche.placeholder")}
+              isSearchable={false}
+              styles={customStyles}
+            />
+          </label>
+          <label className={s.label}>
+            <span>{t("blog.subscribe.country.label")}</span>
+            <Select
+              options={countries}
+              placeholder={t("blog.subscribe.country.placeholder")}
+              isSearchable={true}
+              styles={customStyles}
+            />
+          </label>
         </div>
         <Button
           className={s.submitBtn}

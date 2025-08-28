@@ -1,4 +1,5 @@
-import BlogHero from "@/components/BlogHero/BlogHero";
+import ArticleAgencyBody from "@/components/ArticleAgencyBody/ArticleAgencyBody";
+import ArticleHero from "@/components/ArticleHero/ArticleHero";
 import Footer from "@/components/FooterReworked/FooterReworked";
 import Header from "@/components/Header/Header";
 import Layout from "@/helpers/components/LayoutReworked/Layout";
@@ -20,7 +21,8 @@ export default async function BlogPage({ params }) {
       <PageConainer>
         <Layout>
           <Header />
-          <BlogHero />
+          <ArticleHero />
+          <ArticleAgencyBody />
         </Layout>
         <Footer />
       </PageConainer>
