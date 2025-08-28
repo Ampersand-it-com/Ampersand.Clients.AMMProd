@@ -48,8 +48,9 @@ function Header() {
 
   // navigation
 
-  const { toPage, getCleanPath } = useLocalizedPath();
-  const cleanPath = useMemo(() => getCleanPath(), []);
+  const { toPage } = useLocalizedPath();
+  const pathName = usePathname();
+  const pathParts = pathName.split("/");
 
   //
 
@@ -71,7 +72,7 @@ function Header() {
         <div ref={nodeRef} className={classNames(s.mobileMenu)}>
           <ul className={s.menuList}>
             <li
-              className={classNames(s.menuItem, cleanPath == "/" && s.active)}
+              className={classNames(s.menuItem, pathParts[2] == "" && s.active)}
             >
               <Link href={toPage("/")} onClick={() => handleLinkClick()}>
                 {t("common.header.agency")}
@@ -80,7 +81,7 @@ function Header() {
             <li
               className={classNames(
                 s.menuItem,
-                cleanPath == "products/" && s.active
+                pathParts[2] == "products" && s.active
               )}
             >
               <Link
@@ -93,7 +94,7 @@ function Header() {
             <li
               className={classNames(
                 s.menuItem,
-                cleanPath == "cases/" && s.active
+                pathParts[2] == "cases" && s.active
               )}
             >
               <Link
@@ -106,7 +107,7 @@ function Header() {
             <li
               className={classNames(
                 s.menuItem,
-                cleanPath == "blog/" && s.active
+                pathParts[2] == "blog" && s.active
               )}
             >
               <Link href={toPage("/blog")} onClick={() => handleLinkClick()}>
@@ -116,7 +117,7 @@ function Header() {
             <li
               className={classNames(
                 s.menuItem,
-                cleanPath == "clients/" && s.active
+                pathParts[2] == "clients" && s.active
               )}
             >
               <Link
@@ -142,7 +143,7 @@ function Header() {
           <li
             className={classNames(
               s.desctopMenuItem,
-              cleanPath == "/" && s.active
+              pathParts[2] == "" && s.active
             )}
           >
             <Link href={toPage("/")} onClick={() => handleLinkClick()}>
@@ -152,7 +153,7 @@ function Header() {
           <li
             className={classNames(
               s.desctopMenuItem,
-              cleanPath == "products/" && s.active
+              pathParts[2] == "products" && s.active
             )}
           >
             <Link
@@ -165,7 +166,7 @@ function Header() {
           <li
             className={classNames(
               s.desctopMenuItem,
-              cleanPath == "cases/" && s.active
+              pathParts[2] == "cases" && s.active
             )}
           >
             <Link
@@ -178,7 +179,7 @@ function Header() {
           <li
             className={classNames(
               s.desctopMenuItem,
-              cleanPath == "blog/" && s.active
+              pathParts[2] == "blog" && s.active
             )}
           >
             <Link href={toPage("/blog")} onClick={() => handleLinkClick()}>
@@ -188,7 +189,7 @@ function Header() {
           <li
             className={classNames(
               s.desctopMenuItem,
-              cleanPath == "clients/" && s.active
+              pathParts[2] == "clients" && s.active
             )}
           >
             <Link
