@@ -83,8 +83,14 @@
   }
 }
 
+// solid tile bg
+// .cardFilled {
+//   background: $black-light;
+// }
+
 .cardFilled {
-  background: $black-light;
+  background: rgba($white, 0.05);
+  backdrop-filter: blur(10px);
 }
 
 .chapterTitle {

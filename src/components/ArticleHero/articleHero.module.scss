@@ -15,7 +15,7 @@
     max-height: 720px;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     gap: 48px;
   }
 }
@@ -23,15 +23,16 @@
 .ellipse {
   position: absolute !important;
   left: 0 !important;
-  top: 108px !important;
-  width: 50% !important;
-  height: 50% !important;
+  top: 0px !important;
+  width: 100% !important;
+  height: 100% !important;
 }
 
 .content {
   z-index: 1;
   flex: 1;
-  max-width: 480px;
+  // max-width: 480px;
+  max-width: 960px;
 
   display: flex;
   flex-direction: column;
@@ -39,7 +40,9 @@
 }
 
 .title {
-  @include h2;
+  // @include h2;
+  @include h1;
+  text-align: center;
 }
 
 .button {

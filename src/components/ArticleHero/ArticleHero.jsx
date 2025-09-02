@@ -1,8 +1,8 @@
 "use client";
 
-import Image from "next/image";
+// import Image from "next/image";
+// import heroImg from "@/assets/articles/agency1.0/hero.png";
 import { useTranslations } from "@/i18n";
-import heroImg from "@/assets/articles/agency1.0/hero.png";
 import Button from "../CharacterUpgrade/components/Button";
 import Ellipse from "@/helpers/components/Ellipse/Ellipse";
 import s from "./articleHero.module.scss";
@@ -25,9 +25,9 @@ export default function ArticleHero() {
           {t("articleAgency.hero.button")}
         </Button>
       </div>
-      <div className={s.imageWrapper}>
+      {/* <div className={s.imageWrapper}>
         <Image src={heroImg} alt="Article hero" className={s.image} priority />
-      </div>
+      </div> */}
     </section>
   );
 }

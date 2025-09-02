@@ -14,8 +14,8 @@ function BlogArticles() {
   const content = useMemo(
     () => [
       {
-        link: "https://www.youtube.com/embed/XT4jRiyFLoc",
-        preview: "https://i.ytimg.com/vi/XT4jRiyFLoc/hqdefault.jpg",
+        link: "https://www.youtube.com/embed/yi3Kt8CUIMk",
+        preview: "https://i.ytimg.com/vi/yi3Kt8CUIMk/hqdefault.jpg",
         title: t("blog.articles.0.title"),
         description: t("blog.articles.0.description"),
         page: toPage("/blog/agency-1.0"),
