@@ -1,9 +1,15 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: "https://example.com", // твой домен
-  generateRobotsTxt: false, // robots.txt тоже создаст
-  outDir: "./out", // если билдишь через next export
+  siteUrl: "https://ammagency.com.ua",
+  generateRobotsTxt: false,
+  outDir: "./out",
   sitemapSize: 5000,
-  changefreq: "daily",
-  priority: 0.7,
+  exclude: ["/sent", "/en/sent", "/ua/sent", "/ru/sent"],
+
+  transform: async (config, path) => {
+    return {
+      loc: path,
+      lastmod: new Date().toISOString(),
+    };
+  },
 };
