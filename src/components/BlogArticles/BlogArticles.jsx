@@ -14,10 +14,24 @@ function BlogArticles() {
   const content = useMemo(
     () => [
       {
-        link: "https://www.youtube.com/embed/yi3Kt8CUIMk",
-        preview: "https://i.ytimg.com/vi/yi3Kt8CUIMk/hqdefault.jpg",
+        link: "https://www.youtube.com/embed/tYmBn_zohmE",
+        preview: "https://i.ytimg.com/vi/tYmBn_zohmE/hqdefault.jpg",
         title: t("blog.articles.0.title"),
         description: t("blog.articles.0.description"),
+        page: toPage("/blog/amm-tech-work"),
+      },
+      {
+        link: "https://www.youtube.com/embed/H1lMTGZVq-w",
+        preview: "https://i.ytimg.com/vi/H1lMTGZVq-w/hqdefault.jpg",
+        title: t("blog.articles.1.title"),
+        description: t("blog.articles.1.description"),
+        page: toPage("/blog/ai-alternative"),
+      },
+      {
+        link: "https://www.youtube.com/embed/yi3Kt8CUIMk",
+        preview: "https://i.ytimg.com/vi/yi3Kt8CUIMk/hqdefault.jpg",
+        title: t("blog.articles.2.title"),
+        description: t("blog.articles.2.description"),
         page: toPage("/blog/agency-1.0"),
       },
     ],

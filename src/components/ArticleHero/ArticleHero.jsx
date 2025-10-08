@@ -8,7 +8,7 @@ import Ellipse from "@/helpers/components/Ellipse/Ellipse";
 import s from "./articleHero.module.scss";
 import { useRouter } from "next/navigation";
 
-export default function ArticleHero() {
+export default function ArticleHero({ namespace = "articleAgency" }) {
   const { t } = useTranslations();
   const router = useRouter();
 
@@ -20,9 +20,9 @@ export default function ArticleHero() {
     <section className={s.hero}>
       <Ellipse className={s.ellipse} />
       <div className={s.content}>
-        <h1 className={s.title}>{t("articleAgency.hero.title")}</h1>
+        <h1 className={s.title}>{t(`${namespace}.hero.title`)}</h1>
         <Button className={s.button} onClick={onButtonClick}>
-          {t("articleAgency.hero.button")}
+          {t(`${namespace}.hero.button`)}
         </Button>
       </div>
       {/* <div className={s.imageWrapper}>
