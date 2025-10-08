@@ -7,6 +7,14 @@ import PageConainer from "@/helpers/components/PageConainer/PageConainer";
 import { getMetadata } from "@/helpers/getMetadata";
 import { getTranslations, LocaleProvider } from "@/i18n";
 
+export async function generateStaticParams() {
+  return [
+    { lang: "ua" },
+    { lang: "en" },
+    { lang: "ru" },
+  ];
+}
+
 export async function generateMetadata({ params }) {
   const { lang } = await params;
   return await getMetadata(lang, "articleAmmTechWork", "blog/amm-tech-work");
