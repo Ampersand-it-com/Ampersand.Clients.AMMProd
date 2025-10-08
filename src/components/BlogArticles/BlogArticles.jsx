@@ -35,7 +35,7 @@ function BlogArticles() {
         page: toPage("/blog/agency-1.0"),
       },
     ],
-    []
+    [t, toPage]
   );
 
   const [isVideoClicked, setIsVideoClicked] = useState(
