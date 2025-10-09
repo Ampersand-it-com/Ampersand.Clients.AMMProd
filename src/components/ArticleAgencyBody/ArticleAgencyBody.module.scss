@@ -21,7 +21,7 @@
   margin: 0;
   position: absolute;
   right: 0px;
-  top: -20px;
+  top: -40px;
   transform: rotate(2deg);
 
   padding: 4px 24px;
@@ -31,8 +31,11 @@
 
   @include h3;
 
+  @media (min-width: 769px) {
+    top: -20px;
+  }
+
   @media (max-width: 768px) {
-    top: -40px;
     z-index: 10;
     font-size: 14px;
     padding: 4px 16px;
