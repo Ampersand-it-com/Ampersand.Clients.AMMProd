@@ -9,6 +9,12 @@
 
   padding-bottom: 100px;
   scroll-margin-top: 128px;
+
+  @media (max-width: 768px) {
+    gap: 24px;
+    padding-bottom: 60px;
+    overflow: visible;
+  }
 }
 
 .featureText {
@@ -32,6 +38,13 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
+
+  @media (max-width: 768px) {
+    gap: 16px;
+    overflow: visible;
+    min-height: auto;
+    height: auto;
+  }
 }
 
 .imgBlock {
@@ -92,6 +105,17 @@
   box-sizing: border-box;
   overflow: visible;
   min-height: auto;
+  height: auto;
+  max-height: none;
+
+  @media (max-width: 768px) {
+    padding: 16px;
+    gap: 16px;
+    overflow: visible;
+    height: auto;
+    min-height: auto;
+    max-height: none;
+  }
 
   @include desktop {
     padding: 40px;
@@ -130,6 +154,13 @@
   white-space: pre-line;
   word-wrap: break-word;
   overflow-wrap: break-word;
+  
+  @media (max-width: 768px) {
+    word-break: break-word;
+    hyphens: auto;
+    overflow-wrap: break-word;
+    white-space: pre-line;
+  }
 }
 
 .p {
