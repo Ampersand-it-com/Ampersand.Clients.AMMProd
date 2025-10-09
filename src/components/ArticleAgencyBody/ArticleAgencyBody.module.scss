@@ -115,6 +115,10 @@
     height: auto;
     min-height: auto;
     max-height: none;
+    width: 100%;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
   }
 
   @include desktop {
@@ -160,6 +164,9 @@
     hyphens: auto;
     overflow-wrap: break-word;
     white-space: pre-line;
+    max-width: 100%;
+    overflow: visible;
+    text-overflow: unset;
   }
 }
 

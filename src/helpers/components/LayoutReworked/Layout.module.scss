@@ -1,12 +1,17 @@
 @use "@/styles/variables" as *;
 
 .root {
-  width: 320px;
+  width: 100%;
+  max-width: 320px;
   overflow: visible;
   align-self: center;
+  padding: 0 16px;
+  box-sizing: border-box;
 
   @include desktop {
+    max-width: 1170px;
     width: 1170px;
+    padding: 0;
   }
 }
 
