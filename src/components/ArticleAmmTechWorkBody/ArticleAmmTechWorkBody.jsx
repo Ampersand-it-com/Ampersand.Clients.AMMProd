@@ -60,22 +60,6 @@ export default function ArticleAmmTechWorkBody() {
       </section>
 
       <section className={s.chapter}>
-        <h2 className={s.chapterTitle}>{t("articleAmmTechWork.chapter5.title")}</h2>
-        <p className={s.p}>{t("articleAmmTechWork.chapter5.p1")}</p>
-        <div className={s.videoWrapper}>
-          <iframe
-            width="100%"
-            height="500"
-            src="https://www.youtube.com/embed/tYmBn_zohmE"
-            title="AMM Tech Work Video"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          ></iframe>
-        </div>
-      </section>
-
-      <section className={s.chapter}>
         <Ellipse className={s.bottomEllipse} />
         <h2 className={s.chapterTitle}>{t("articleAmmTechWork.chapter6.title")}</h2>
         <p className={s.p}>{t("articleAmmTechWork.chapter6.p1")}</p>
@@ -97,6 +81,22 @@ export default function ArticleAmmTechWorkBody() {
           <p className={s.p}>{t("articleAmmTechWork.chapter8.p2")}</p>
           <p className={s.p}>{t("articleAmmTechWork.chapter8.p3")}</p>
           <p className={s.lead}>{t("articleAmmTechWork.chapter8.p4")}</p>
+        </div>
+      </section>
+
+      <section className={s.chapter}>
+        <h2 className={s.chapterTitle}>{t("articleAmmTechWork.chapter5.title")}</h2>
+        <p className={s.p}>{t("articleAmmTechWork.chapter5.p1")}</p>
+        <div className={s.videoWrapper}>
+          <iframe
+            width="100%"
+            height="500"
+            src="https://www.youtube.com/embed/tYmBn_zohmE"
+            title="AMM Tech Work Video"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          ></iframe>
         </div>
       </section>
     </div>
