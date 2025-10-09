@@ -2,7 +2,6 @@
 
 import StarIcon from "@/assets/icons/starIcon.svg";
 import { useTranslations } from "@/i18n";
-import cn from "classnames";
 import Ellipse from "@/helpers/components/Ellipse/Ellipse";
 import s from "../ArticleAgencyBody/ArticleAgencyBody.module.scss";
 
@@ -24,7 +23,6 @@ export default function ArticleAmmTechWorkBody() {
       <section className={s.chapter}>
         <Ellipse className={s.topEllipse} />
         <h2 className={s.chapterTitle}>{t("articleAmmTechWork.chapter2.title")}</h2>
-        <p className={s.p}>{t("articleAmmTechWork.chapter2.p1")}</p>
         <ul className={s.list}>
           <li className={s.listItem}>
             <StarIcon className={s.starIcon} />
@@ -39,7 +37,9 @@ export default function ArticleAmmTechWorkBody() {
             {t("articleAmmTechWork.chapter2.list.2")}
           </li>
         </ul>
+        <p className={s.p}>{t("articleAmmTechWork.chapter2.p1")}</p>
         <p className={s.p}>{t("articleAmmTechWork.chapter2.p2")}</p>
+        <p className={s.p}>{t("articleAmmTechWork.chapter2.p3")}</p>
       </section>
 
       <section className={s.chapter}>
@@ -53,8 +53,9 @@ export default function ArticleAmmTechWorkBody() {
       <section className={s.chapter}>
         <h2 className={s.chapterTitle}>{t("articleAmmTechWork.chapter4.title")}</h2>
         <p className={s.p}>{t("articleAmmTechWork.chapter4.p1")}</p>
+        <p className={s.p}>{t("articleAmmTechWork.chapter4.p2")}</p>
         <div className={s.cardFilled}>
-          <p className={s.p}>{t("articleAmmTechWork.chapter4.p2")}</p>
+          <p className={s.p}>{t("articleAmmTechWork.chapter4.p3")}</p>
         </div>
       </section>
 
@@ -83,19 +84,21 @@ export default function ArticleAmmTechWorkBody() {
 
       <section className={s.chapter}>
         <h2 className={s.chapterTitle}>{t("articleAmmTechWork.chapter7.title")}</h2>
-        <div className={s.cardFilled}>
-          <p className={s.lead}>{t("articleAmmTechWork.chapter7.p1")}</p>
+        <p className={s.p}>{t("articleAmmTechWork.chapter7.p1")}</p>
+        <div className={s.cardBordered}>
           <p className={s.p}>{t("articleAmmTechWork.chapter7.p2")}</p>
         </div>
       </section>
 
       <section className={s.chapter}>
-        <div className={s.cardBordered}>
+        <div className={s.cardFilled}>
           <p className={s.lead}>{t("articleAmmTechWork.chapter8.title")}</p>
+          <p className={s.p}>{t("articleAmmTechWork.chapter8.p1")}</p>
+          <p className={s.p}>{t("articleAmmTechWork.chapter8.p2")}</p>
+          <p className={s.p}>{t("articleAmmTechWork.chapter8.p3")}</p>
+          <p className={s.lead}>{t("articleAmmTechWork.chapter8.p4")}</p>
         </div>
       </section>
     </div>
   );
 }
-
-
