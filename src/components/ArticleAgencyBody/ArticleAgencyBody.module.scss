@@ -90,6 +90,8 @@
   gap: 20px;
   padding: 20px;
   box-sizing: border-box;
+  overflow: visible;
+  min-height: auto;
 
   @include desktop {
     padding: 40px;
@@ -99,6 +101,8 @@
 .cardBordered {
   border: 1px solid $grey-light;
   border-radius: 20px;
+  min-height: auto;
+  height: auto;
 
   @include desktop {
     border-radius: 40px;
@@ -113,6 +117,8 @@
 .cardFilled {
   background: rgba($white, 0.05);
   backdrop-filter: blur(10px);
+  min-height: auto;
+  height: auto;
 }
 
 .chapterTitle {
@@ -122,6 +128,8 @@
 .p,
 .lead {
   white-space: pre-line;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .p {
