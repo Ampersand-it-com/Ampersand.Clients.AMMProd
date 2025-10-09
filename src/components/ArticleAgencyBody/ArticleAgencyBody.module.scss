@@ -30,6 +30,13 @@
   color: $black-primary;
 
   @include h3;
+
+  @media (max-width: 768px) {
+    top: -30px;
+    z-index: 10;
+    font-size: 14px;
+    padding: 4px 16px;
+  }
 }
 
 .chapter {
@@ -44,6 +51,7 @@
     overflow: visible;
     min-height: auto;
     height: auto;
+    margin-top: 20px;
   }
 }
 
@@ -119,6 +127,7 @@
     box-sizing: border-box;
     word-wrap: break-word;
     overflow-wrap: break-word;
+    margin-top: 10px;
   }
 
   @include desktop {
