@@ -31,14 +31,21 @@
 
   @include h3;
 
-  @media (min-width: 1170px) {
-    top: -20px;
-  }
-
-  @media (max-width: 768px) {
-    z-index: 10;
+  @media (max-width: 1169px) {
+    position: static;
+    transform: none;
+    right: auto;
+    top: auto;
+    margin: 0 auto 20px;
+    text-align: center;
+    display: block;
+    width: fit-content;
     font-size: 14px;
     padding: 4px 16px;
+  }
+
+  @media (min-width: 1170px) {
+    top: -20px;
   }
 }
 
