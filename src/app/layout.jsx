@@ -58,7 +58,7 @@ export default function RootLayout({ children }) {
             }`}
         </Script>
       </head>
-      <body>
+      <body suppressHydrationWarning>
         {/* Google Tag Manager (noscript) */}
         <noscript>
           <iframe

@@ -10,6 +10,9 @@ import client6 from "@/assets/images/client6.jpg";
 import client7 from "@/assets/images/client7.jpg";
 import client8 from "@/assets/images/client8.jpg";
 import client9 from "@/assets/images/client9.png";
+import client10 from "@/assets/images/client10.jpg";
+import client11 from "@/assets/images/client11.jpg";
+import client12 from "@/assets/images/client12.jpg";
 import clutch from "@/assets/images/clutch.png";
 import { useState, useEffect } from "react";
 import classNames from "classnames";
@@ -105,14 +108,14 @@ function Clients() {
           ></Image>
         </li>
         <li
-          className={classNames(s.clientSeven, {
+          className={classNames(s.clientTwelve, {
             [s.secondRowAnimation]: setIsTitleShown,
           })}
         >
           <Image
             className={s.clientsImg}
-            src={client7}
-            alt="client_image-7"
+            src={client12}
+            alt="DELA MEDIA GROUP"
           ></Image>
         </li>
         <li
@@ -135,6 +138,39 @@ function Clients() {
             className={s.clientsImg}
             src={client9}
             alt="client_image-9"
+          ></Image>
+        </li>
+        <li
+          className={classNames(s.clientEleven, {
+            [s.secondRowAnimation]: setIsTitleShown,
+          })}
+        >
+          <Image
+            className={s.clientsImg}
+            src={client11}
+            alt="eva BEAUTY"
+          ></Image>
+        </li>
+        <li
+          className={classNames(s.clientTen, {
+            [s.secondRowAnimation]: setIsTitleShown,
+          })}
+        >
+          <Image
+            className={s.clientsImg}
+            src={client10}
+            alt="spraga"
+          ></Image>
+        </li>
+        <li
+          className={classNames(s.clientSeven, {
+            [s.secondRowAnimation]: setIsTitleShown,
+          })}
+        >
+          <Image
+            className={s.clientsImg}
+            src={client7}
+            alt="client_image-7"
           ></Image>
         </li>
       </ul>
