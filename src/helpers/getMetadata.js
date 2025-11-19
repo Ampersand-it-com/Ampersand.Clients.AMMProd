@@ -9,6 +9,7 @@ export async function getMetadata(lang, namespace, path = "", noIndex) {
     title: meta.title,
     description: meta.description,
     alternates: {
+      canonical: `${url}/${lang}/${path}`,
       languages: {
         en: "/en/" + path,
         ru: "/ru/" + path,
@@ -19,7 +20,7 @@ export async function getMetadata(lang, namespace, path = "", noIndex) {
     openGraph: {
       title: meta.title,
       description: meta.description,
-      url: `${url}/${lang}${path}`,
+      url: `${url}/${lang}/${path}`,
       siteName: meta.title,
       locale: lang,
       type: "website",
