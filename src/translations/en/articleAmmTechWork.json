@@ -19,19 +19,28 @@
     "chapter2": {
       "title": "Why here?",
       "list": [
-        "They successfully cooperate with various companies",
-        "They have over 4 years of experience in engineering, technology and equipment, technical components (engines, batteries, filters, etc.)",
-        "They create highly effective visual solutions"
+        "They successfully cooperate with various companies.",
+        "They have over 4 years of experience in engineering, technology and equipment, technical components (engines, batteries, filters, etc.).",
+        "They create highly effective visual solutions."
       ],
       "p1": "The products offered influence communication with B2B customers and investors, greatly increasing the level of trust and understanding of modern technical solutions. They take your activities and business to a new level.",
-      "p2": "AMM is confident that effective visualization not only makes it easier to understand a particular product, but also contributes to faster and more confident decision-making regarding orders or investments.",
-      "p3": "Let's take a closer look at each of these offerings."
+      "p2": "",
+      "p3": "AMM: main areas of work",
+      "p4": "What can AMM offer?",
+      "p5": "Most often, they fulfill orders for:",
+      "p6": "Creating 3D products that make complex things easier to understand and more accessible.",
+      "p7": "Improving and boosting sales, communication with B2B clients, and investors.",
+      "p8": "Visualizing processes and products that are difficult to show using traditional methods.",
+      "p9": "",
+      "p10": "AMM is confident that effective visualization not only makes it easier to understand a particular product, but also contributes to faster and more confident decision-making regarding orders or investments.",
+      "p11": "Let's take a closer look at each of these offerings."
     },
 
     "chapter3": {
       "title": "Visualization of complex technologies in 3D",
-      "p1": "One of the key areas of AMM's work is the creation or development of 3D products. The goal of such projects is to demonstrate technologies that are impossible or difficult to show using traditional, more familiar methods. For example, by visualizing batteries, engines, filters, and other technical systems, it is possible to reveal the principles of their operation to interested parties and make everything more understandable even for people without special technological knowledge.",
-      "p2": "An excellent example of this is the interactive Multiboard Lite Plus. When creating the device, the developers combined a wide range of the best technologies with the properties of a traditional board. This model is suitable for use in education and business. It is convenient for creating presentations, conducting online meetings, learning, and working."
+      "p1": "One of the key areas of AMM's work is the creation or development of 3D products.",
+      "p2": "The goal of such projects is to demonstrate technologies that are impossible or difficult to show using traditional, more familiar methods. For example, by visualizing batteries, engines, filters, and other technical systems, it is possible to reveal the principles of their operation to interested parties and make everything more understandable even for people without special technological knowledge.",
+      "p3": "An excellent example of this is the interactive Multiboard Lite Plus. When creating the device, the developers combined a wide range of the best technologies with the properties of a traditional board. This model is suitable for use in education and business. It is convenient for creating presentations, conducting online meetings, learning, and working."
     },
 
     "chapter4": {
@@ -48,22 +57,27 @@
 
     "chapter6": {
       "title": "Improving communications and sales levels",
-      "p1": "Visualization of technological solutions of varying complexity enhances sales and improves communication with investors and B2B clients. This approach significantly reduces the time it takes to convey information, ensuring a clear understanding of the product's features, its useful properties, and the possibilities of integration into specific operations or processes.",
-      "p2": "With 3D models and animations from AMM, it is easier to convey concepts even of the most complex type to the audience, showing them visually and quite accessible in practice. Of course, this affects the likelihood of a successful deal, which is very beneficial for investors. Clients also benefit because they specifically understand what results they can expect from using a particular product, rather than simply studying abstract and incomprehensible technical characteristics."
+      "p1": "Visualization of technological solutions of varying complexity enhances sales and improves communication with investors and B2B clients.",
+      "p2": "This approach significantly reduces the time it takes to convey information, ensuring a clear understanding of the product's features, its useful properties, and the possibilities of integration into specific operations or processes.",
+      "p3": "With 3D models and animations from AMM, it is easier to convey concepts even of the most complex type to the audience, showing them visually and quite accessible in practice. Of course, this affects the likelihood of a successful deal, which is very beneficial for investors. Clients also benefit because they specifically understand what results they can expect from using a particular product, rather than simply studying abstract and incomprehensible technical characteristics."
     },
 
     "chapter7": {
       "title": "Durability and ease of maintenance",
-      "p1": "AMM focuses on creating products that are easy to use, understand, and maintain. AMM is very interested in durability.",
-      "p2": "And through visualization, customers can explain how the equipment works, what advantages or problems are possible, and how to ensure proper operation and maintenance over time."
+      "p1": "AMM focuses on creating products that are easy to use, understand, and maintain.",
+      "p2": "AMM is very interested in durability.",
+      "p3": "And through visualization, customers can explain how the equipment works, what advantages or problems are possible, and how to ensure proper operation and maintenance over time."
     },
 
     "chapter8": {
       "title": "Visualization – the path to the future of manufacturing",
-      "p1": "In the past, when explaining things verbally, we encountered problems arising from misunderstandings. AMM constantly strives to stay one step ahead of its competitors.",
-      "p2": "Therefore, the company focuses exclusively on using products that can change the rules of the game in this industry. The AMM agency does not just help solve current problems. It actively paves the way for future innovations.",
-      "p3": "Any complex technology can have understandable and accessible solutions. AMM clients who take advantage of this benefit reach the peak of their own development, actively implementing the most daring engineering solutions and ideas into reality.",
-      "p4": "Ready to give it a try? Contact AMM right now!"
+      "p1": "In the past, when explaining things verbally, we encountered problems arising from misunderstandings.",
+      "p2": "AMM constantly strives to stay one step ahead of its competitors.",
+      "p3": "Therefore, the company focuses exclusively on using products that can change the rules of the game in this industry.",
+      "p4": "The AMM agency does not just help solve current problems. It actively paves the way for future innovations.",
+      "p5": "Any complex technology can have understandable and accessible solutions.",
+      "p6": "AMM clients who take advantage of this benefit reach the peak of their own development, actively implementing the most daring engineering solutions and ideas into reality.",
+      "p7": "Ready to give it a try? Contact AMM right now!"
     }
   }
 }
