@@ -51,7 +51,6 @@
 .subtitle {
   position: absolute;
   right: 0;
-  bottom: -40px;
   transform: rotate(-3deg);
 
   padding: 0 20px;
@@ -62,6 +61,10 @@
   animation-delay: 1s;
 
   @include h3;
+
+  @include desktop {
+    bottom: -40px;
+  }
 }
 
 .marqueeContainer {
