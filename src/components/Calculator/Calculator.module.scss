@@ -20,6 +20,7 @@
 
 .title {
   font-family: Furore, sans-serif;
+  text-transform: uppercase;
   font-weight: 400;
   font-size: 22px;
   line-height: 150%;
@@ -95,6 +96,7 @@
   cursor: pointer;
   user-select: none;
   font-family: Furore, sans-serif;
+  text-transform: uppercase;
   font-weight: 400;
   font-size: 14px;
   line-height: 150%;
@@ -223,6 +225,7 @@
 
 .finalPrice {
   font-family: Furore, sans-serif;
+  text-transform: uppercase;
   font-weight: 400;
   font-size: 40px;
   line-height: 100%;
@@ -240,6 +243,7 @@
   @include desktop {
     display: block;
     font-family: Furore, sans-serif;
+    text-transform: uppercase;
     font-weight: 400;
     font-size: 40px;
     line-height: 100%;

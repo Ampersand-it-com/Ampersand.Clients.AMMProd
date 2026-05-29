@@ -14,6 +14,7 @@ export const useStyles = makeStyles({
   },
   title: {
     fontFamily: "Furore, sans-serif",
+    textTransform: "uppercase",
     fontWeight: 400,
     fontSize: 22,
     lineHeight: "150%",
@@ -29,6 +30,7 @@ export const useStyles = makeStyles({
     width: 125,
     margin: "7px auto 23px auto",
     fontFamily: "Furore, sans-serif",
+    textTransform: "uppercase",
     fontWeight: 400,
     fontSize: 12,
     lineHeight: "100%",

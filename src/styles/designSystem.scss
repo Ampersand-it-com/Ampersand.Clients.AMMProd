@@ -8,6 +8,7 @@
   font-weight: 400;
   font-size: 25px;
   letter-spacing: 0.07em;
+  text-transform: uppercase;
 
   @include desktop {
     font-size: 60px;
@@ -20,6 +21,7 @@
   font-size: 22px;
   line-height: 133%;
   letter-spacing: 0.07em;
+  text-transform: uppercase;
 
   @include desktop {
     font-size: 36px;
@@ -32,6 +34,7 @@
   font-size: 18px;
   line-height: 133%;
   letter-spacing: 0.07em;
+  text-transform: uppercase;
 
   @include desktop {
     font-size: 22px;

@@ -61,7 +61,7 @@
 
   @include desktop {
     display: flex;
-    margin-left: 172px;
+    margin-left: 100px;
     justify-content: space-between;
     width: 875px;
   }
@@ -95,7 +95,7 @@
 
 .menuList {
   margin: 130px 0;
-  gap: 32px;
+  gap: 24px;
 }
 
 .menuItem {
@@ -160,7 +160,7 @@
 
   @include desktop {
     display: flex;
-    gap: 32px;
+    gap: 24px;
     font-family: Roboto, sans-serif;
     font-weight: 400;
     font-size: 16px;

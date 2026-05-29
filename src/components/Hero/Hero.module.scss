@@ -222,6 +222,7 @@
 
 .name {
   font-family: Furore, sans-serif;
+  text-transform: uppercase;
   font-weight: 400;
   font-size: 60px;
   letter-spacing: 0.07em;
@@ -245,6 +246,7 @@
     animation: fadeIn 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
     animation-delay: 0.5s;
     font-family: Furore, sans-serif;
+    text-transform: uppercase;
     font-weight: 400;
     font-size: 60px;
     letter-spacing: 0.07em;
@@ -255,6 +257,7 @@
 
 .title {
   font-family: Furore, sans-serif;
+  text-transform: uppercase;
   font-weight: 400;
   font-size: 25px;
   width: 320px;

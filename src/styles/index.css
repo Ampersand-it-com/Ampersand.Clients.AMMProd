@@ -11,22 +11,16 @@
   font-style: normal;
 }
 
-/* Furore lacks extended-Latin glyphs (æ ø å etc.); route that range to Roboto.
-   Bold weight is used for both, so the fallback reads heavier next to Furore. */
+/* Furore lacks extended-Latin glyphs (æ ø å etc.); route that range to the
+   heavier Roboto-Bold file so the fallback reads as bold next to Furore.
+   Declared at weight 400 only: a 700-weight face here would win the weight
+   match for bold-default elements (e.g. <h6>) and then fail to supply their
+   ASCII glyphs, knocking that text down to the browser default font. */
 @font-face {
   font-family: "Furore";
   src: url("/fonts/Roboto-Bold.woff") format("woff"),
     url("/fonts/Roboto-Bold.ttf") format("truetype");
   font-weight: normal;
-  font-style: normal;
-  unicode-range: U+00C0-024F;
-}
-
-@font-face {
-  font-family: "Furore";
-  src: url("/fonts/Roboto-Bold.woff") format("woff"),
-    url("/fonts/Roboto-Bold.ttf") format("truetype");
-  font-weight: 700;
   font-style: normal;
   unicode-range: U+00C0-024F;
 }
