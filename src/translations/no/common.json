@@ -1,0 +1,34 @@
+{
+  "common": {
+    "header": {
+      "aboutUs": "OM OSS",
+      "priceCalculator": "PRISKALKULATOR",
+      "caseStudies": "KUNDECASER",
+      "conacts": "KONTAKT",
+      "contactUs": "KONTAKT OSS",
+      "title": "AMM/ videobyrå v.2.0",
+      "description": "Vi er et videobyrå. Vi lager innhold som jobber effektivt for deg 24/7.",
+      "agency": "BYRÅ 2.0",
+      "products": "PRODUKTER",
+      "clients": "KUNDER",
+      "blog": "BLOGG"
+    },
+    "contactModal": {
+      "title": "Skal vi snakke om prosjektet ditt?",
+      "name": "Navn*",
+      "namePlaceholder": "Skriv inn navnet ditt",
+      "phoneNumber": "Telefonnummer*",
+      "email": "Vil du kommunisere på e-post?",
+      "emailPlaceholder": "Skriv inn e-posten din",
+      "btn": "Send",
+      "successTitle": "Henvendelsen din er sendt!",
+      "description": "Vår rådgiver tar kontakt med deg innen 30 minutter i byråets åpningstider",
+      "request": "Har du et hastespørsmål – ring oss med en gang"
+    },
+    "footer": {
+      "rights1": "© 2022–",
+      "rights2": " AMM Production. Med enerett."
+    },
+    "error": "Ugyldig verdi"
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "blog": {
+    "meta": {
+      "title": "AMM / Blogg",
+      "description": "AMM – vi deler erfaringer, idéer og resultater"
+    },
+
+    "hero": {
+      "title": "AMM – vi deler erfaringer, idéer og resultater",
+      "subtitle": "DELER DET PRAKTISKE",
+      "marquee": "Blogg • "
+    },
+
+    "articles": [
+      {
+        "title": "Når det virtuelle blir virkelig: hvordan kombinasjonen av 3D og den ekte verden innleder en ny æra for videoreklame",
+        "description": "Dagens publikum er vant til de fleste videoformater. Det blir stadig vanskeligere å fange oppmerksomheten deres. Det ekte miljøet kombineres med 3D-animasjon, noe som skaper en effekt av «levende virkelighet». Teamet i videobyrået AMM var blant de første til å ta fatt på denne utfordringen aktivt og systematisk."
+      },
+      {
+        "title": "AMMs arbeid på det teknologiske feltet",
+        "description": "Planlegger du å bestille en effektiv presentasjon for et moderne selskap? Er du bekymret for at alt kan bli komplisert og uklart for potensielle kunder? Å kontakte det profesjonelle byrået AMM løser disse problemene.\n\nDe har over 4 års erfaring innen ingeniørfag, teknologi og utstyr, tekniske komponenter. De skaper svært effektive visuelle løsninger."
+      },
+      {
+        "title": "Et alternativ til AI-drevet filming for merkevarer",
+        "description": "Konkurransen i dagens medielandskap byr på mange utfordringer for merkevarer. Tradisjonell video- og fotoproduksjon regnes nå som logistisk krevende, tidkrevende, kostbar og så videre.\n\nHvis det fantes et alternativ for å lage visuelt innhold av høy kvalitet uten disse komplikasjonene, ville alt blitt maksimalt forenklet. Og et slikt alternativ finnes allerede. Alt som er planlagt kan realiseres ved hjelp av AI og ulike moderne teknologier."
+      },
+      {
+        "title": "Videobyrå 2.0: en ny æra for visuell kommunikasjon",
+        "description": "Verden og alt i den er i endring.\nDu kan ikke lenger lage videoer bare «for videoens skyld», i hvert fall ikke når det handler om forretningsprosesser. Et håndfast resultat kreves.\nOg nettopp derfor tar et byrå av en ny generasjon form – Videobyrå 2.0.\n\nJa, på et vis henger dette sammen med utviklingen av entreprenørskap.\nDet er et svar på reelle markedsutfordringer.\nDet er effektiv visuell kommunikasjon på et nytt nivå.\nDet understreker at hvert sekund av publikums oppmerksomhet på visuelt innhold nå er verdt sin vekt i gull."
+      }
+    ],
+
+    "subscribe": {
+      "title": "ABONNER PÅ AMMS NYHETSBREV",
+      "subtitle": "Din kilde til praktisk erfaring og idéer",
+      "email": {
+        "label": "E-post",
+        "placeholder": "E-post"
+      },
+      "niche": {
+        "label": "Bedriftens nisje",
+        "placeholder": "Velg"
+      },
+      "country": {
+        "label": "Land",
+        "placeholder": "Land"
+      },
+      "button": "Send",
+      "niches": {
+        "it": "IT / Programvareutvikling",
+        "design": "Design / Kreativt",
+        "marketing": "Markedsføring / Reklame",
+        "media": "Media / Produksjon",
+        "gaming": "Gaming / e-sport",
+        "film": "Film / Videoproduksjon",
+        "music": "Musikk / Underholdning",
+        "fashion": "Mote / Livsstil",
+        "education": "Utdanning / e-læring",
+        "health": "Helse / Velvære",
+        "other": "Annet"
+      },
+      "countries": {
+        "ua": "Ukraina",
+        "us": "USA",
+        "gb": "Storbritannia",
+        "ca": "Canada",
+        "au": "Australia",
+        "de": "Tyskland",
+        "fr": "Frankrike",
+        "it": "Italia",
+        "es": "Spania",
+        "pl": "Polen",
+        "nl": "Nederland",
+        "other": "Annet"
+      },
+      "success": {
+        "title": "Takk for at du abonnerer!",
+        "text": "Vi setter pris på interessen din. Følg med på oppdateringer!"
+      }
+    }
+  }
+}

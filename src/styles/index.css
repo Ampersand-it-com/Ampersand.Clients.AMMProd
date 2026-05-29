@@ -11,6 +11,26 @@
   font-style: normal;
 }
 
+/* Furore lacks extended-Latin glyphs (æ ø å etc.); route that range to Roboto.
+   Bold weight is used for both, so the fallback reads heavier next to Furore. */
+@font-face {
+  font-family: "Furore";
+  src: url("/fonts/Roboto-Bold.woff") format("woff"),
+    url("/fonts/Roboto-Bold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  unicode-range: U+00C0-024F;
+}
+
+@font-face {
+  font-family: "Furore";
+  src: url("/fonts/Roboto-Bold.woff") format("woff"),
+    url("/fonts/Roboto-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  unicode-range: U+00C0-024F;
+}
+
 @font-face {
   font-family: "Roboto";
   src: url("/fonts/Roboto-Bold.eot");
