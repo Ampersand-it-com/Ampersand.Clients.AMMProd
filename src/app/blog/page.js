@@ -1,5 +1,5 @@
-import { redirect } from "next/navigation";
+import LocaleRedirect from "@/components/LocaleRedirect/LocaleRedirect";
 
 export default function BlogPage() {
-  redirect("/en/blog");
+  return <LocaleRedirect path="/blog" />;
 }
