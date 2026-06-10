@@ -7,9 +7,9 @@
 
     "title": {
       "name": "AMM",
-      "title": "er et videobyrå av type 2.0",
-      "subTitle": "Vi skaper effektive og teknologiske videoverktøy for å nå forretningsmål",
-      "mainBtn": "Diskuter prosjektet",
+      "title": "– et videobyrå for fremtiden",
+      "subTitle": "Vi lager videoinnhold som gir resultater – for bedriften din, hele døgnet",
+      "mainBtn": "La oss snakke",
       "ribbonAd": "IKKE DE FØRSTE, MEN DE ENESTE!"
     },
     "characterUpgrade": {
@@ -43,19 +43,19 @@
     "whoWeAre": {
       "label": "Hvem er vi?",
       "title": "Vi er et videobyrå.",
-      "description": " Vi lager innhold som jobber effektivt for deg 24/7.",
+      "description": " Vi lager innhold som jobber for deg – døgnet rundt.",
       "reasonList": {
-        "firstItem": "Vi utvikler idéer og manus for fremtidige animasjons- og videoprosjekter",
+        "firstItem": "Vi utvikler ideer og manus for animasjons- og videoprosjekter",
         "secondItem": "Vi utarbeider kommunikasjonsstrategier",
         "thirdItem": "Vi lager animasjons- og videoprodukter basert på moderne teknologi",
-        "fourthItem": "Vi utnytter videomarkedsføring fullt ut og fremmer animasjons- og videoinnhold gjennom ulike kommunikasjonskanaler",
-        "fifthItem": "Vi jobber med ulike forretningsområder og forener partnere fra mange bransjer"
+        "fourthItem": "Vi distribuerer innhold i de kanalene som gir mest effekt",
+        "fifthItem": "Vi samarbeider med partnere på tvers av bransjer"
       }
     },
     "ourFeatures": {
       "label": "Hvorfor ikke?",
       "title": "Hvorfor velge oss?",
-      "subTitle": "Spøk til side – du bør velge oss fordi vi lager effektivt innhold:",
+      "subTitle": "Vi lager effektivt innhold, og det er grunnen:",
       "cards": {
         "firstItem": {
           "title": "Vi leverer resultater",
@@ -67,15 +67,15 @@
         },
         "thirdItem": {
           "title": "Et team av fagfolk",
-          "descriptions": "Vi forener mange eksperter for å nå prosjektets mål"
+          "descriptions": "Vi samler de rette ekspertene for å nå prosjektets mål"
         },
         "fourthItem": {
-          "title": "Vi følger med i tiden",
-          "descriptions": "Vi behersker hele bredden av moderne teknologi for produksjon av animasjon og video"
+          "title": "Vi er alltid oppdatert på ny teknologi",
+          "descriptions": "Vi mestrer hele spekteret av moderne video- og animasjonsteknologi"
         },
         "fifthItem": {
           "title": "Vi er ikke redde for utfordringer",
-          "descriptions": "Vi løser oppgaver av enhver kompleksitet, retning og omfang"
+          "descriptions": "Vi løser utfordringer uansett størrelse og kompleksitet"
         },
         "sixthItem": {
           "title": "Vi skiller oss ut",
@@ -84,45 +84,45 @@
       }
     },
     "products": {
-      "title": "Våre produkter",
+      "title": "Våre tjenester",
       "firstCard": {
         "title": "Hva er målet ditt?",
-        "firstItem": "Videoer som forklarer programvarefunksjoner",
-        "secondItem": "Bedrifts- og forretningsvideo for å vinne lojalitet hos kunder og partnere",
-        "thirdItem": "Videoer for sosiale medier for å promotere et produkt, en tjeneste eller et selskap",
+        "firstItem": "Forklaringsvideoer for programvare",
+        "secondItem": "Bedriftsvideo som bygger tillit hos kunder og partnere",
+        "thirdItem": "Videoer for sosiale medier for å markedsføre et produkt, en tjeneste eller et selskap",
         "fourthItem": "Øke konvertering og salg gjennom video",
-        "fifthItem": "Viral video med mål om popularisering",
-        "sixthItem": "Presentasjon av produktet eller tjenestene",
+        "fifthItem": "Viral video for økt rekkevidde og synlighet",
+        "sixthItem": "Produkt- og tjenestepresentasjoner",
         "seventhItem": "Opplæringsvideo",
-        "eightItem": "Animert video til reklameformål",
-        "ninthItem": "Video eller animasjon med mål om merkevarebygging"
+        "eightItem": "Reklamevideo og kampanjeinnhold",
+        "ninthItem": "Video og animasjon for merkevarebygging"
       },
       "secondCard": {
         "title": "Hvilket format foretrekker du?",
         "firstItem": "2D-animert video",
         "secondItem": "3D-animert video",
-        "thirdItem": "Klassisk animasjon",
-        "fourthItem": "Forklarende tegnefilmer",
+        "thirdItem": "Tradisjonell animasjon",
+        "fourthItem": "Forklaringsanimasjon",
         "fifthItem": "Video-infografikk",
         "sixthItem": "Motion design og animasjonsgrafikk",
         "seventhItem": "Karakteranimasjon",
-        "eightItem": "Doodle-videoer og animasjoner for whiteboards"
+        "eightItem": "Whiteboard-animasjon"
       },
       "thirdCard": {
-        "title": "Hvilket arbeidsområde er du i?",
+        "title": "Hvilken bransje tilhører du?",
         "firstItem": "Bygg og anlegg",
         "secondItem": "Elektronikk",
         "thirdItem": "Finans",
-        "fourthItem": "Næringsmiddelindustri",
+        "fourthItem": "Mat og drikke",
         "fifthItem": "Produksjon",
-        "sixthItem": "IT og kryptovaluta",
-        "seventhItem": "Produksjon og ingeniørfag",
+        "sixthItem": "IT og teknologi",
+        "seventhItem": "Industri og ingeniørfag",
         "eightItem": "Medisin"
       }
     },
     "calculator": {
       "title": "Kalkulator",
-      "subTitle": "Velg en tjeneste du er interessert i, så estimerer vi kostnaden for produktet",
+      "subTitle": "Velg tjenesten du er interessert i, så gir vi deg et prisestimat",
       "video": "Video",
       "animation": "Animasjon",
       "form": "Format",
@@ -135,7 +135,7 @@
       "btn": "Beregn prisen",
       "disclaimerTitle": "er den estimerte kostnaden for prosjektet ditt.",
       "disclaimer": "Dette er en estimert pris basert på parameterne du har angitt. I virkeligheten kan prisen være høyere eller lavere, avhengig av behovene dine. For en individuell beregning, legg igjen kontaktinformasjonen din, så tar vår rådgiver kontakt med deg.",
-      "discussBtn": "Diskuter prosjektet",
+      "discussBtn": "La oss snakke",
       "videoOption": {
         "imageVideo": "Imagevideo",
         "advertisingVideo": "Reklamevideo",
@@ -182,8 +182,8 @@
         "title": "Kreativ strategi",
         "firstItem": "Videostrategi",
         "secondItem": "Utforming av en idé",
-        "thirdItem": "Utarbeiding av manus",
-        "fifthItem": "Utarbeiding av storyboard"
+        "thirdItem": "Manusskriving",
+        "fifthItem": "Storyboard"
       },
       "third": {
         "firstItem": "Filming",
@@ -200,9 +200,9 @@
       }
     },
     "caseStudies": {
-      "title": "Kundecaser",
-      "description": "Vi har valgt ut de lekreste arbeidene fra porteføljen vår. Vil du se flere?",
-      "link": "Klikk på lenken",
+      "title": "Referanser",
+      "description": "Her er et utvalg av arbeidene vi er mest stolte av. Vil du se flere?",
+      "link": "Se flere arbeider på YouTube",
       "need": "Behov:",
       "result": "Resultat:",
       "firstCard": {
@@ -212,29 +212,29 @@
       },
       "secondCard": {
         "title": "3D-animasjon",
-        "need": "Eieren ønsket å presentere objektet visuelt for å fremskynde beslutninger og salg allerede før byggearbeidet var ferdig.",
-        "result": "Salget økte med 40 %. Videopresentasjonen vakte interesse hos 80 % av nye potensielle kjøpere, hvorav 50 % bestemte seg for å kjøpe bolig."
+        "need": "Eieren ønsket å presentere objektet visuelt for å få fart på salget allerede før byggestart.",
+        "result": "Salget økte med 40 %. 80 % av nye potensielle kjøpere ble interessert etter å ha sett videoen, og 50 % av disse valgte å kjøpe bolig."
       },
       "thirdCard": {
-        "title": "3D-motion-presentasjon",
-        "need": "Å lage en presentasjonsvideo – en gjennomgang av et arkitektprosjekt for et sykehus rettet mot investorer, for å holde på oppmerksomheten og bevare selskapets tillit og investering.",
+        "title": "3D-animert presentasjon",
+        "need": "Lage en presentasjonsvideo av et sykehusprosjekt for å engasjere investorer og styrke tilliten til prosjektet.",
         "result": "100 % positiv tilbakemelding fra kunder og investorer på en privat visning."
       },
       "fourthCard": {
-        "title": "3D-motion-presentasjon",
-        "need": "Å lage en serie videoer for å promotere plattformen og oppfordre forbrukerne til handling.",
-        "result": "Aktiviteten av nedlastinger og handlinger på plattformen økte med 21,7 %."
+        "title": "3D-animert presentasjon",
+        "need": "Lage en serie videoer for å markedsføre plattformen og motivere brukerne til å handle.",
+        "result": "Antall nedlastinger og brukerhandlinger økte med 21,7 %."
       }
     },
 
     "contactForm": {
       "title": "Har du flere spørsmål?",
-      "description": "Send oss kontaktinformasjonen din, så hjelper vi deg."
+      "description": "Fyll inn skjemaet, så tar vi kontakt."
     },
 
     "clients": {
-      "title": "Kunder",
-      "clutch": "Les på Clutch hvorfor kundene foretrekker oss"
+      "title": "Våre kunder",
+      "clutch": "Se hva kundene våre sier om oss på Clutch"
     }
   }
 }

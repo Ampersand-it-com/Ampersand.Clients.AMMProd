@@ -2,44 +2,44 @@
   "blog": {
     "meta": {
       "title": "AMM / Blogg",
-      "description": "AMM – vi deler erfaringer, idéer og resultater"
+      "description": "Innsikt, ideer og resultater fra oss i AMM"
     },
 
     "hero": {
-      "title": "AMM – vi deler erfaringer, idéer og resultater",
-      "subtitle": "DELER DET PRAKTISKE",
+      "title": "Innsikt, ideer og resultater fra oss i AMM",
+      "subtitle": "FAGLIG INNSIKT",
       "marquee": "Blogg • "
     },
 
     "articles": [
       {
         "title": "Når det virtuelle blir virkelig: hvordan kombinasjonen av 3D og den ekte verden innleder en ny æra for videoreklame",
-        "description": "Dagens publikum er vant til de fleste videoformater. Det blir stadig vanskeligere å fange oppmerksomheten deres. Det ekte miljøet kombineres med 3D-animasjon, noe som skaper en effekt av «levende virkelighet». Teamet i videobyrået AMM var blant de første til å ta fatt på denne utfordringen aktivt og systematisk."
+        "description": "Publikum har sett det meste – og kravene til videoinnhold er høyere enn noensinne. Når ekte omgivelser møter 3D-animasjon, oppstår noe helt nytt. Teamet i videobyrået AMM var blant de første til å utforske dette systematisk."
       },
       {
-        "title": "AMMs arbeid på det teknologiske feltet",
-        "description": "Planlegger du å bestille en effektiv presentasjon for et moderne selskap? Er du bekymret for at alt kan bli komplisert og uklart for potensielle kunder? Å kontakte det profesjonelle byrået AMM løser disse problemene.\n\nDe har over 4 års erfaring innen ingeniørfag, teknologi og utstyr, tekniske komponenter. De skaper svært effektive visuelle løsninger."
+        "title": "Slik løser AMM tekniske kommunikasjonsutfordringer",
+        "description": "Planlegger du å bestille en effektiv presentasjon for et moderne selskap? Vi gjør det tekniske forståelig – for alle målgrupper.\n\nVi har over fire års erfaring innen teknologi, ingeniørfag og tekniske løsninger. Vi skaper svært effektive visuelle løsninger."
       },
       {
-        "title": "Et alternativ til AI-drevet filming for merkevarer",
-        "description": "Konkurransen i dagens medielandskap byr på mange utfordringer for merkevarer. Tradisjonell video- og fotoproduksjon regnes nå som logistisk krevende, tidkrevende, kostbar og så videre.\n\nHvis det fantes et alternativ for å lage visuelt innhold av høy kvalitet uten disse komplikasjonene, ville alt blitt maksimalt forenklet. Og et slikt alternativ finnes allerede. Alt som er planlagt kan realiseres ved hjelp av AI og ulike moderne teknologier."
+        "title": "Hvordan AI erstatter tradisjonell videoproduksjon for merkevarer",
+        "description": "Konkurransen i dagens medielandskap byr på mange utfordringer for merkevarer. Tradisjonell video- og fotoproduksjon regnes nå som logistisk krevende, tidkrevende og kostbar.\n\nHvis det fantes et alternativ for å lage visuelt innhold av høy kvalitet uten disse komplikasjonene, ville produksjonen blitt langt enklere og rimeligere. Og et slikt alternativ finnes allerede. Mulighetene er nesten ubegrensede ved hjelp av AI og ulike moderne teknologier."
       },
       {
-        "title": "Videobyrå 2.0: en ny æra for visuell kommunikasjon",
-        "description": "Verden og alt i den er i endring.\nDu kan ikke lenger lage videoer bare «for videoens skyld», i hvert fall ikke når det handler om forretningsprosesser. Et håndfast resultat kreves.\nOg nettopp derfor tar et byrå av en ny generasjon form – Videobyrå 2.0.\n\nJa, på et vis henger dette sammen med utviklingen av entreprenørskap.\nDet er et svar på reelle markedsutfordringer.\nDet er effektiv visuell kommunikasjon på et nytt nivå.\nDet understreker at hvert sekund av publikums oppmerksomhet på visuelt innhold nå er verdt sin vekt i gull."
+        "title": "Hvorfor «video for videoens skyld» ikke lenger holder",
+        "description": "Verden og alt i den er i endring.\nDu kan ikke lenger lage videoer bare «for videoens skyld», i hvert fall ikke når det handler om forretningsprosesser. Et håndfast resultat kreves.\nOg nettopp derfor vokser det frem en ny type byrå – Videobyrå 2.0.\n\nJa, på et vis handler dette om et reelt skifte i markedet.\nDet er et svar på reelle markedsutfordringer.\nDet er effektiv visuell kommunikasjon på et nytt nivå.\nDet understreker at hvert sekund av publikums oppmerksomhet på visuelt innhold nå er verdt sin vekt i gull."
       }
     ],
 
     "subscribe": {
       "title": "ABONNER PÅ AMMS NYHETSBREV",
-      "subtitle": "Din kilde til praktisk erfaring og idéer",
+      "subtitle": "Få faglig innsikt rett i innboksen",
       "email": {
         "label": "E-post",
         "placeholder": "E-post"
       },
       "niche": {
-        "label": "Bedriftens nisje",
-        "placeholder": "Velg"
+        "label": "Bransje",
+        "placeholder": "Velg bransje"
       },
       "country": {
         "label": "Land",
